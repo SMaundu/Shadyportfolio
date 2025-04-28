@@ -85,10 +85,8 @@ const Index = () => {
               />
             </h1>
             <h6 className="font-bold text-5xl md:text-2xl lg:text-7xl leading-tight">
-              <AnimatedText
-                text="I bring ideas to life through design & code."
-                className="block"
-              />
+                 I bring ideas to life through design & code.
+            
             </h6>
 
             <p className="text-xl text-foreground/80 max-w-2xl reveal opacity-0">
@@ -417,6 +415,21 @@ const Index = () => {
                 CSS.
               </div>
             </div>
+
+            <div className="rounded-lg overflow-hidden shadow-md bg-card border border-border">
+              <img
+                src="/designs/doc.png"
+                alt="Poster 3"
+                className="w-full h-60 object-cover  hover:scale-105 hover:brightness-90 transition-all duration-300"
+              />
+              <h3 className="text-xl font-semibold text-center text-gold">
+                Health Management Information System
+              </h3>
+              <div className="text-white-700 text-center">
+              A simple web application that simulates a basic health information system for managing clients and health programs/services.
+              </div>
+            </div>
+           
             <div className="flex justify-center mt-6">
               <Button
                 variant="outline"
