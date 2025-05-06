@@ -431,19 +431,7 @@ const Index = () => {
             </div>
            
             <div className="flex justify-center mt-6">
-              <Button
-                variant="outline"
-                className="text-gold border-burgundy hover:bg-gold/10 hover:scale-105 hover:brightness-90 transition-all duration-300"
-                asChild
-              >
-                <a
-                  href="https://drive.google.com/drive/u/0/folders/1A9PQvmsnXmPIvzMUEeRUCWrQzOnZvHFm"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View These and More Projects
-                </a>
-              </Button>
+             
             </div>
           </div>
         </div>
