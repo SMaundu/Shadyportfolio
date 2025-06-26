@@ -23,6 +23,7 @@ import {
   Network,
 } from "lucide-react";
 
+
 const Index = () => {
   // Add a scroll reveal effect for elements when they come into view
   useEffect(() => {
