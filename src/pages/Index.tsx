@@ -54,9 +54,7 @@ const Index = () => {
     name: "Shadrack Maundu Ndinda",
     title: "IT Professional & Developer",
     email: "shadrackmaundu2001@gmail.com",
-    phone: "+254719300801",
-    dob: "4th December 2001",
-    id: "39401611",
+    phone: "+254719300801",  
     nationality: "Kenyan",
   };
 
@@ -66,15 +64,22 @@ const Index = () => {
 
       {/* Hero Section */}
       <SectionContainer id="home" className="relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 -z-10" />
-        <div className="max-w-4xl mx-auto">
+       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 -z-10" />
+
+      {/* Changed to max-w-6xl to give the 2 columns more space */}
+      <div className="max-w-6xl mx-auto py-24 md:py-32 px-4"> {/* Added horizontal padding px-4 for mobile */}
+        
+        {/* This is the 2-column grid. It stacks on mobile and splits on 'lg' screens. */}
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
+          {/* MOVED: All your text content is now in the first grid column */}
           <div className="flex flex-col gap-6">
             <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center">
               <span className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
                 B.Sc. Information Technology
               </span>
               <span className="text-foreground/60">
-                Jomo Kenyatta University of Agriculture and Technology
+                Jomo Kenyatta University of Agriculture and Technology (JKUAT)
               </span>
             </div>
 
@@ -85,21 +90,21 @@ const Index = () => {
                 className="bg-gradient-to-r from-gold to-burgundy text-transparent bg-clip-text block mt-2"
               />
             </h1>
-            <h6 className="font-bold text-5xl md:text-2xl lg:text-7xl leading-tight">
-                 I bring ideas to life through design & code.
-            
+            <h6 className="text-2xl md:text-2xl lg:text-4xl leading-tight">
+              I bring ideas to life through design & code.
             </h6>
 
             <p className="text-xl text-foreground/80 max-w-2xl reveal opacity-0">
-              An IT professional specializing in web development, programming,
-              and mobile application development. Based in Kenya with a passion
-              for creating innovative digital solutions.
+              An IT professional specializing in Graphics Design, Web
+              development, programming, and mobile application development.
+              Based in Kenya with a passion for creating innovative digital
+              solutions.
             </p>
 
             <div className="flex flex-wrap gap-4 mt-4 reveal opacity-0">
               <Button
                 size="lg"
-                className="bg-burgundy text-white hover:bg-burgundy/90"
+                className="bg-burgundy text-white hover:bg-burgundy/90 px-6 py-3 rounded-md cursor-pointer" // Added styling for mock button
                 asChild
               >
                 <a href="#contact">Contact Me</a>
@@ -108,14 +113,28 @@ const Index = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-gold text-gold hover:bg-gold/10"
+                className="border-gold text-gold hover:bg-gold/10 px-6 py-3 rounded-md border cursor-pointer" // Added styling for mock button
                 asChild
               >
                 <a href="#resume">View Resume</a>
               </Button>
             </div>
           </div>
+
+          {/* NEW: This is the second grid column for your image */}
+          <div className="reveal opacity-0 flex justify-center items-center">
+            {/* This div is the "rounded rectangle" frame */}
+            <div className="bg-card p-2 rounded-2xl shadow-xl border border-border w-100 h-200 ">
+              <img               
+                src="/designs/Passport 2.jpg"
+                alt="Shadrack Maundu"
+                className="w-full h-auto object-cover rounded-xl" // The image itself is also rounded
+              />
+            </div>
+          </div>
+          
         </div>
+      </div>
       </SectionContainer>
 
       {/* About Section */}
@@ -154,25 +173,7 @@ const Index = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <Calendar className="w-5 h-5 text-gold mt-1" />
-                  <div>
-                    <div className="font-medium">Date of Birth</div>
-                    <div className="text-foreground/80">
-                      {personalDetails.dob}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <FileText className="w-5 h-5 text-gold mt-1" />
-                  <div>
-                    <div className="font-medium">ID Number</div>
-                    <div className="text-foreground/80">
-                      {personalDetails.id}
-                    </div>
-                  </div>
-                </div>
+                
 
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-gold mt-1" />
@@ -192,12 +193,12 @@ const Index = () => {
               </h3>
               <div className="space-y-4 text-foreground/80">
                 <p>
-                  I am an Information Technology student at Jomo Kenyatta
-                  University of Agriculture and Technology (JKUAT), where I'm
-                  pursuing a Bachelor of Science in Information Technology.
+                  I am an Information Technology Graduate at Jomo Kenyatta
+                  University of Agriculture and Technology (JKUAT), where I
+                  pursued a Bachelor of Science in Information Technology.
                 </p>
                 <p>
-                  With a strong foundation in web development, programming, and
+                  With a strong foundation in Graphics Design, Web development, programming, and
                   mobile app development, I bring technical expertise alongside
                   excellent communication skills. My educational background
                   includes strong performances in Mathematics, Physics, and
@@ -221,16 +222,14 @@ const Index = () => {
 
           <div className="mt-8 space-y-2 reveal opacity-0">
             <TimelineItem
-              date="2021 - Present"
+              date="2021 - 2025"
               title="Jomo Kenyatta University of Agriculture and Technology (JKUAT)"
               description={
                 <>
                   <p className="mb-2">
                     Bachelor of Science in Information Technology (IT)
                   </p>
-                  <div className="text-sm text-foreground/70 italic">
-                    Current enrollment
-                  </div>
+                 
                 </>
               }
             />
@@ -241,16 +240,7 @@ const Index = () => {
               description={
                 <>
                   <p className="mb-2">Mean Grade: A- (minus) - 78 points</p>
-                  <ul className="list-disc list-inside text-sm space-y-1">
-                    <li>Mathematics A</li>
-                    <li>English A-</li>
-                    <li>Kiswahili A</li>
-                    <li>Physics A-</li>
-                    <li>Chemistry B</li>
-                    <li>Geography A-</li>
-                    <li>Christian Religious Education A-</li>
-                    <li>Business Studies A-</li>
-                  </ul>
+                  
                 </>
               }
             />
@@ -261,13 +251,7 @@ const Index = () => {
               description={
                 <>
                   <p className="mb-2">Mean Grade: 352 out of 500</p>
-                  <ul className="list-disc list-inside text-sm space-y-1">
-                    <li>Mathematics A-</li>
-                    <li>English Language B</li>
-                    <li>Kiswahili B</li>
-                    <li>Science B+</li>
-                    <li>Social Studies and Religious Education B+</li>
-                  </ul>
+                 
                 </>
               }
             />
@@ -308,18 +292,23 @@ const Index = () => {
             <SkillCard
               title="Mobile Development"
               icon={<Monitor className="h-6 w-6" />}
-              description="Experience with Android Studio and Java for building mobile applications on the Android platform."
+              description="Experience with Dart/Flutter, Android Studio and Java for building mobile applications on the Android platform."
             />
 
             <SkillCard
-              title="Design & Networking"
+              title="Graphics Design"
               icon={<PaintBucket className="h-6 w-6" />}
-              description="Graphics design capabilities in the Adobe Suite. This involves design in Adobe Photoshop, Adobe Illustrator among others such as the Canva."
+              description="Graphics design capabilities in the Adobe Suite. This involves design in Adobe Photoshop, Adobe Illustrator, Adobe Indesign among others such as the Canva."
             />
             <SkillCard
               title="Networking"
               icon={<Monitor className="h-6 w-6" />}
               description="Intermediate knowledge in Networking especially in the configuration of networks in a Local Area Network."
+            />
+            <SkillCard
+              title="Digital Marketing"
+              icon={<Globe className="h-6 w-6" />}
+              description="My proficiency is in full-funnel content strategy. I design Seamless fliers, social media posts, brochures, and other marketing materials that align with brand identity and campaign goals."
             />
           </div>
         </div>
@@ -333,29 +322,29 @@ const Index = () => {
             {/* Poster 1 */}
             <div className="rounded-lg overflow-hidden shadow-md bg-card border border-border">
               <img
-                src="/designs/bikeRide.png"
+                src="/designs/Medical Camp 2.png"
                 alt="Poster 1"
                 className="w-full h-60 object-cover hover:scale-105 hover:brightness-90 transition-all duration-300"
               />
               <div className="p-4 text-center text-sm text-foreground/80">
-                Bike Riding Poster
+                Medical Camp Poster
               </div>
             </div>
             {/* Poster 2 */}
             <div className="rounded-lg overflow-hidden shadow-md bg-card border border-border">
               <img
-                src="/designs/Inreach.png"
+                src="/designs/Shirts Sale.png"
                 alt="Poster 3"
                 className="w-full h-60 object-cover  hover:scale-105 hover:brightness-90 transition-all duration-300"
               />
               <div className="p-4 text-center text-sm text-foreground/80">
-                JKUAT CU Inreach Poster
+                Shirt Sales Poster
               </div>
             </div>
             {/* Poster 3 */}
             <div className="rounded-lg overflow-hidden shadow-md bg-card border border-border">
               <img
-                src="/designs/SkillUp2.png"
+                src="/designs/UET Cultural sunday2.png"
                 alt="Poster 2"
                 className="w-full h-60 object-cover hover:scale-105 hover:brightness-90 transition-all duration-300"
               />
@@ -433,131 +422,6 @@ const Index = () => {
            
             <div className="flex justify-center mt-6">
              
-            </div>
-          </div>
-        </div>
-      </SectionContainer>
-
-      {/* Resume Section */}
-      <SectionContainer id="resume">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="section-title">Resume</h2>
-
-          <div className="mt-8 reveal opacity-0">
-            <div className="p-6 bg-card rounded-lg shadow-sm border border-border">
-              <h3 className="text-2xl font-bold mb-6">CURRICULUM VITAE</h3>
-
-              <div className="space-y-8">
-                <div>
-                  <h4 className="text-xl font-semibold mb-4 text-gold">
-                    PERSONAL DETAILS
-                  </h4>
-                  <ul className="space-y-2">
-                    <li>
-                      <span className="font-medium">NAME:</span>{" "}
-                      {personalDetails.name}
-                    </li>
-                    <li>
-                      <span className="font-medium">EMAIL:</span>{" "}
-                      {personalDetails.email}
-                    </li>
-                    <li>
-                      <span className="font-medium">DATE OF BIRTH:</span>{" "}
-                      {personalDetails.dob}
-                    </li>
-                    <li>
-                      <span className="font-medium">PHONE NUMBER:</span>{" "}
-                      {personalDetails.phone}
-                    </li>
-                    <li>
-                      <span className="font-medium">ID NUMBER:</span>{" "}
-                      {personalDetails.id}
-                    </li>
-                    <li>
-                      <span className="font-medium">NATIONALITY:</span>{" "}
-                      {personalDetails.nationality}
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 className="text-xl font-semibold mb-4 text-gold">
-                    EDUCATION
-                  </h4>
-
-                  <div className="space-y-4">
-                    <div>
-                      <h5 className="font-medium">
-                        2021 – Present: Jomo Kenyatta University of Agriculture
-                        and Technology (JKUAT)
-                      </h5>
-                      <p className="ml-6">
-                        • Bachelor of Science in Information Technology (IT)
-                      </p>
-                    </div>
-
-                    <div>
-                      <h5 className="font-medium">
-                        2017 – 2020: Kenya Certificate of Secondary Education
-                        (KCSE)
-                      </h5>
-                      <ul className="ml-6 space-y-1">
-                        <li>• Mean Grade: A- (minus) – 78 points</li>
-                        <li>
-                          • (Mathematics A, English A-, Kiswahili A, Physics A-,
-                          Chemistry B, Geography A-, Christian Religious
-                          Education A-, Business Studies A-)
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h5 className="font-medium">
-                        2008-2015: Kenya Certificate of Primary Education (KCPE)
-                      </h5>
-                      <ul className="ml-6 space-y-1">
-                        <li>• Mean Grade: 352 out of 500</li>
-                        <li>
-                          • (Mathematics A-, English Language B, Kiswahili B,
-                          Science B+, Social Studies and Religious Education B+)
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="text-xl font-semibold mb-4 text-gold">
-                    SKILLS
-                  </h4>
-
-                  <ul className="space-y-2 ml-6">
-                    <li>a. Computer skills in computer packages</li>
-                    <li>
-                      b. Excellent communication skills in writing and
-                      face-to-face
-                    </li>
-                    <li>c. Programming Languages: Java</li>
-                    <li>
-                      d. Web Development (Front End developer) – HTML, CSS,
-                      JavaScript
-                    </li>
-                    <li>e. Mobile development – Android Studio (Java)</li>
-                    <li>f. Intermediate knowledge in Networking</li>
-                    <li>g. Graphics design</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="mt-8 flex justify-center">
-                <a
-                  href="/My Full Resume.pdf"
-                  download
-                  className="bg-burgundy hover:bg-burgundy/90 text-white px-4 py-2 rounded-lg"
-                >
-                  Download Full Resume (PDF)
-                </a>
-              </div>
             </div>
           </div>
         </div>
@@ -641,8 +505,18 @@ const Index = () => {
                         linkedin.com/in/shadrack-maundu
                       </a>
                     </div>
+                    
                   </div>
+                  
                 </div>
+                 <div className="mt-8 flex justify-center">
+                <a
+                  href="/My Full Resume.pdf"
+                  download
+                  className="bg-burgundy hover:bg-burgundy/90 text-white px-20 py-5 rounded-lg">
+                  Download Full Resume (PDF)
+                </a>
+              </div>
               </div>
             </div>
 
