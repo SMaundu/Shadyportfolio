@@ -79,7 +79,7 @@ const Index = () => {
                 B.Sc. Information Technology
               </span>
               <span className="text-foreground/60">
-                Jomo Kenyatta University of Agriculture and Technology (JKUAT)
+                 (JKUAT)
               </span>
             </div>
 
@@ -116,7 +116,7 @@ const Index = () => {
                 className="border-gold text-gold hover:bg-gold/10 px-6 py-3 rounded-md border cursor-pointer" // Added styling for mock button
                 asChild
               >
-                <a href="#resume">View Resume</a>
+                <a href="#contact">View Resume</a>
               </Button>
             </div>
           </div>
@@ -138,7 +138,7 @@ const Index = () => {
       </SectionContainer>
 
       {/* About Section */}
-      <SectionContainer id="about" className="bg-muted/30">
+      <SectionContainer id="about" className="bg-muted/30 max-l-w-6xl mx-auto">
         <div className="max-w-4xl mx-auto">
           <h2 className="section-title">About Me</h2>
 
@@ -217,7 +217,7 @@ const Index = () => {
 
       {/* Education Section */}
       <SectionContainer id="education">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-15xl mx-14">
           <h2 className="section-title">Education</h2>
 
           <div className="mt-8 space-y-2 reveal opacity-0">
@@ -315,7 +315,7 @@ const Index = () => {
       </SectionContainer>
 
       <SectionContainer id="designs">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-14">
           <h2 className="section-title">Design Showcase</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 reveal opacity-0">
