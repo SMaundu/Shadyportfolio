@@ -511,7 +511,7 @@ const Index = () => {
                 </div>
                  <div className="mt-8 flex justify-center">
                 <a
-                  href="/My Full Resume.pdf"
+                  href="/designs/Shadrack_Maundu_CV.pdf"
                   download
                   className="bg-burgundy hover:bg-burgundy/90 text-white px-20 py-5 rounded-lg">
                   Download Full Resume (PDF)
