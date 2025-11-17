@@ -218,7 +218,7 @@ const Index = () => {
 
       {/* Education Section */}
       <SectionContainer id="education">
-        <div className="max-w-15xl mx-auto">
+        <div className="max-w-15xl mx-auto px-4">
           <h2 className="section-title">Education</h2>
 
           <div className="mt-8 space-y-2 reveal opacity-0">
@@ -262,7 +262,7 @@ const Index = () => {
 
       {/* Skills Section */}
       <SectionContainer id="skills" className="bg-muted/30">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto px-4">
           <h2 className="section-title">Skills & Expertise</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 stagger-animation">
@@ -316,7 +316,7 @@ const Index = () => {
       </SectionContainer>
 
       <SectionContainer id="designs">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto px-4">
           <h2 className="section-title">Design Showcase</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 reveal opacity-0">
@@ -374,7 +374,7 @@ const Index = () => {
       </SectionContainer>
 
       <SectionContainer id="projects">
-        <div className="max-w-4xl mx-auto mb-40 mt-3">
+        <div className="max-w-4xl mx-auto mb-40 mt-3 px-4">
           <h2 className="section-title">Projects</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 reveal opacity-0">
@@ -426,7 +426,7 @@ const Index = () => {
 
       {/* Contact Section */}
       <SectionContainer id="contact" className="bg-muted/30">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto px-4">
           <h2 className="section-title">Contact Me</h2>
 
           <div className="grid md:grid-cols-2 gap-10 mt-8">
