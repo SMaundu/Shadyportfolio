@@ -139,7 +139,7 @@ const Index = () => {
       </SectionContainer>
 
       {/* About Section */}
-      <SectionContainer id="about" className="bg-muted/30 max-l-w-6xl mx-auto">
+      <SectionContainer id="about" className="bg-muted/30 max-l-w-6xl mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="section-title">About Me</h2>
 
