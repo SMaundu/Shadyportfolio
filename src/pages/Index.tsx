@@ -21,6 +21,7 @@ import {
   PaintBucket,
   Monitor,
   Network,
+  Instagram,
 } from "lucide-react";
 
 
@@ -76,7 +77,7 @@ const Index = () => {
           <div className="flex flex-col gap-6">
             <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center">
               <span className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
-                B.Sc. Information Technology
+                B.Sc. IT
               </span>
               <span className="text-foreground/60">
                  (JKUAT)
@@ -217,7 +218,7 @@ const Index = () => {
 
       {/* Education Section */}
       <SectionContainer id="education">
-        <div className="max-w-15xl mx-14">
+        <div className="max-w-15xl mx-auto">
           <h2 className="section-title">Education</h2>
 
           <div className="mt-8 space-y-2 reveal opacity-0">
@@ -315,7 +316,7 @@ const Index = () => {
       </SectionContainer>
 
       <SectionContainer id="designs">
-        <div className="max-w-4xl mx-14">
+        <div className="max-w-4xl mx-auto">
           <h2 className="section-title">Design Showcase</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 reveal opacity-0">
@@ -349,14 +350,14 @@ const Index = () => {
                 className="w-full h-60 object-cover hover:scale-105 hover:brightness-90 transition-all duration-300"
               />
               <div className="p-4 text-center text-sm text-foreground/80">
-                Graphics Design Class Poster
+                UET Cultural Sunday
               </div>
             </div>
 
             <div className="flex justify-center mt-6">
               <Button
                 variant="outline"
-                className="text-gold border-gold hover:bg-gold/10 hover:scale-105 hover:brightness-90 transition-all duration-300"
+                className="text-gold border-gold hover:bg-gold/10 hover:scale-105 hover:brightness-100 transition-all duration-300"
                 asChild
               >
                 <a
@@ -364,7 +365,7 @@ const Index = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View These and More Designs
+                  View These and More Designs Here
                 </a>
               </Button>
             </div>
@@ -373,7 +374,7 @@ const Index = () => {
       </SectionContainer>
 
       <SectionContainer id="projects">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto mb-40 mt-3">
           <h2 className="section-title">Projects</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 reveal opacity-0">
@@ -413,16 +414,12 @@ const Index = () => {
                 className="w-full h-60 object-cover  hover:scale-105 hover:brightness-90 transition-all duration-300"
               />
               <h3 className="text-xl font-semibold text-center text-gold">
-                Health Management Information System
+                Health Management IS
               </h3>
               <div className="text-white-700 text-center">
-              A simple web application that simulates a basic health information system for managing clients and health programs/services.
+              A simple web application that simulates a basic health information system.
               </div>
-            </div>
-           
-            <div className="flex justify-center mt-6">
-             
-            </div>
+            </div>      
           </div>
         </div>
       </SectionContainer>
@@ -507,13 +504,30 @@ const Index = () => {
                     </div>
                     
                   </div>
+                  <div className="flex items-center gap-3">
+                    <div className="p-3 rounded-full bg-primary/10 text-primary">
+                      <Instagram className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <div className="text-sm text-foreground/70">Instagram</div>
+                      <a
+                        href="https://www.instagram.com/maundu_shady/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium hover:text-primary"
+                      >
+                      maundu_shady
+                      </a>
+                    </div>
+                    
+                  </div>
                   
                 </div>
                  <div className="mt-8 flex justify-center">
                 <a
                   href="/designs/Shadrack_Maundu_CV.pdf"
                   download
-                  className="bg-burgundy hover:bg-burgundy/90 text-white px-20 py-5 rounded-lg">
+                  className="bg-burgundy hover:bg-burgundy/90 text-white px-20 py-2 rounded-lg">
                   Download Full Resume (PDF)
                 </a>
               </div>
@@ -593,13 +607,12 @@ const Index = () => {
               Shadrack Maundu
             </h3>
             <p className="text-sm text-foreground/60">
-              IT Professional & Developer
+              Graphics Designer, IT Professional & Software Developer
             </p>
           </div>
 
           <div className="text-sm text-foreground/60">
-            &copy; {new Date().getFullYear()} Shadrack Maundu. All rights
-            reserved.
+            &copy; Built By Shadrack Maundu. All rights reserved.
           </div>
         </div>
       </footer>

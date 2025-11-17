@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { Menu, X, Home, UserCircle, GraduationCap, Briefcase, Code, FileText, Folder, Projector } from "lucide-react";
+import { Menu, X, Home, UserCircle, GraduationCap, Briefcase, Code, FileText, Folder, Projector, Contact, Phone, PhoneCallIcon } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { AccordionHeader } from "@radix-ui/react-accordion";
 
@@ -20,8 +20,9 @@ export function Navigation() {
     { name: "About", href: "#about", icon: <UserCircle className="h-5 w-5" /> },
     { name: "Education", href: "#education", icon: <GraduationCap className="h-5 w-5" /> },
     { name: "Skills", href: "#skills", icon: <Code className="h-5 w-5" /> },
+    { name: "Designs", href: "#designs", icon: <Projector className="h-5 w-5" /> },
     { name: "Projects", href: "#projects", icon: <Folder className="h-5 w-5" /> },
-    { name: "Resume", href: "#resume", icon: <FileText className="h-5 w-5" /> }
+    { name: "Contact", href: "#contact", icon: <PhoneCallIcon className="h-5 w-5" /> },
   ];
 
   // Handle section navigation and highlighting
