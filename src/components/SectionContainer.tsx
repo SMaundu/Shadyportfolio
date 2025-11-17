@@ -13,7 +13,7 @@ export function SectionContainer({ id, className, children }: SectionContainerPr
     <section
       id={id}
       className={cn(
-        "min-h-screen py-16 px- md:px-12 lg:px-24 flex flex-col justify-center",
+        "min--screen py-16 px-1 md:px-12 lg:px-24 flex  justify-center",
         className
       )}
     >

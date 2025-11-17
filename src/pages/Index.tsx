@@ -77,10 +77,7 @@ const Index = () => {
           <div className="flex flex-col gap-6">
             <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center">
               <span className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
-                B.Sc. IT
-              </span>
-              <span className="text-foreground/60">
-                 (JKUAT)
+                B.Sc. Information Technology (JKUAT)
               </span>
             </div>
 
@@ -140,7 +137,7 @@ const Index = () => {
 
       {/* About Section */}
       <SectionContainer id="about" className="bg-muted/30 max-l-w-6xl mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto px-4">
           <h2 className="section-title">About Me</h2>
 
           <div className="grid md:grid-cols-2 gap-8 mt-8">
@@ -221,7 +218,7 @@ const Index = () => {
         <div className="max-w-15xl mx-auto px-4">
           <h2 className="section-title">Education</h2>
 
-          <div className="mt-8 space-y-2 reveal opacity-0">
+          <div className="mt-8 space-y-2 reveal opacity-0 px-2">
             <TimelineItem
               date="2021 - 2025"
               title="Jomo Kenyatta University of Agriculture and Technology (JKUAT)"
@@ -325,7 +322,7 @@ const Index = () => {
               <img
                 src="/designs/Medical Camp 2.png"
                 alt="Poster 1"
-                className="w-full h-60 object-cover hover:scale-105 hover:brightness-90 transition-all duration-300"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 reveal opacity-00"
               />
               <div className="p-4 text-center text-sm text-foreground/80">
                 Medical Camp Poster
@@ -336,7 +333,7 @@ const Index = () => {
               <img
                 src="/designs/Shirts Sale.png"
                 alt="Poster 3"
-                className="w-full h-60 object-cover  hover:scale-105 hover:brightness-90 transition-all duration-300"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 reveal opacity-0"
               />
               <div className="p-4 text-center text-sm text-foreground/80">
                 Shirt Sales Poster
@@ -347,7 +344,7 @@ const Index = () => {
               <img
                 src="/designs/UET Cultural sunday2.png"
                 alt="Poster 2"
-                className="w-full h-60 object-cover hover:scale-105 hover:brightness-90 transition-all duration-300"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 reveal opacity-0"
               />
               <div className="p-4 text-center text-sm text-foreground/80">
                 UET Cultural Sunday
@@ -376,7 +373,6 @@ const Index = () => {
       <SectionContainer id="projects">
         <div className="max-w-4xl mx-auto mb-40 mt-3 px-4">
           <h2 className="section-title">Projects</h2>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 reveal opacity-0">
             <div className="rounded-lg overflow-hidden shadow-md bg-card border border-border">
               <img
