@@ -19,6 +19,7 @@ export function Navigation() {
     { name: "Home", href: "#home", icon: <Home className="h-5 w-5" /> },
     { name: "About", href: "#about", icon: <UserCircle className="h-5 w-5" /> },
     { name: "Education", href: "#education", icon: <GraduationCap className="h-5 w-5" /> },
+    { name: "Experience", href: "#experience", icon: <Briefcase className="h-5 w-5" /> },
     { name: "Skills", href: "#skills", icon: <Code className="h-5 w-5" /> },
     { name: "Designs", href: "#designs", icon: <Projector className="h-5 w-5" /> },
     { name: "Projects", href: "#projects", icon: <Folder className="h-5 w-5" /> },

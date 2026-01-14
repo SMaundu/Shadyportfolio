@@ -22,7 +22,9 @@ import {
   Monitor,
   Network,
   Instagram,
+  Briefcase,
 } from "lucide-react";
+import { ScrollToTopButton } from "@/components/ScrollToTopButton";
 
 
 const Index = () => {
@@ -55,7 +57,7 @@ const Index = () => {
     name: "Shadrack Maundu Ndinda",
     title: "IT Professional & Developer",
     email: "shadrackmaundu2001@gmail.com",
-    phone: "+254719300801",  
+    phone: "+254719 300 801",  
     nationality: "Kenyan",
   };
 
@@ -213,50 +215,75 @@ const Index = () => {
         </div>
       </SectionContainer>
 
-      {/* Education Section */}
-      <SectionContainer id="education">
-        <div className="max-w-15xl mx-auto px-4">
-          <h2 className="section-title">Education</h2>
+      {/* Education & Experience Section */}
+      <SectionContainer id="education-experience">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Education Card */}
+            <div className="bg-card p-6 rounded-lg shadow-md border border-border reveal opacity-0">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-3 rounded-full bg-primary/10 text-primary">
+                  <BookOpen className="h-5 w-5" />
+                </div>
+                <h2 className="section-title">Education</h2>
+              </div>
+              <div className="mt-8 space-y-2 px-2">
+                <TimelineItem
+                  date="2021 - 2025"
+                  title="Jomo Kenyatta University of Agriculture and Technology (JKUAT)"
+                  description={
+                    <p className="mb-2">
+                      Bachelor of Science in Information Technology (IT)
+                    </p>
+                  }
+                />
+                <TimelineItem
+                  date="2017 - 2020"
+                  title="Kenya Certificate of Secondary Education (KCSE)"
+                  description={
+                    <p className="mb-2">Mean Grade: A- (minus) - 78 points</p>
+                  }
+                />
+                <TimelineItem
+                  date="2008 - 2015"
+                  title="Kenya Certificate of Primary Education (KCPE)"
+                  description={
+                    <p className="mb-2">Mean Grade: 352 out of 500</p>
+                  }
+                />
+              </div>
+            </div>
 
-          <div className="mt-8 space-y-2 reveal opacity-0 px-2">
-            <TimelineItem
-              date="2021 - 2025"
-              title="Jomo Kenyatta University of Agriculture and Technology (JKUAT)"
-              description={
-                <>
-                  <p className="mb-2">
-                    Bachelor of Science in Information Technology (IT)
-                  </p>
-                 
-                </>
-              }
-            />
-
-            <TimelineItem
-              date="2017 - 2020"
-              title="Kenya Certificate of Secondary Education (KCSE)"
-              description={
-                <>
-                  <p className="mb-2">Mean Grade: A- (minus) - 78 points</p>
-                  
-                </>
-              }
-            />
-
-            <TimelineItem
-              date="2008 - 2015"
-              title="Kenya Certificate of Primary Education (KCPE)"
-              description={
-                <>
-                  <p className="mb-2">Mean Grade: 352 out of 500</p>
-                 
-                </>
-              }
-            />
+            {/* Experience Card */}
+            <div className="bg-card p-6 rounded-lg shadow-md border border-border reveal opacity-0" style={{animationDelay: '0.2s'}}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-3 rounded-full bg-primary/10 text-primary">
+                  <Briefcase className="h-5 w-5" />
+                </div>
+                <h2 className="section-title">Experience</h2>
+              </div>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-lg font-semibold">Graphics Designer — 3 Years</h3>
+                  <ul className="list-disc ml-6 mt-2 text-foreground/80">
+                    <li>Action Africa Institute</li>
+                    <li>Gallexia Kenya Ltd.</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold">Software Development — 2 Years</h3>
+                  <ul className="list-disc ml-6 mt-2 text-foreground/80">
+                    <li>Kenya Malaria Youth Corps (KeMYC)</li>
+                    <li>Portfolio</li>
+                    <li>QLess App</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </SectionContainer>
-
+      
       {/* Skills Section */}
       <SectionContainer id="skills" className="bg-muted/30">
         <div className="max-w-4xl mx-auto px-4">
@@ -322,7 +349,7 @@ const Index = () => {
               <img
                 src="/designs/Medical Camp 2.png"
                 alt="Poster 1"
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 reveal opacity-00"
+                className="w-full h-auto object-cover"
               />
               <div className="p-4 text-center text-sm text-foreground/80">
                 Medical Camp Poster
@@ -333,7 +360,7 @@ const Index = () => {
               <img
                 src="/designs/Shirts Sale.png"
                 alt="Poster 3"
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 reveal opacity-0"
+                className="w-full h-auto object-cover"
               />
               <div className="p-4 text-center text-sm text-foreground/80">
                 Shirt Sales Poster
@@ -344,7 +371,7 @@ const Index = () => {
               <img
                 src="/designs/UET Cultural sunday2.png"
                 alt="Poster 2"
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 reveal opacity-0"
+                className="w-full h-auto object-cover"
               />
               <div className="p-4 text-center text-sm text-foreground/80">
                 UET Cultural Sunday
@@ -612,6 +639,7 @@ const Index = () => {
           </div>
         </div>
       </footer>
+      <ScrollToTopButton />
     </div>
   );
 };
