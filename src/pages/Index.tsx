@@ -79,7 +79,7 @@ const Index = () => {
           <div className="flex flex-col gap-6">
             <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center">
               <span className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
-                B.Sc. Information Technology (JKUAT)
+                Graphics Designer | Software Developer
               </span>
             </div>
 
@@ -193,22 +193,18 @@ const Index = () => {
               </h3>
               <div className="space-y-4 text-foreground/80">
                 <p>
-                  I am an Information Technology Graduate at Jomo Kenyatta
-                  University of Agriculture and Technology (JKUAT), where I
+                  I am an IT Graduate from JKUAT, where I
                   pursued a Bachelor of Science in Information Technology.
                 </p>
                 <p>
                   With a strong foundation in Graphics Design, Web development, programming, and
                   mobile app development, I bring technical expertise alongside
-                  excellent communication skills. My educational background
-                  includes strong performances in Mathematics, Physics, and
-                  Computer Studies.
-                </p>
-                <p>
-                  I am passionate about applying my skills to create innovative
-                  technological solutions and continuously learning new
-                  technologies in the ever-evolving IT landscape.
-                </p>
+                  excellent communication skills. 
+                 </p> 
+                  <p> 
+                    I am passionate about creating innovative digital solutions that drive results and enhance user experiences. I am eager to contribute my skills and creativity to impactful projects in the tech industry.
+                  </p>
+               
               </div>
             </div>
           </div>
@@ -233,8 +229,10 @@ const Index = () => {
                   title="Jomo Kenyatta University of Agriculture and Technology (JKUAT)"
                   description={
                     <p className="mb-2">
-                      Bachelor of Science in Information Technology (IT)
+                      Bachelor of Science in Information Technology (IT) -
+                      Second Class Honours (Upper Division)
                     </p>
+                    
                   }
                 />
                 <TimelineItem
@@ -264,10 +262,12 @@ const Index = () => {
               </div>
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-semibold">Graphics Designer — 3 Years</h3>
+                  <h3 className="text-lg font-semibold">Graphics Designer — 4 Years</h3>
                   <ul className="list-disc ml-6 mt-2 text-foreground/80">
                     <li>Action Africa Institute</li>
                     <li>Gallexia Kenya Ltd.</li>
+                    <li>Boxraft Ltd.</li>
+
                   </ul>
                 </div>
                 <div>
@@ -275,7 +275,14 @@ const Index = () => {
                   <ul className="list-disc ml-6 mt-2 text-foreground/80">
                     <li>Kenya Malaria Youth Corps (KeMYC)</li>
                     <li>Portfolio</li>
-                    <li>QLess App</li>
+                    <li>QLess App (in progress)</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold">Social Media Management — 1 Year</h3>
+                  <ul className="list-disc ml-6 mt-2 text-foreground/80">
+                    <li>Optimum Prime Solutions (Tally Prime)</li>
+                    
                   </ul>
                 </div>
               </div>
@@ -369,12 +376,23 @@ const Index = () => {
             {/* Poster 3 */}
             <div className="rounded-lg overflow-hidden shadow-md bg-card border border-border">
               <img
-                src="/designs/UET Cultural sunday2.png"
+                src="/designs/Shadesign Ad2.png"
                 alt="Poster 2"
                 className="w-full h-auto object-cover"
               />
               <div className="p-4 text-center text-sm text-foreground/80">
-                UET Cultural Sunday
+                Shadesign Ad
+              </div>
+            </div>
+            {/* Poster 4 */}
+            <div className="rounded-lg overflow-hidden shadow-md bg-card border border-border">
+              <img
+                src="/designs/Brandon.jpg"
+                alt="Poster 4"
+                className="w-full h-auto object-cover"
+              />
+              <div className="p-4 text-center text-sm text-foreground/80">
+                Brandon Ad
               </div>
             </div>
 
@@ -397,7 +415,7 @@ const Index = () => {
         </div>
       </SectionContainer>
 
-      <SectionContainer id="projects">
+      {/* <SectionContainer id="projects">
         <div className="max-w-4xl mx-auto mb-40 mt-3 px-4">
           <h2 className="section-title">Projects</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 reveal opacity-0">
@@ -445,7 +463,7 @@ const Index = () => {
             </div>      
           </div>
         </div>
-      </SectionContainer>
+      </SectionContainer> */}
 
       {/* Contact Section */}
       <SectionContainer id="contact" className="bg-muted/30">
@@ -548,7 +566,7 @@ const Index = () => {
                 </div>
                  <div className="mt-8 flex justify-center">
                 <a
-                  href="/designs/Shadrack_Maundu_CV.pdf"
+                  href="https://drive.google.com/file/d/1T5sUXTOBsacI8uvdR8chwkmwYNosfjur/view?usp=sharing"
                   download
                   className="bg-burgundy hover:bg-burgundy/90 text-white px-20 py-2 rounded-lg">
                   Download Full Resume (PDF)
