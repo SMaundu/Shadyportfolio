@@ -267,6 +267,7 @@ const Index = () => {
                     <li>Action Africa Institute</li>
                     <li>Gallexia Kenya Ltd.</li>
                     <li>Boxraft Ltd.</li>
+                    <li>Optimum Prime Solutions Ltd.</li>
 
                   </ul>
                 </div>
@@ -373,6 +374,17 @@ const Index = () => {
                 Shirt Sales Poster
               </div>
             </div>
+            {/* Poster 7 */}
+            <div className="rounded-lg overflow-hidden shadow-md bg-card border border-border">
+              <img
+                src="/designs/TMA-Men's-Mental-Health-2026.png"
+                alt="Poster 6"
+                className="w-full h-auto object-cover"
+              />
+              <div className="p-4 text-center text-sm text-foreground/80">
+                Mental Health Poster
+              </div>
+            </div>
             {/* Poster 3 */}
             <div className="rounded-lg overflow-hidden shadow-md bg-card border border-border">
               <img
@@ -381,7 +393,7 @@ const Index = () => {
                 className="w-full h-auto object-cover"
               />
               <div className="p-4 text-center text-sm text-foreground/80">
-                Shadesign Ad
+                Shadesign Ad Poster
               </div>
             </div>
             {/* Poster 4 */}
@@ -392,7 +404,53 @@ const Index = () => {
                 className="w-full h-auto object-cover"
               />
               <div className="p-4 text-center text-sm text-foreground/80">
-                Brandon Ad
+                Brandon Ad Poster
+              </div>
+            </div>
+            {/* Poster 5 */}
+            <div className="rounded-lg overflow-hidden shadow-md bg-card border border-border">
+              <img
+                src="/designs/Folder Design.png"
+                alt="Poster 5"
+                className="w-full h-auto object-cover"
+              />
+              <div className="p-4 text-center text-sm text-foreground/80">
+                Folder Design Flier
+              </div>
+             
+            </div>
+            
+            {/* Poster 8 */}
+            <div className="rounded-lg overflow-hidden shadow-md bg-card border border-border">
+              <img
+                src="/designs/Welcome to July 2026.png"
+                alt="Poster 8"
+                className="w-full h-auto object-cover"
+              />
+              <div className="p-4 text-center text-sm text-foreground/80">
+                Welcome to July 2026 Poster
+              </div>
+            </div>
+            {/* Poster 9 */}
+            <div className="rounded-lg overflow-hidden shadow-md bg-card border border-border">
+              <img
+                src="/designs/100k James.png"
+                alt="Poster 9"
+                className="w-full h-auto object-cover"
+              />
+              <div className="p-4 text-center text-sm text-foreground/80">
+                100k James Poster
+              </div>
+            </div>
+             {/* Poster 10 */}
+            <div className="rounded-lg overflow-hidden shadow-md bg-card border border-border">
+              <img
+                src="/designs/Mothers Day TMA Sq.png"
+                alt="Poster 10"
+                className="w-full h-auto object-cover"
+              />
+              <div className="p-4 text-center text-sm text-foreground/80">
+                Mothers Day Poster
               </div>
             </div>
 
