@@ -5,10 +5,10 @@ import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
-  { ignores: ["dist"] },
+  { ignores: ["dist", "node_modules", "public", ".netlify", "scripts/assets/shots"] },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
-    files: ["**/*.{ts,tsx}"],
+    files: ["**/*.{ts,tsx,mts}"],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
@@ -25,5 +25,14 @@ export default tseslint.config(
       ],
       "@typescript-eslint/no-unused-vars": "off",
     },
+  },
+  {
+    files: ["netlify/**/*.{ts,mts}", "scripts/**/*.ts", "tests/**/*.ts", "vite.config.ts", "vitest.config.ts"],
+    languageOptions: { globals: globals.node },
+  },
+  {
+    // shadcn/ui primitives export helpers next to components by design.
+    files: ["src/components/ui/**/*.tsx", "src/components/containers/**/*.tsx"],
+    rules: { "react-refresh/only-export-components": "off" },
   }
 );
