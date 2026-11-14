@@ -10,9 +10,9 @@ import {
 } from "framer-motion";
 import { ArrowDownRight, ArrowRight } from "lucide-react";
 import { useRef, type PointerEvent, type ReactNode } from "react";
-import { SMark } from "@/components/layout/Logo";
 import { SectionLink } from "@/components/layout/SectionLink";
 import { RotatingWords } from "@/components/motion/RotatingWords";
+import { HeroArt } from "@/components/sections/HeroArt";
 import { profile } from "@/content/site";
 import { EASE_OUT } from "@/lib/motion";
 
@@ -62,9 +62,9 @@ function Parallax({
 }
 
 /**
- * Hero: big role headline over a warm glow with a giant Shadesigns mark that
- * follows the cursor, a supporting statement on the right and the four core
- * disciplines along the bottom.
+ * Hero: big role headline over a warm glow with a design + code illustration
+ * (pen nib drawing "</>") that follows the cursor, a supporting statement on
+ * the right and the four core disciplines along the bottom.
  */
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -78,7 +78,6 @@ export function Hero() {
   const lightX = useMotionValue(68);
   const lightY = useMotionValue(42);
   const spotlight = useMotionTemplate`radial-gradient(560px circle at ${lightX}% ${lightY}%, rgba(247,163,6,0.16), transparent 62%)`;
-  const markRotate = useTransform(sx, (v) => v * 10);
 
   const onPointerMove = (e: PointerEvent<HTMLElement>) => {
     if (reduce || e.pointerType !== "mouse" || !ref.current) return;
@@ -111,25 +110,17 @@ export function Hero() {
         <motion.div className="absolute inset-0" style={{ background: spotlight }} />
       </div>
 
-      {/* Giant mark in place of a portrait: follows the cursor */}
-      <Parallax x={sx} y={sy} depth={-50} className="right-[-8%] top-[10%] hidden h-[74%] md:block lg:right-[max(2%,calc((100vw-1680px)/2))]">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.6, delay: 0.3, ease: EASE_OUT }}
-          style={{ rotate: markRotate }}
-          className="h-full"
-        >
-          <SMark className="h-full w-auto text-[hsl(var(--background))] opacity-80 drop-shadow-[0_40px_80px_rgba(0,0,0,0.55)] dark:opacity-90" />
-        </motion.div>
+      {/* Tablet: the illustration floats top right, beside the headline */}
+      <HeroArt
+        x={sx}
+        y={sy}
+        reduce={!!reduce}
+        className="right-[3%] top-[8.5%] hidden w-[min(50vw,430px)] md:block lg:hidden"
+      />
+      <Parallax x={sx} y={sy} depth={70} className="left-[46%] top-[11%] hidden lg:block">
+        <div className="h-12 w-12 rounded-full border border-primary/40" />
       </Parallax>
-      <Parallax x={sx} y={sy} depth={-90} className="right-[max(12%,calc((100vw-1680px)/2+10%))] top-[14%] hidden lg:block">
-        <SMark className="h-24 w-24 animate-spin-slow text-transparent [stroke:hsl(var(--primary)/0.6)] [stroke-width:10]" />
-      </Parallax>
-      <Parallax x={sx} y={sy} depth={70} className="bottom-[32%] left-[47%] hidden md:block">
-        <div className="h-16 w-16 rounded-full border border-primary/40" />
-      </Parallax>
-      <Parallax x={sx} y={sy} depth={30} className="left-[40%] top-[16%] hidden lg:block">
+      <Parallax x={sx} y={sy} depth={30} className="left-[38%] top-[17%] hidden lg:block">
         <div className="h-3 w-3 rotate-45 bg-primary/80" />
       </Parallax>
 
@@ -169,6 +160,11 @@ export function Hero() {
             transition={{ duration: 0.9, delay: 0.8, ease: EASE_OUT }}
             className="relative z-10 max-w-[31rem] lg:justify-self-end lg:pb-4"
           >
+            {/* Desktop: the illustration sits in flow above the statement, so they never collide;
+                the nib runs down behind the text. */}
+            <div className="relative -z-10 hidden aspect-[100/47.5] lg:mb-8 lg:block">
+              <HeroArt x={sx} y={sy} reduce={!!reduce} className="left-[-9%] top-0 w-[115%]" />
+            </div>
             <p className="font-display text-2xl font-extrabold leading-tight md:text-3xl">{profile.tagline}</p>
             <p className="mt-4 text-[15px] leading-relaxed text-foreground/80 md:text-base">
               Brand identities, campaigns and corporate design, plus the websites and apps that bring them to life.

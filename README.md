@@ -3,7 +3,7 @@
 Personal portfolio of **Shadrack Maundu, Creative Designer | Software Developer**.
 Live: https://smaunduportfolio.netlify.app
 
-- Animated hero, tools ticker, about, experience, a 3D poster wall (square and portrait rows), six selected case studies, services and contact.
+- Animated hero with a design + code illustration (a pen nib drawing `</>`), a tools ticker with each tool's logo, about, experience, a 3D poster wall (square and portrait rows), six selected case studies, services and contact.
 - A real backend: enquiries are validated, spam-checked, rate-limited, stored in **Supabase** and emailed with **Resend** through **Netlify Functions**.
 - Real consultation booking with **Cal.com**; a signed webhook stores every booking in Supabase.
 - Dark-first gold and burgundy design in Mont + Montserrat, light theme, reduced-motion support, responsive from 320 px to 2560 px, SEO and social previews for every page.
@@ -77,6 +77,8 @@ Originals stay outside the repository (`D:\GRAPHICS`, `E:\React\site-originals`,
 3. Reference the id (`"my-project/cover"`) in `projects.ts`. TypeScript will flag typos.
 
 **Poster wall:** add file names to `POSTER_FILES` (from `D:\GRAPHICS\Fliers`) or `DRIVE_POSTERS` (files saved in `E:\React\drive-posters`) in `build_assets.py`, then run `npm run assets:media`. Square and portrait posters are sorted into their own rows automatically.
+
+**Tool logos:** the "Tools I use" strip reads `tools` in `src/content/experience.ts`; the SVGs live in `src/assets/tools/`. They come from open icon sets: Adobe, Figma, React, Flutter, Java, Python, MySQL and Firebase from the Iconify `logos` set (CC0), Affinity Designer from `vscode-icons` (MIT) and Canva from Devicon (MIT). The logos themselves are their owners' trademarks and are shown only to name the tools. Set `tile: true` for logos that are already an app tile.
 
 **Fonts:** Mont comes from Fontfabric's free release (ExtraLight and Heavy only). Those "DEMO" files draw a "DEMO" badge for a few characters (`/ | # % ~ ^ _ < >`) and through some OpenType features, so `src/index.css` limits Mont with `unicode-range` (those characters fall back to Montserrat) and switches the features off. If you buy the full Mont family, replace the files in `src/assets/fonts/` and remove those workarounds.
 

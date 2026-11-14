@@ -1,5 +1,18 @@
 # Testing results
 
+## Hero illustration and tool logos (14 Nov 2026, third round)
+
+| Check | Result |
+| --- | --- |
+| Type-check, lint, backend tests 23 / 23, production build | Pass |
+| Responsive sweep: 5 pages x 10 widths (320 to 2560 px) | **50 / 50 pass** |
+| Browser interaction tests | **29 / 29 pass** |
+| Hero illustration never overlaps the statement (in flow above it from 1024 px; beside the headline at 768 px; hidden on phones) | Checked at 768, 1024, 1280x720, 1440, 1920, 2560, dark and light |
+| Nib tip stays on the `</>` stroke while the cursor moves | 0 px drift |
+| Reduced motion: illustration shows its finished state immediately | Pass |
+| Tools strip logos load (12 tools, duplicated for the loop) | 24 / 24 |
+| Console errors | None (except the expected 503 while no API keys are set) |
+
 ## Design update (14 Nov 2026, second round)
 
 | Check | Result |

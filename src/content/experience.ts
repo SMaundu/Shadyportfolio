@@ -5,6 +5,20 @@
  *  - Shadrack_Maundu_Professional_CV.pdf (work modes, KCSE)
  * Do not add roles, dates or achievements that are not in those documents.
  */
+
+import affinityDesigner from "@/assets/tools/affinity-designer.svg";
+import canva from "@/assets/tools/canva.svg";
+import figma from "@/assets/tools/figma.svg";
+import firebase from "@/assets/tools/firebase.svg";
+import flutter from "@/assets/tools/flutter.svg";
+import illustrator from "@/assets/tools/illustrator.svg";
+import indesign from "@/assets/tools/indesign.svg";
+import java from "@/assets/tools/java.svg";
+import mysql from "@/assets/tools/mysql.svg";
+import photoshop from "@/assets/tools/photoshop.svg";
+import python from "@/assets/tools/python.svg";
+import react from "@/assets/tools/react.svg";
+
 export interface Role {
   title: string;
   org: string;
@@ -154,17 +168,18 @@ export const skillGroups = [
   },
 ] as const;
 
+/** Tools strip under the hero. Logos are the official app/brand marks; "tile" marks ones that are already an app tile. */
 export const tools = [
-  { name: "Photoshop", short: "Ps" },
-  { name: "Illustrator", short: "Ai" },
-  { name: "InDesign", short: "Id" },
-  { name: "Affinity Designer", short: "Af" },
-  { name: "Figma", short: "Fg" },
-  { name: "Canva", short: "Cv" },
-  { name: "React", short: "Re" },
-  { name: "Flutter", short: "Fl" },
-  { name: "Java", short: "Jv" },
-  { name: "Python", short: "Py" },
-  { name: "MySQL", short: "Sq" },
-  { name: "Firebase", short: "Fb" },
+  { name: "Photoshop", icon: photoshop, tile: true },
+  { name: "Illustrator", icon: illustrator, tile: true },
+  { name: "InDesign", icon: indesign, tile: true },
+  { name: "Affinity Designer", icon: affinityDesigner, tile: false },
+  { name: "Figma", icon: figma, tile: false },
+  { name: "Canva", icon: canva, tile: false },
+  { name: "React", icon: react, tile: false },
+  { name: "Flutter", icon: flutter, tile: false },
+  { name: "Java", icon: java, tile: false },
+  { name: "Python", icon: python, tile: false },
+  { name: "MySQL", icon: mysql, tile: false },
+  { name: "Firebase", icon: firebase, tile: false },
 ] as const;
