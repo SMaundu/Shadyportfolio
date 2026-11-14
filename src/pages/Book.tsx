@@ -84,7 +84,7 @@ export default function Book() {
           >
             Consultation
           </motion.p>
-          <h1 className="mt-4 overflow-hidden font-display text-[clamp(3.5rem,11vw,9rem)] uppercase leading-[0.88]">
+          <h1 className="mt-4 overflow-hidden font-display text-[clamp(3rem,8vw,7rem)] font-extrabold uppercase leading-[0.92] tracking-tight">
             <motion.span className="block" initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ duration: 1, ease: EASE_OUT }}>
               Let's <span className="text-highlight">talk</span>
             </motion.span>

@@ -94,7 +94,7 @@ export function Footer() {
       </div>
       <p
         aria-hidden
-        className="pointer-events-none select-none whitespace-nowrap text-center font-display text-[22vw] uppercase leading-[0.75] text-foreground/[0.04]"
+        className="pointer-events-none select-none whitespace-nowrap text-center font-display text-[15vw] font-extrabold uppercase leading-[0.8] tracking-tight text-foreground/[0.04]"
       >
         Shadesigns
       </p>

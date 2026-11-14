@@ -11,517 +11,417 @@ export interface MediaAsset {
 
 export const media = {
   "site/portrait": {
-    "w": 1920,
-    "h": 2880,
+    "w": 1600,
+    "h": 2400,
     "color": "#898c80",
     "alpha": false,
     "srcs": {
-      "640": "/media/site/portrait-640.webp",
-      "1280": "/media/site/portrait-1280.webp",
-      "1920": "/media/site/portrait-1920.webp"
+      "480": "/media/site/portrait-480.webp",
+      "960": "/media/site/portrait-960.webp",
+      "1600": "/media/site/portrait-1600.webp"
     },
     "og": "/media/site/portrait-og.jpg"
   },
   "faithful-two/billboard": {
-    "w": 1920,
-    "h": 1350,
+    "w": 1600,
+    "h": 1125,
     "color": "#bab2b5",
     "alpha": false,
     "srcs": {
-      "640": "/media/faithful-two/billboard-640.webp",
-      "1280": "/media/faithful-two/billboard-1280.webp",
-      "1920": "/media/faithful-two/billboard-1920.webp"
+      "480": "/media/faithful-two/billboard-480.webp",
+      "960": "/media/faithful-two/billboard-960.webp",
+      "1600": "/media/faithful-two/billboard-1600.webp"
     },
     "og": "/media/faithful-two/billboard-og.jpg"
   },
   "faithful-two/logo": {
-    "w": 960,
-    "h": 377,
+    "w": 800,
+    "h": 314,
     "color": "#c3bcb9",
     "alpha": true,
     "srcs": {
-      "480": "/media/faithful-two/logo-480.webp",
-      "960": "/media/faithful-two/logo-960.webp"
+      "400": "/media/faithful-two/logo-400.webp",
+      "800": "/media/faithful-two/logo-800.webp"
     }
   },
   "faithful-two/geometry": {
-    "w": 1280,
-    "h": 720,
+    "w": 1440,
+    "h": 810,
     "color": "#f6f2f1",
     "alpha": false,
     "srcs": {
-      "640": "/media/faithful-two/geometry-640.webp",
-      "1280": "/media/faithful-two/geometry-1280.webp"
+      "480": "/media/faithful-two/geometry-480.webp",
+      "960": "/media/faithful-two/geometry-960.webp",
+      "1440": "/media/faithful-two/geometry-1440.webp"
     }
   },
   "faithful-two/pattern": {
-    "w": 1280,
-    "h": 720,
+    "w": 1440,
+    "h": 810,
     "color": "#c2362e",
     "alpha": false,
     "srcs": {
-      "640": "/media/faithful-two/pattern-640.webp",
-      "1280": "/media/faithful-two/pattern-1280.webp"
+      "480": "/media/faithful-two/pattern-480.webp",
+      "960": "/media/faithful-two/pattern-960.webp",
+      "1440": "/media/faithful-two/pattern-1440.webp"
     }
   },
   "faithful-two/guide-cover": {
-    "w": 1280,
-    "h": 905,
+    "w": 1440,
+    "h": 1018,
     "color": "#8d1f2f",
     "alpha": false,
     "srcs": {
-      "640": "/media/faithful-two/guide-cover-640.webp",
-      "1280": "/media/faithful-two/guide-cover-1280.webp"
-    }
-  },
-  "faithful-two/guide-contents": {
-    "w": 1280,
-    "h": 905,
-    "color": "#8e222e",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/faithful-two/guide-contents-640.webp",
-      "1280": "/media/faithful-two/guide-contents-1280.webp"
+      "480": "/media/faithful-two/guide-cover-480.webp",
+      "960": "/media/faithful-two/guide-cover-960.webp",
+      "1440": "/media/faithful-two/guide-cover-1440.webp"
     }
   },
   "faithful-two/guide-meaning": {
-    "w": 1280,
-    "h": 905,
+    "w": 1440,
+    "h": 1018,
     "color": "#e6e0d9",
     "alpha": false,
     "srcs": {
-      "640": "/media/faithful-two/guide-meaning-640.webp",
-      "1280": "/media/faithful-two/guide-meaning-1280.webp"
+      "480": "/media/faithful-two/guide-meaning-480.webp",
+      "960": "/media/faithful-two/guide-meaning-960.webp",
+      "1440": "/media/faithful-two/guide-meaning-1440.webp"
     }
   },
   "faithful-two/guide-construction": {
-    "w": 1280,
-    "h": 905,
+    "w": 1440,
+    "h": 1018,
     "color": "#e8e0d9",
     "alpha": false,
     "srcs": {
-      "640": "/media/faithful-two/guide-construction-640.webp",
-      "1280": "/media/faithful-two/guide-construction-1280.webp"
+      "480": "/media/faithful-two/guide-construction-480.webp",
+      "960": "/media/faithful-two/guide-construction-960.webp",
+      "1440": "/media/faithful-two/guide-construction-1440.webp"
     }
   },
   "faithful-two/guide-patterns": {
-    "w": 1280,
-    "h": 905,
+    "w": 1440,
+    "h": 1018,
     "color": "#e2d0c9",
     "alpha": false,
     "srcs": {
-      "640": "/media/faithful-two/guide-patterns-640.webp",
-      "1280": "/media/faithful-two/guide-patterns-1280.webp"
+      "480": "/media/faithful-two/guide-patterns-480.webp",
+      "960": "/media/faithful-two/guide-patterns-960.webp",
+      "1440": "/media/faithful-two/guide-patterns-1440.webp"
     }
   },
   "faithful-two/guide-type": {
-    "w": 1280,
-    "h": 905,
+    "w": 1440,
+    "h": 1018,
     "color": "#8a1f2f",
     "alpha": false,
     "srcs": {
-      "640": "/media/faithful-two/guide-type-640.webp",
-      "1280": "/media/faithful-two/guide-type-1280.webp"
+      "480": "/media/faithful-two/guide-type-480.webp",
+      "960": "/media/faithful-two/guide-type-960.webp",
+      "1440": "/media/faithful-two/guide-type-1440.webp"
     }
   },
   "faithful-two/guide-colour": {
-    "w": 1280,
-    "h": 905,
+    "w": 1440,
+    "h": 1018,
     "color": "#d2b9a1",
     "alpha": false,
     "srcs": {
-      "640": "/media/faithful-two/guide-colour-640.webp",
-      "1280": "/media/faithful-two/guide-colour-1280.webp"
+      "480": "/media/faithful-two/guide-colour-480.webp",
+      "960": "/media/faithful-two/guide-colour-960.webp",
+      "1440": "/media/faithful-two/guide-colour-1440.webp"
     }
   },
   "faithful-two/guide-imagery": {
-    "w": 1280,
-    "h": 905,
+    "w": 1440,
+    "h": 1018,
     "color": "#914c54",
     "alpha": false,
     "srcs": {
-      "640": "/media/faithful-two/guide-imagery-640.webp",
-      "1280": "/media/faithful-two/guide-imagery-1280.webp"
+      "480": "/media/faithful-two/guide-imagery-480.webp",
+      "960": "/media/faithful-two/guide-imagery-960.webp",
+      "1440": "/media/faithful-two/guide-imagery-1440.webp"
     }
   },
   "faithful-two/stationery": {
-    "w": 1920,
-    "h": 1280,
+    "w": 1600,
+    "h": 1067,
     "color": "#b39b7f",
     "alpha": false,
     "srcs": {
-      "640": "/media/faithful-two/stationery-640.webp",
-      "1280": "/media/faithful-two/stationery-1280.webp",
-      "1920": "/media/faithful-two/stationery-1920.webp"
+      "480": "/media/faithful-two/stationery-480.webp",
+      "960": "/media/faithful-two/stationery-960.webp",
+      "1600": "/media/faithful-two/stationery-1600.webp"
     },
     "og": "/media/faithful-two/stationery-og.jpg"
   },
   "faithful-two/business-card": {
-    "w": 1280,
-    "h": 844,
+    "w": 1440,
+    "h": 949,
     "color": "#ecdedf",
     "alpha": true,
     "srcs": {
-      "640": "/media/faithful-two/business-card-640.webp",
-      "1280": "/media/faithful-two/business-card-1280.webp"
+      "480": "/media/faithful-two/business-card-480.webp",
+      "960": "/media/faithful-two/business-card-960.webp",
+      "1440": "/media/faithful-two/business-card-1440.webp"
     }
   },
   "faithful-two/mug": {
-    "w": 1280,
-    "h": 960,
+    "w": 1440,
+    "h": 1080,
     "color": "#e2d5d5",
     "alpha": false,
     "srcs": {
-      "640": "/media/faithful-two/mug-640.webp",
-      "1280": "/media/faithful-two/mug-1280.webp"
+      "480": "/media/faithful-two/mug-480.webp",
+      "960": "/media/faithful-two/mug-960.webp",
+      "1440": "/media/faithful-two/mug-1440.webp"
     }
   },
   "faithful-two/notebook": {
-    "w": 1280,
-    "h": 1280,
+    "w": 1440,
+    "h": 1440,
     "color": "#af9d9b",
     "alpha": false,
     "srcs": {
-      "640": "/media/faithful-two/notebook-640.webp",
-      "1280": "/media/faithful-two/notebook-1280.webp"
+      "480": "/media/faithful-two/notebook-480.webp",
+      "960": "/media/faithful-two/notebook-960.webp",
+      "1440": "/media/faithful-two/notebook-1440.webp"
     }
   },
   "faithful-two/hoodie": {
-    "w": 1280,
-    "h": 853,
+    "w": 1440,
+    "h": 960,
     "color": "#724f52",
     "alpha": false,
     "srcs": {
-      "640": "/media/faithful-two/hoodie-640.webp",
-      "1280": "/media/faithful-two/hoodie-1280.webp"
+      "480": "/media/faithful-two/hoodie-480.webp",
+      "960": "/media/faithful-two/hoodie-960.webp",
+      "1440": "/media/faithful-two/hoodie-1440.webp"
     }
   },
   "faithful-two/tshirt": {
-    "w": 1280,
-    "h": 853,
+    "w": 1440,
+    "h": 960,
     "color": "#ba9c9b",
     "alpha": false,
     "srcs": {
-      "640": "/media/faithful-two/tshirt-640.webp",
-      "1280": "/media/faithful-two/tshirt-1280.webp"
+      "480": "/media/faithful-two/tshirt-480.webp",
+      "960": "/media/faithful-two/tshirt-960.webp",
+      "1440": "/media/faithful-two/tshirt-1440.webp"
     }
   },
   "faithful-two/polo": {
-    "w": 1280,
-    "h": 853,
+    "w": 1440,
+    "h": 960,
     "color": "#8d8c8f",
     "alpha": false,
     "srcs": {
-      "640": "/media/faithful-two/polo-640.webp",
-      "1280": "/media/faithful-two/polo-1280.webp"
+      "480": "/media/faithful-two/polo-480.webp",
+      "960": "/media/faithful-two/polo-960.webp",
+      "1440": "/media/faithful-two/polo-1440.webp"
     }
   },
   "faithful-two/tote": {
-    "w": 1280,
-    "h": 1142,
+    "w": 1440,
+    "h": 1285,
     "color": "#d7beb5",
     "alpha": false,
     "srcs": {
-      "640": "/media/faithful-two/tote-640.webp",
-      "1280": "/media/faithful-two/tote-1280.webp"
+      "480": "/media/faithful-two/tote-480.webp",
+      "960": "/media/faithful-two/tote-960.webp",
+      "1440": "/media/faithful-two/tote-1440.webp"
     }
   },
   "faithful-two/pencil": {
-    "w": 1280,
-    "h": 1280,
+    "w": 1440,
+    "h": 1440,
     "color": "#c8c2c3",
     "alpha": false,
     "srcs": {
-      "640": "/media/faithful-two/pencil-640.webp",
-      "1280": "/media/faithful-two/pencil-1280.webp"
+      "480": "/media/faithful-two/pencil-480.webp",
+      "960": "/media/faithful-two/pencil-960.webp",
+      "1440": "/media/faithful-two/pencil-1440.webp"
     }
   },
   "faithful-two/signage": {
-    "w": 1280,
-    "h": 1664,
+    "w": 1440,
+    "h": 1872,
     "color": "#655353",
     "alpha": false,
     "srcs": {
-      "640": "/media/faithful-two/signage-640.webp",
-      "1280": "/media/faithful-two/signage-1280.webp"
+      "480": "/media/faithful-two/signage-480.webp",
+      "960": "/media/faithful-two/signage-960.webp",
+      "1440": "/media/faithful-two/signage-1440.webp"
     }
   },
   "faithful-two/youtube": {
-    "w": 1280,
-    "h": 720,
+    "w": 1440,
+    "h": 810,
     "color": "#a88d80",
     "alpha": false,
     "srcs": {
-      "640": "/media/faithful-two/youtube-640.webp",
-      "1280": "/media/faithful-two/youtube-1280.webp"
+      "480": "/media/faithful-two/youtube-480.webp",
+      "960": "/media/faithful-two/youtube-960.webp",
+      "1440": "/media/faithful-two/youtube-1440.webp"
     }
   },
-  "amana-insights/profile-cover": {
-    "w": 1697,
-    "h": 2400,
-    "color": "#8c8795",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/amana-insights/profile-cover-640.webp",
-      "1280": "/media/amana-insights/profile-cover-1280.webp",
-      "1697": "/media/amana-insights/profile-cover-1697.webp"
-    },
-    "og": "/media/amana-insights/profile-cover-og.jpg"
-  },
   "amana-insights/logo": {
-    "w": 960,
-    "h": 429,
+    "w": 800,
+    "h": 357,
     "color": "#d1c3c7",
     "alpha": true,
     "srcs": {
-      "480": "/media/amana-insights/logo-480.webp",
-      "960": "/media/amana-insights/logo-960.webp"
+      "400": "/media/amana-insights/logo-400.webp",
+      "800": "/media/amana-insights/logo-800.webp"
     }
   },
   "amana-insights/mark": {
-    "w": 960,
-    "h": 859,
+    "w": 800,
+    "h": 716,
     "color": "#b6a7b5",
     "alpha": true,
     "srcs": {
-      "480": "/media/amana-insights/mark-480.webp",
-      "960": "/media/amana-insights/mark-960.webp"
+      "400": "/media/amana-insights/mark-400.webp",
+      "800": "/media/amana-insights/mark-800.webp"
+    }
+  },
+  "amana-insights/logo-dark": {
+    "w": 800,
+    "h": 298,
+    "color": "#fffbf6",
+    "alpha": true,
+    "srcs": {
+      "400": "/media/amana-insights/logo-dark-400.webp",
+      "800": "/media/amana-insights/logo-dark-800.webp"
+    }
+  },
+  "amana-insights/logo-orange": {
+    "w": 800,
+    "h": 320,
+    "color": "#e3e2eb",
+    "alpha": true,
+    "srcs": {
+      "400": "/media/amana-insights/logo-orange-400.webp",
+      "800": "/media/amana-insights/logo-orange-800.webp"
+    }
+  },
+  "amana-insights/logo-white": {
+    "w": 800,
+    "h": 319,
+    "color": "#ffffff",
+    "alpha": true,
+    "srcs": {
+      "400": "/media/amana-insights/logo-white-400.webp",
+      "800": "/media/amana-insights/logo-white-800.webp"
+    }
+  },
+  "amana-insights/logo-black": {
+    "w": 800,
+    "h": 319,
+    "color": "#b2b2b2",
+    "alpha": true,
+    "srcs": {
+      "400": "/media/amana-insights/logo-black-400.webp",
+      "800": "/media/amana-insights/logo-black-800.webp"
     }
   },
   "amana-insights/guide": {
-    "w": 1280,
-    "h": 1810,
+    "w": 1440,
+    "h": 2037,
     "color": "#b1a0a8",
     "alpha": false,
     "srcs": {
-      "640": "/media/amana-insights/guide-640.webp",
-      "1280": "/media/amana-insights/guide-1280.webp"
+      "480": "/media/amana-insights/guide-480.webp",
+      "960": "/media/amana-insights/guide-960.webp",
+      "1440": "/media/amana-insights/guide-1440.webp"
+    }
+  },
+  "amana-insights/profile-cover": {
+    "w": 1440,
+    "h": 2037,
+    "color": "#8c8795",
+    "alpha": false,
+    "srcs": {
+      "480": "/media/amana-insights/profile-cover-480.webp",
+      "960": "/media/amana-insights/profile-cover-960.webp",
+      "1440": "/media/amana-insights/profile-cover-1440.webp"
     }
   },
   "amana-insights/profile-contents": {
-    "w": 1280,
-    "h": 1810,
+    "w": 1440,
+    "h": 2037,
     "color": "#e9e4e4",
     "alpha": false,
     "srcs": {
-      "640": "/media/amana-insights/profile-contents-640.webp",
-      "1280": "/media/amana-insights/profile-contents-1280.webp"
+      "480": "/media/amana-insights/profile-contents-480.webp",
+      "960": "/media/amana-insights/profile-contents-960.webp",
+      "1440": "/media/amana-insights/profile-contents-1440.webp"
     }
   },
   "amana-insights/profile-about": {
-    "w": 1280,
-    "h": 1810,
+    "w": 1440,
+    "h": 2037,
     "color": "#78718b",
     "alpha": false,
     "srcs": {
-      "640": "/media/amana-insights/profile-about-640.webp",
-      "1280": "/media/amana-insights/profile-about-1280.webp"
+      "480": "/media/amana-insights/profile-about-480.webp",
+      "960": "/media/amana-insights/profile-about-960.webp",
+      "1440": "/media/amana-insights/profile-about-1440.webp"
     }
   },
   "amana-insights/profile-mission": {
-    "w": 1280,
-    "h": 1810,
+    "w": 1440,
+    "h": 2037,
     "color": "#8c7b79",
     "alpha": false,
     "srcs": {
-      "640": "/media/amana-insights/profile-mission-640.webp",
-      "1280": "/media/amana-insights/profile-mission-1280.webp"
+      "480": "/media/amana-insights/profile-mission-480.webp",
+      "960": "/media/amana-insights/profile-mission-960.webp",
+      "1440": "/media/amana-insights/profile-mission-1440.webp"
     }
   },
   "amana-insights/profile-services": {
-    "w": 1280,
-    "h": 1810,
+    "w": 1440,
+    "h": 2037,
     "color": "#989095",
     "alpha": false,
     "srcs": {
-      "640": "/media/amana-insights/profile-services-640.webp",
-      "1280": "/media/amana-insights/profile-services-1280.webp"
+      "480": "/media/amana-insights/profile-services-480.webp",
+      "960": "/media/amana-insights/profile-services-960.webp",
+      "1440": "/media/amana-insights/profile-services-1440.webp"
     }
   },
   "amana-insights/profile-back": {
-    "w": 1280,
-    "h": 1810,
+    "w": 1440,
+    "h": 2037,
     "color": "#4c5276",
     "alpha": false,
     "srcs": {
-      "640": "/media/amana-insights/profile-back-640.webp",
-      "1280": "/media/amana-insights/profile-back-1280.webp"
+      "480": "/media/amana-insights/profile-back-480.webp",
+      "960": "/media/amana-insights/profile-back-960.webp",
+      "1440": "/media/amana-insights/profile-back-1440.webp"
     }
   },
   "amana-insights/letterhead": {
-    "w": 1280,
-    "h": 1656,
+    "w": 1440,
+    "h": 1863,
     "color": "#f5f1ef",
     "alpha": false,
     "srcs": {
-      "640": "/media/amana-insights/letterhead-640.webp",
-      "1280": "/media/amana-insights/letterhead-1280.webp"
-    }
-  },
-  "queensway/guide": {
-    "w": 1697,
-    "h": 2400,
-    "color": "#9b98a6",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/queensway/guide-640.webp",
-      "1280": "/media/queensway/guide-1280.webp",
-      "1697": "/media/queensway/guide-1697.webp"
-    },
-    "og": "/media/queensway/guide-og.jpg"
-  },
-  "queensway/logo": {
-    "w": 960,
-    "h": 960,
-    "color": "#848193",
-    "alpha": true,
-    "srcs": {
-      "480": "/media/queensway/logo-480.webp",
-      "960": "/media/queensway/logo-960.webp"
-    }
-  },
-  "queensway/logo-gold": {
-    "w": 960,
-    "h": 768,
-    "color": "#eeeef1",
-    "alpha": true,
-    "srcs": {
-      "480": "/media/queensway/logo-gold-480.webp",
-      "960": "/media/queensway/logo-gold-960.webp"
-    }
-  },
-  "queensway/card-front": {
-    "w": 1280,
-    "h": 739,
-    "color": "#dbd8d1",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/queensway/card-front-640.webp",
-      "1280": "/media/queensway/card-front-1280.webp"
-    }
-  },
-  "queensway/card-back": {
-    "w": 1280,
-    "h": 739,
-    "color": "#3e3d5f",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/queensway/card-back-640.webp",
-      "1280": "/media/queensway/card-back-1280.webp"
-    }
-  },
-  "queensway/sticker": {
-    "w": 1280,
-    "h": 1280,
-    "color": "#918fa3",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/queensway/sticker-640.webp",
-      "1280": "/media/queensway/sticker-1280.webp"
-    }
-  },
-  "queensway/sticker-alt": {
-    "w": 1280,
-    "h": 1280,
-    "color": "#bbb7b6",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/queensway/sticker-alt-640.webp",
-      "1280": "/media/queensway/sticker-alt-1280.webp"
-    }
-  },
-  "the-myrtle/brand-board": {
-    "w": 1920,
-    "h": 2714,
-    "color": "#bbbb99",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/the-myrtle/brand-board-640.webp",
-      "1280": "/media/the-myrtle/brand-board-1280.webp",
-      "1920": "/media/the-myrtle/brand-board-1920.webp"
-    },
-    "og": "/media/the-myrtle/brand-board-og.jpg"
-  },
-  "the-myrtle/logo": {
-    "w": 960,
-    "h": 960,
-    "color": "#8eb27b",
-    "alpha": true,
-    "srcs": {
-      "480": "/media/the-myrtle/logo-480.webp",
-      "960": "/media/the-myrtle/logo-960.webp"
-    }
-  },
-  "the-myrtle/logo-alt": {
-    "w": 960,
-    "h": 960,
-    "color": "#91b37c",
-    "alpha": false,
-    "srcs": {
-      "480": "/media/the-myrtle/logo-alt-480.webp",
-      "960": "/media/the-myrtle/logo-alt-960.webp"
-    }
-  },
-  "kellian/lightbox": {
-    "w": 1080,
-    "h": 1350,
-    "color": "#793253",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/kellian/lightbox-640.webp",
-      "1080": "/media/kellian/lightbox-1080.webp"
-    },
-    "og": "/media/kellian/lightbox-og.jpg"
-  },
-  "kellian/logo": {
-    "w": 960,
-    "h": 915,
-    "color": "#cfc8c8",
-    "alpha": false,
-    "srcs": {
-      "480": "/media/kellian/logo-480.webp",
-      "960": "/media/kellian/logo-960.webp"
-    }
-  },
-  "kellian/flier": {
-    "w": 1280,
-    "h": 3413,
-    "color": "#a69bb0",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/kellian/flier-640.webp",
-      "1280": "/media/kellian/flier-1280.webp"
-    }
-  },
-  "kellian/print-front": {
-    "w": 900,
-    "h": 2400,
-    "color": "#afa1b2",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/kellian/print-front-640.webp",
-      "900": "/media/kellian/print-front-900.webp"
-    }
-  },
-  "kellian/print-back": {
-    "w": 900,
-    "h": 2400,
-    "color": "#afa1b2",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/kellian/print-back-640.webp",
-      "900": "/media/kellian/print-back-900.webp"
+      "480": "/media/amana-insights/letterhead-480.webp",
+      "960": "/media/amana-insights/letterhead-960.webp",
+      "1440": "/media/amana-insights/letterhead-1440.webp"
     }
   },
   "au-2027/backdrop": {
-    "w": 1920,
-    "h": 1440,
+    "w": 1600,
+    "h": 1200,
     "color": "#8ba293",
     "alpha": false,
     "srcs": {
-      "640": "/media/au-2027/backdrop-640.webp",
-      "1280": "/media/au-2027/backdrop-1280.webp",
-      "1920": "/media/au-2027/backdrop-1920.webp"
+      "480": "/media/au-2027/backdrop-480.webp",
+      "960": "/media/au-2027/backdrop-960.webp",
+      "1600": "/media/au-2027/backdrop-1600.webp"
     },
     "og": "/media/au-2027/backdrop-og.jpg"
   },
@@ -531,17 +431,18 @@ export const media = {
     "color": "#a4b981",
     "alpha": false,
     "srcs": {
+      "480": "/media/au-2027/preview-480.webp",
       "596": "/media/au-2027/preview-596.webp"
     }
   },
   "au-2027/logo": {
-    "w": 960,
-    "h": 367,
+    "w": 800,
+    "h": 306,
     "color": "#b3ccb3",
     "alpha": true,
     "srcs": {
-      "480": "/media/au-2027/logo-480.webp",
-      "960": "/media/au-2027/logo-960.webp"
+      "400": "/media/au-2027/logo-400.webp",
+      "800": "/media/au-2027/logo-800.webp"
     }
   },
   "au-2027/rollup": {
@@ -550,1492 +451,1332 @@ export const media = {
     "color": "#7d9991",
     "alpha": false,
     "srcs": {
-      "640": "/media/au-2027/rollup-640.webp",
+      "480": "/media/au-2027/rollup-480.webp",
+      "960": "/media/au-2027/rollup-960.webp",
       "1024": "/media/au-2027/rollup-1024.webp"
     }
   },
   "au-2027/teardrop": {
-    "w": 1280,
-    "h": 720,
+    "w": 1440,
+    "h": 810,
     "color": "#156d31",
     "alpha": false,
     "srcs": {
-      "640": "/media/au-2027/teardrop-640.webp",
-      "1280": "/media/au-2027/teardrop-1280.webp"
+      "480": "/media/au-2027/teardrop-480.webp",
+      "960": "/media/au-2027/teardrop-960.webp",
+      "1440": "/media/au-2027/teardrop-1440.webp"
     }
   },
   "logofolio/evie": {
-    "w": 960,
-    "h": 960,
+    "w": 800,
+    "h": 800,
     "color": "#c57b83",
     "alpha": false,
     "srcs": {
-      "480": "/media/logofolio/evie-480.webp",
-      "960": "/media/logofolio/evie-960.webp"
+      "400": "/media/logofolio/evie-400.webp",
+      "800": "/media/logofolio/evie-800.webp"
     }
   },
   "logofolio/luxe": {
-    "w": 960,
-    "h": 960,
+    "w": 800,
+    "h": 800,
     "color": "#847e7f",
     "alpha": false,
     "srcs": {
-      "480": "/media/logofolio/luxe-480.webp",
-      "960": "/media/logofolio/luxe-960.webp"
+      "400": "/media/logofolio/luxe-400.webp",
+      "800": "/media/logofolio/luxe-800.webp"
     }
   },
   "logofolio/decor": {
-    "w": 960,
-    "h": 960,
+    "w": 800,
+    "h": 800,
     "color": "#c18280",
     "alpha": false,
     "srcs": {
-      "480": "/media/logofolio/decor-480.webp",
-      "960": "/media/logofolio/decor-960.webp"
+      "400": "/media/logofolio/decor-400.webp",
+      "800": "/media/logofolio/decor-800.webp"
     }
   },
   "logofolio/helpmate": {
-    "w": 960,
-    "h": 647,
+    "w": 800,
+    "h": 539,
     "color": "#eef1ec",
     "alpha": false,
     "srcs": {
-      "480": "/media/logofolio/helpmate-480.webp",
-      "960": "/media/logofolio/helpmate-960.webp"
+      "400": "/media/logofolio/helpmate-400.webp",
+      "800": "/media/logofolio/helpmate-800.webp"
     }
   },
   "logofolio/grace-community": {
-    "w": 960,
-    "h": 476,
+    "w": 800,
+    "h": 397,
     "color": "#c18a8d",
     "alpha": false,
     "srcs": {
-      "480": "/media/logofolio/grace-community-480.webp",
-      "960": "/media/logofolio/grace-community-960.webp"
+      "400": "/media/logofolio/grace-community-400.webp",
+      "800": "/media/logofolio/grace-community-800.webp"
     }
   },
   "logofolio/sunday-school": {
-    "w": 960,
-    "h": 960,
+    "w": 800,
+    "h": 800,
     "color": "#c0827f",
     "alpha": false,
     "srcs": {
-      "480": "/media/logofolio/sunday-school-480.webp",
-      "960": "/media/logofolio/sunday-school-960.webp"
+      "400": "/media/logofolio/sunday-school-400.webp",
+      "800": "/media/logofolio/sunday-school-800.webp"
     }
   },
-  "logofolio/yelklin-card": {
-    "w": 1280,
-    "h": 732,
-    "color": "#e0e3e2",
+  "logofolio/queensway": {
+    "w": 800,
+    "h": 800,
+    "color": "#848193",
+    "alpha": true,
+    "srcs": {
+      "400": "/media/logofolio/queensway-400.webp",
+      "800": "/media/logofolio/queensway-800.webp"
+    }
+  },
+  "logofolio/queensway-guide": {
+    "w": 1440,
+    "h": 2037,
+    "color": "#9b98a6",
     "alpha": false,
     "srcs": {
-      "640": "/media/logofolio/yelklin-card-640.webp",
-      "1280": "/media/logofolio/yelklin-card-1280.webp"
+      "480": "/media/logofolio/queensway-guide-480.webp",
+      "960": "/media/logofolio/queensway-guide-960.webp",
+      "1440": "/media/logofolio/queensway-guide-1440.webp"
     }
   },
-  "logofolio/yelklin-card-back": {
-    "w": 1280,
-    "h": 732,
-    "color": "#6e7d89",
+  "logofolio/myrtle": {
+    "w": 800,
+    "h": 800,
+    "color": "#8eb27b",
+    "alpha": true,
+    "srcs": {
+      "400": "/media/logofolio/myrtle-400.webp",
+      "800": "/media/logofolio/myrtle-800.webp"
+    }
+  },
+  "logofolio/myrtle-board": {
+    "w": 1440,
+    "h": 2036,
+    "color": "#bbbb99",
     "alpha": false,
     "srcs": {
-      "640": "/media/logofolio/yelklin-card-back-640.webp",
-      "1280": "/media/logofolio/yelklin-card-back-1280.webp"
+      "480": "/media/logofolio/myrtle-board-480.webp",
+      "960": "/media/logofolio/myrtle-board-960.webp",
+      "1440": "/media/logofolio/myrtle-board-1440.webp"
     }
   },
-  "shadesigns/brand": {
-    "w": 1920,
-    "h": 1233,
+  "logofolio/kellian": {
+    "w": 800,
+    "h": 762,
+    "color": "#cfc8c8",
+    "alpha": false,
+    "srcs": {
+      "400": "/media/logofolio/kellian-400.webp",
+      "800": "/media/logofolio/kellian-800.webp"
+    }
+  },
+  "logofolio/shadesigns": {
+    "w": 1440,
+    "h": 925,
     "color": "#e8d7d6",
     "alpha": false,
     "srcs": {
-      "640": "/media/shadesigns/brand-640.webp",
-      "1280": "/media/shadesigns/brand-1280.webp",
-      "1920": "/media/shadesigns/brand-1920.webp"
-    },
-    "og": "/media/shadesigns/brand-og.jpg"
-  },
-  "shadesigns/rate-card": {
-    "w": 1280,
-    "h": 1810,
-    "color": "#956755",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/shadesigns/rate-card-640.webp",
-      "1280": "/media/shadesigns/rate-card-1280.webp"
+      "480": "/media/logofolio/shadesigns-480.webp",
+      "960": "/media/logofolio/shadesigns-960.webp",
+      "1440": "/media/logofolio/shadesigns-1440.webp"
     }
   },
-  "shadesigns/packages": {
-    "w": 1280,
-    "h": 1656,
-    "color": "#efe4e3",
+  "logofolio/yelklin-card": {
+    "w": 1440,
+    "h": 823,
+    "color": "#e0e3e2",
     "alpha": false,
     "srcs": {
-      "640": "/media/shadesigns/packages-640.webp",
-      "1280": "/media/shadesigns/packages-1280.webp"
-    }
-  },
-  "shadesigns/business-card": {
-    "w": 1280,
-    "h": 1510,
-    "color": "#76625e",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/shadesigns/business-card-640.webp",
-      "1280": "/media/shadesigns/business-card-1280.webp"
-    }
-  },
-  "shadesigns/ad": {
-    "w": 1080,
-    "h": 1350,
-    "color": "#d1b0a2",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/shadesigns/ad-640.webp",
-      "1080": "/media/shadesigns/ad-1080.webp"
-    }
-  },
-  "shadesigns/offer": {
-    "w": 1280,
-    "h": 1600,
-    "color": "#e1c4b8",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/shadesigns/offer-640.webp",
-      "1280": "/media/shadesigns/offer-1280.webp"
-    }
-  },
-  "shadesigns/folder": {
-    "w": 1080,
-    "h": 1350,
-    "color": "#e4dbd9",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/shadesigns/folder-640.webp",
-      "1080": "/media/shadesigns/folder-1080.webp"
-    }
-  },
-  "fairtrade-sugar/page-0": {
-    "w": 1697,
-    "h": 2400,
-    "color": "#b4b98b",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/fairtrade-sugar/page-0-640.webp",
-      "1280": "/media/fairtrade-sugar/page-0-1280.webp",
-      "1697": "/media/fairtrade-sugar/page-0-1697.webp"
-    },
-    "og": "/media/fairtrade-sugar/page-0-og.jpg"
-  },
-  "fairtrade-sugar/page-1": {
-    "w": 1280,
-    "h": 1810,
-    "color": "#5d9792",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/fairtrade-sugar/page-1-640.webp",
-      "1280": "/media/fairtrade-sugar/page-1-1280.webp"
-    }
-  },
-  "fairtrade-sugar/page-2": {
-    "w": 1280,
-    "h": 1810,
-    "color": "#84bdbe",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/fairtrade-sugar/page-2-640.webp",
-      "1280": "/media/fairtrade-sugar/page-2-1280.webp"
-    }
-  },
-  "fairtrade-sugar/page-3": {
-    "w": 1280,
-    "h": 1810,
-    "color": "#f1eeec",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/fairtrade-sugar/page-3-640.webp",
-      "1280": "/media/fairtrade-sugar/page-3-1280.webp"
-    }
-  },
-  "fairtrade-sugar/page-5": {
-    "w": 1280,
-    "h": 1810,
-    "color": "#d2e4e4",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/fairtrade-sugar/page-5-640.webp",
-      "1280": "/media/fairtrade-sugar/page-5-1280.webp"
-    }
-  },
-  "fairtrade-sugar/page-7": {
-    "w": 1280,
-    "h": 1810,
-    "color": "#a7ac9c",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/fairtrade-sugar/page-7-640.webp",
-      "1280": "/media/fairtrade-sugar/page-7-1280.webp"
+      "480": "/media/logofolio/yelklin-card-480.webp",
+      "960": "/media/logofolio/yelklin-card-960.webp",
+      "1440": "/media/logofolio/yelklin-card-1440.webp"
     }
   },
   "optimum-prime/prime-1": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#253a57",
     "alpha": false,
     "srcs": {
-      "400": "/media/optimum-prime/prime-1-400.webp",
-      "800": "/media/optimum-prime/prime-1-800.webp"
+      "360": "/media/optimum-prime/prime-1-360.webp",
+      "720": "/media/optimum-prime/prime-1-720.webp"
     }
   },
   "optimum-prime/tally-ad": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#adb1c8",
     "alpha": false,
     "srcs": {
-      "400": "/media/optimum-prime/tally-ad-400.webp",
-      "800": "/media/optimum-prime/tally-ad-800.webp"
+      "360": "/media/optimum-prime/tally-ad-360.webp",
+      "720": "/media/optimum-prime/tally-ad-720.webp"
     }
   },
   "optimum-prime/april-13": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#788a95",
     "alpha": false,
     "srcs": {
-      "400": "/media/optimum-prime/april-13-400.webp",
-      "800": "/media/optimum-prime/april-13-800.webp"
+      "360": "/media/optimum-prime/april-13-360.webp",
+      "720": "/media/optimum-prime/april-13-720.webp"
     }
   },
   "optimum-prime/april-15": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#bebdc3",
     "alpha": false,
     "srcs": {
-      "400": "/media/optimum-prime/april-15-400.webp",
-      "800": "/media/optimum-prime/april-15-800.webp"
+      "360": "/media/optimum-prime/april-15-360.webp",
+      "720": "/media/optimum-prime/april-15-720.webp"
     }
   },
   "optimum-prime/april-22": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#cdcee1",
     "alpha": false,
     "srcs": {
-      "400": "/media/optimum-prime/april-22-400.webp",
-      "800": "/media/optimum-prime/april-22-800.webp"
+      "360": "/media/optimum-prime/april-22-360.webp",
+      "720": "/media/optimum-prime/april-22-720.webp"
     }
   },
   "optimum-prime/april-6": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#9c9faf",
     "alpha": false,
     "srcs": {
-      "400": "/media/optimum-prime/april-6-400.webp",
-      "800": "/media/optimum-prime/april-6-800.webp"
+      "360": "/media/optimum-prime/april-6-360.webp",
+      "720": "/media/optimum-prime/april-6-720.webp"
     }
   },
   "optimum-prime/march-2": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#859795",
     "alpha": false,
     "srcs": {
-      "400": "/media/optimum-prime/march-2-400.webp",
-      "800": "/media/optimum-prime/march-2-800.webp"
+      "360": "/media/optimum-prime/march-2-360.webp",
+      "720": "/media/optimum-prime/march-2-720.webp"
     }
   },
   "optimum-prime/may-11": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#5d5b5a",
     "alpha": false,
     "srcs": {
-      "400": "/media/optimum-prime/may-11-400.webp",
-      "800": "/media/optimum-prime/may-11-800.webp"
+      "360": "/media/optimum-prime/may-11-360.webp",
+      "720": "/media/optimum-prime/may-11-720.webp"
     }
   },
   "optimum-prime/may-22": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#d9d7d7",
     "alpha": false,
     "srcs": {
-      "400": "/media/optimum-prime/may-22-400.webp",
-      "800": "/media/optimum-prime/may-22-800.webp"
+      "360": "/media/optimum-prime/may-22-360.webp",
+      "720": "/media/optimum-prime/may-22-720.webp"
     }
   },
   "optimum-prime/tally-2": {
-    "w": 800,
-    "h": 1000,
+    "w": 720,
+    "h": 900,
     "color": "#4bb8d6",
     "alpha": false,
     "srcs": {
-      "400": "/media/optimum-prime/tally-2-400.webp",
-      "800": "/media/optimum-prime/tally-2-800.webp"
+      "360": "/media/optimum-prime/tally-2-360.webp",
+      "720": "/media/optimum-prime/tally-2-720.webp"
     }
   },
   "optimum-prime/wed-11-3": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#455b8a",
     "alpha": false,
     "srcs": {
-      "400": "/media/optimum-prime/wed-11-3-400.webp",
-      "800": "/media/optimum-prime/wed-11-3-800.webp"
+      "360": "/media/optimum-prime/wed-11-3-360.webp",
+      "720": "/media/optimum-prime/wed-11-3-720.webp"
     }
   },
   "optimum-prime/mon-16-3": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#2b4a86",
     "alpha": false,
     "srcs": {
-      "400": "/media/optimum-prime/mon-16-3-400.webp",
-      "800": "/media/optimum-prime/mon-16-3-800.webp"
+      "360": "/media/optimum-prime/mon-16-3-360.webp",
+      "720": "/media/optimum-prime/mon-16-3-720.webp"
     }
   },
   "optimum-prime/fri-20-3": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#c5c2ca",
     "alpha": false,
     "srcs": {
-      "400": "/media/optimum-prime/fri-20-3-400.webp",
-      "800": "/media/optimum-prime/fri-20-3-800.webp"
+      "360": "/media/optimum-prime/fri-20-3-360.webp",
+      "720": "/media/optimum-prime/fri-20-3-720.webp"
     }
   },
   "optimum-prime/follow": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#11397f",
     "alpha": false,
     "srcs": {
-      "400": "/media/optimum-prime/follow-400.webp",
-      "800": "/media/optimum-prime/follow-800.webp"
+      "360": "/media/optimum-prime/follow-360.webp",
+      "720": "/media/optimum-prime/follow-720.webp"
     }
   },
   "optimum-prime/june-1": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#cbd1ec",
     "alpha": false,
     "srcs": {
-      "400": "/media/optimum-prime/june-1-400.webp",
-      "800": "/media/optimum-prime/june-1-800.webp"
+      "360": "/media/optimum-prime/june-1-360.webp",
+      "720": "/media/optimum-prime/june-1-720.webp"
     }
   },
   "optimum-prime/april-29": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#b0bbc3",
     "alpha": false,
     "srcs": {
-      "400": "/media/optimum-prime/april-29-400.webp",
-      "800": "/media/optimum-prime/april-29-800.webp"
+      "360": "/media/optimum-prime/april-29-360.webp",
+      "720": "/media/optimum-prime/april-29-720.webp"
     }
   },
   "optimum-prime/22nd-march": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#4b47af",
     "alpha": false,
     "srcs": {
-      "400": "/media/optimum-prime/22nd-march-400.webp",
-      "800": "/media/optimum-prime/22nd-march-800.webp"
+      "360": "/media/optimum-prime/22nd-march-360.webp",
+      "720": "/media/optimum-prime/22nd-march-720.webp"
     }
   },
   "optimum-prime/madaraka": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#d5cec6",
     "alpha": false,
     "srcs": {
-      "400": "/media/optimum-prime/madaraka-400.webp",
-      "800": "/media/optimum-prime/madaraka-800.webp"
-    }
-  },
-  "skypeak/billboard-1": {
-    "w": 1920,
-    "h": 2303,
-    "color": "#6b7896",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/skypeak/billboard-1-640.webp",
-      "1280": "/media/skypeak/billboard-1-1280.webp",
-      "1920": "/media/skypeak/billboard-1-1920.webp"
-    },
-    "og": "/media/skypeak/billboard-1-og.jpg"
-  },
-  "skypeak/billboard-2": {
-    "w": 1280,
-    "h": 1535,
-    "color": "#4b5b80",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/skypeak/billboard-2-640.webp",
-      "1280": "/media/skypeak/billboard-2-1280.webp"
-    }
-  },
-  "skypeak/social": {
-    "w": 709,
-    "h": 851,
-    "color": "#667492",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/skypeak/social-400.webp",
-      "709": "/media/skypeak/social-709.webp"
-    }
-  },
-  "skypeak/social-2": {
-    "w": 800,
-    "h": 960,
-    "color": "#4a5b80",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/skypeak/social-2-400.webp",
-      "800": "/media/skypeak/social-2-800.webp"
-    }
-  },
-  "atdf-2026/coming-1": {
-    "w": 800,
-    "h": 800,
-    "color": "#29465d",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/atdf-2026/coming-1-400.webp",
-      "800": "/media/atdf-2026/coming-1-800.webp"
-    }
-  },
-  "atdf-2026/coming-2": {
-    "w": 800,
-    "h": 800,
-    "color": "#3b4955",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/atdf-2026/coming-2-400.webp",
-      "800": "/media/atdf-2026/coming-2-800.webp"
-    }
-  },
-  "atdf-2026/coming-3": {
-    "w": 800,
-    "h": 800,
-    "color": "#374a5b",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/atdf-2026/coming-3-400.webp",
-      "800": "/media/atdf-2026/coming-3-800.webp"
-    }
-  },
-  "atdf-2026/coming-4": {
-    "w": 800,
-    "h": 800,
-    "color": "#364b5a",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/atdf-2026/coming-4-400.webp",
-      "800": "/media/atdf-2026/coming-4-800.webp"
-    }
-  },
-  "atdf-2026/tca-2": {
-    "w": 800,
-    "h": 1000,
-    "color": "#2c475a",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/atdf-2026/tca-2-400.webp",
-      "800": "/media/atdf-2026/tca-2-800.webp"
-    }
-  },
-  "atdf-2026/tca-4": {
-    "w": 800,
-    "h": 1000,
-    "color": "#2c485d",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/atdf-2026/tca-4-400.webp",
-      "800": "/media/atdf-2026/tca-4-800.webp"
-    }
-  },
-  "talents-night/main": {
-    "w": 800,
-    "h": 1000,
-    "color": "#712e21",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/talents-night/main-400.webp",
-      "800": "/media/talents-night/main-800.webp"
-    }
-  },
-  "talents-night/countdown": {
-    "w": 800,
-    "h": 1000,
-    "color": "#602b1e",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/talents-night/countdown-400.webp",
-      "800": "/media/talents-night/countdown-800.webp"
-    }
-  },
-  "talents-night/today": {
-    "w": 800,
-    "h": 1000,
-    "color": "#632f1f",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/talents-night/today-400.webp",
-      "800": "/media/talents-night/today-800.webp"
-    }
-  },
-  "talents-night/now": {
-    "w": 800,
-    "h": 1000,
-    "color": "#663021",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/talents-night/now-400.webp",
-      "800": "/media/talents-night/now-800.webp"
-    }
-  },
-  "talents-night/live": {
-    "w": 800,
-    "h": 1000,
-    "color": "#6f3723",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/talents-night/live-400.webp",
-      "800": "/media/talents-night/live-800.webp"
-    }
-  },
-  "talents-night/final": {
-    "w": 800,
-    "h": 1000,
-    "color": "#774b3f",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/talents-night/final-400.webp",
-      "800": "/media/talents-night/final-800.webp"
-    }
-  },
-  "talents-night/auditions": {
-    "w": 800,
-    "h": 800,
-    "color": "#6c3434",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/talents-night/auditions-400.webp",
-      "800": "/media/talents-night/auditions-800.webp"
-    }
-  },
-  "talents-night/thumbnail": {
-    "w": 1920,
-    "h": 1080,
-    "color": "#5a1f17",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/talents-night/thumbnail-640.webp",
-      "1280": "/media/talents-night/thumbnail-1280.webp",
-      "1920": "/media/talents-night/thumbnail-1920.webp"
-    },
-    "og": "/media/talents-night/thumbnail-og.jpg"
-  },
-  "talents-night/tshirt": {
-    "w": 1280,
-    "h": 1280,
-    "color": "#c5c4a3",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/talents-night/tshirt-640.webp",
-      "1280": "/media/talents-night/tshirt-1280.webp"
-    }
-  },
-  "talents-night/tshirt-back": {
-    "w": 1080,
-    "h": 1350,
-    "color": "#9fa46f",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/talents-night/tshirt-back-640.webp",
-      "1080": "/media/talents-night/tshirt-back-1080.webp"
-    }
-  },
-  "talents-night/tshirt-red": {
-    "w": 1280,
-    "h": 853,
-    "color": "#c09896",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/talents-night/tshirt-red-640.webp",
-      "1280": "/media/talents-night/tshirt-red-1280.webp"
-    }
-  },
-  "taita-taveta/main": {
-    "w": 800,
-    "h": 1131,
-    "color": "#972f1e",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/taita-taveta/main-400.webp",
-      "800": "/media/taita-taveta/main-800.webp"
-    }
-  },
-  "taita-taveta/theme": {
-    "w": 800,
-    "h": 1000,
-    "color": "#594147",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/taita-taveta/theme-400.webp",
-      "800": "/media/taita-taveta/theme-800.webp"
-    }
-  },
-  "taita-taveta/countdown": {
-    "w": 800,
-    "h": 1000,
-    "color": "#706f66",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/taita-taveta/countdown-400.webp",
-      "800": "/media/taita-taveta/countdown-800.webp"
-    }
-  },
-  "taita-taveta/today": {
-    "w": 800,
-    "h": 1000,
-    "color": "#757262",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/taita-taveta/today-400.webp",
-      "800": "/media/taita-taveta/today-800.webp"
-    }
-  },
-  "taita-taveta/locations": {
-    "w": 800,
-    "h": 1000,
-    "color": "#555e70",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/taita-taveta/locations-400.webp",
-      "800": "/media/taita-taveta/locations-800.webp"
-    }
-  },
-  "taita-taveta/seminars": {
-    "w": 800,
-    "h": 800,
-    "color": "#76453d",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/taita-taveta/seminars-400.webp",
-      "800": "/media/taita-taveta/seminars-800.webp"
-    }
-  },
-  "taita-taveta/thank-you": {
-    "w": 800,
-    "h": 1000,
-    "color": "#616077",
-    "alpha": true,
-    "srcs": {
-      "400": "/media/taita-taveta/thank-you-400.webp",
-      "800": "/media/taita-taveta/thank-you-800.webp"
-    }
-  },
-  "taita-taveta/alt": {
-    "w": 800,
-    "h": 1131,
-    "color": "#992d17",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/taita-taveta/alt-400.webp",
-      "800": "/media/taita-taveta/alt-800.webp"
-    }
-  },
-  "taita-taveta/kit": {
-    "w": 1080,
-    "h": 1350,
-    "color": "#e3e3e3",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/taita-taveta/kit-640.webp",
-      "1080": "/media/taita-taveta/kit-1080.webp"
+      "360": "/media/optimum-prime/madaraka-360.webp",
+      "720": "/media/optimum-prime/madaraka-720.webp"
     }
   },
   "gcf/faith-acts": {
-    "w": 800,
-    "h": 1000,
+    "w": 720,
+    "h": 900,
     "color": "#634934",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/faith-acts-400.webp",
-      "800": "/media/gcf/faith-acts-800.webp"
+      "360": "/media/gcf/faith-acts-360.webp",
+      "720": "/media/gcf/faith-acts-720.webp"
     }
   },
   "gcf/faith-endures": {
-    "w": 800,
-    "h": 1000,
+    "w": 720,
+    "h": 900,
     "color": "#72423b",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/faith-endures-400.webp",
-      "800": "/media/gcf/faith-endures-800.webp"
+      "360": "/media/gcf/faith-endures-360.webp",
+      "720": "/media/gcf/faith-endures-720.webp"
     }
   },
   "gcf/faith-waits": {
-    "w": 800,
-    "h": 1000,
+    "w": 720,
+    "h": 900,
     "color": "#e8d9cd",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/faith-waits-400.webp",
-      "800": "/media/gcf/faith-waits-800.webp"
+      "360": "/media/gcf/faith-waits-360.webp",
+      "720": "/media/gcf/faith-waits-720.webp"
     }
   },
   "gcf/fear-1": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#711f1b",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/fear-1-400.webp",
-      "800": "/media/gcf/fear-1-800.webp"
+      "360": "/media/gcf/fear-1-360.webp",
+      "720": "/media/gcf/fear-1-720.webp"
     }
   },
   "gcf/fear-2": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#82403b",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/fear-2-400.webp",
-      "800": "/media/gcf/fear-2-800.webp"
+      "360": "/media/gcf/fear-2-360.webp",
+      "720": "/media/gcf/fear-2-720.webp"
     }
   },
   "gcf/knowing-god": {
-    "w": 800,
-    "h": 1000,
+    "w": 720,
+    "h": 900,
     "color": "#4b3620",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/knowing-god-400.webp",
-      "800": "/media/gcf/knowing-god-800.webp"
+      "360": "/media/gcf/knowing-god-360.webp",
+      "720": "/media/gcf/knowing-god-720.webp"
     }
   },
   "gcf/tongue": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#802d1c",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/tongue-400.webp",
-      "800": "/media/gcf/tongue-800.webp"
+      "360": "/media/gcf/tongue-360.webp",
+      "720": "/media/gcf/tongue-720.webp"
     }
   },
   "gcf/wealth": {
-    "w": 800,
-    "h": 1000,
+    "w": 720,
+    "h": 900,
     "color": "#e8cdb2",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/wealth-400.webp",
-      "800": "/media/gcf/wealth-800.webp"
+      "360": "/media/gcf/wealth-360.webp",
+      "720": "/media/gcf/wealth-720.webp"
     }
   },
   "gcf/family": {
-    "w": 800,
-    "h": 1000,
+    "w": 720,
+    "h": 900,
     "color": "#beb3b2",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/family-400.webp",
-      "800": "/media/gcf/family-800.webp"
+      "360": "/media/gcf/family-360.webp",
+      "720": "/media/gcf/family-720.webp"
     }
   },
   "gcf/thanksgiving": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#744035",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/thanksgiving-400.webp",
-      "800": "/media/gcf/thanksgiving-800.webp"
+      "360": "/media/gcf/thanksgiving-360.webp",
+      "720": "/media/gcf/thanksgiving-720.webp"
     }
   },
   "gcf/forgive": {
-    "w": 800,
-    "h": 1000,
+    "w": 720,
+    "h": 900,
     "color": "#c6bab8",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/forgive-400.webp",
-      "800": "/media/gcf/forgive-800.webp"
+      "360": "/media/gcf/forgive-360.webp",
+      "720": "/media/gcf/forgive-720.webp"
     }
   },
   "gcf/forgiven": {
-    "w": 800,
-    "h": 1000,
+    "w": 720,
+    "h": 900,
     "color": "#c1b9b7",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/forgiven-400.webp",
-      "800": "/media/gcf/forgiven-800.webp"
+      "360": "/media/gcf/forgiven-360.webp",
+      "720": "/media/gcf/forgiven-720.webp"
     }
   },
   "gcf/behind-scenes": {
-    "w": 800,
-    "h": 1000,
+    "w": 720,
+    "h": 900,
     "color": "#452026",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/behind-scenes-400.webp",
-      "800": "/media/gcf/behind-scenes-800.webp"
+      "360": "/media/gcf/behind-scenes-360.webp",
+      "720": "/media/gcf/behind-scenes-720.webp"
     }
   },
   "gcf/grace-licence": {
-    "w": 800,
-    "h": 1000,
+    "w": 720,
+    "h": 900,
     "color": "#403921",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/grace-licence-400.webp",
-      "800": "/media/gcf/grace-licence-800.webp"
+      "360": "/media/gcf/grace-licence-360.webp",
+      "720": "/media/gcf/grace-licence-720.webp"
     }
   },
   "gcf/gift": {
-    "w": 800,
-    "h": 1000,
+    "w": 720,
+    "h": 900,
     "color": "#403724",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/gift-400.webp",
-      "800": "/media/gcf/gift-800.webp"
+      "360": "/media/gcf/gift-360.webp",
+      "720": "/media/gcf/gift-720.webp"
     }
   },
   "gcf/contentment": {
-    "w": 800,
-    "h": 1000,
+    "w": 720,
+    "h": 900,
     "color": "#bab2b1",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/contentment-400.webp",
-      "800": "/media/gcf/contentment-800.webp"
+      "360": "/media/gcf/contentment-360.webp",
+      "720": "/media/gcf/contentment-720.webp"
     }
   },
   "gcf/prayer": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#6e472e",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/prayer-400.webp",
-      "800": "/media/gcf/prayer-800.webp"
+      "360": "/media/gcf/prayer-360.webp",
+      "720": "/media/gcf/prayer-720.webp"
     }
   },
   "gcf/fundraising": {
-    "w": 800,
-    "h": 450,
+    "w": 720,
+    "h": 405,
     "color": "#6c3020",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/fundraising-400.webp",
-      "800": "/media/gcf/fundraising-800.webp"
+      "360": "/media/gcf/fundraising-360.webp",
+      "720": "/media/gcf/fundraising-720.webp"
     }
   },
   "gcf/quote": {
-    "w": 800,
-    "h": 800,
+    "w": 720,
+    "h": 720,
     "color": "#95635f",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/quote-400.webp",
-      "800": "/media/gcf/quote-800.webp"
+      "360": "/media/gcf/quote-360.webp",
+      "720": "/media/gcf/quote-720.webp"
     }
   },
   "gcf/verse": {
-    "w": 800,
-    "h": 1000,
+    "w": 720,
+    "h": 900,
     "color": "#7f6963",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/verse-400.webp",
-      "800": "/media/gcf/verse-800.webp"
+      "360": "/media/gcf/verse-360.webp",
+      "720": "/media/gcf/verse-720.webp"
     }
   },
   "gcf/consecrate": {
-    "w": 800,
-    "h": 1000,
+    "w": 720,
+    "h": 900,
     "color": "#89483c",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/consecrate-400.webp",
-      "800": "/media/gcf/consecrate-800.webp"
+      "360": "/media/gcf/consecrate-360.webp",
+      "720": "/media/gcf/consecrate-720.webp"
     }
   },
   "gcf/beyond": {
-    "w": 800,
-    "h": 1000,
+    "w": 720,
+    "h": 900,
     "color": "#704a41",
     "alpha": false,
     "srcs": {
-      "400": "/media/gcf/beyond-400.webp",
-      "800": "/media/gcf/beyond-800.webp"
+      "360": "/media/gcf/beyond-360.webp",
+      "720": "/media/gcf/beyond-720.webp"
     }
   },
   "gcf/screen": {
-    "w": 1920,
-    "h": 1080,
+    "w": 1600,
+    "h": 900,
     "color": "#5a261e",
     "alpha": false,
     "srcs": {
-      "640": "/media/gcf/screen-640.webp",
-      "1280": "/media/gcf/screen-1280.webp",
-      "1920": "/media/gcf/screen-1920.webp"
+      "480": "/media/gcf/screen-480.webp",
+      "960": "/media/gcf/screen-960.webp",
+      "1600": "/media/gcf/screen-1600.webp"
     },
     "og": "/media/gcf/screen-og.jpg"
   },
   "gcf/screen-2": {
-    "w": 1280,
-    "h": 720,
+    "w": 1440,
+    "h": 810,
     "color": "#3f1f23",
     "alpha": false,
     "srcs": {
-      "640": "/media/gcf/screen-2-640.webp",
-      "1280": "/media/gcf/screen-2-1280.webp"
+      "480": "/media/gcf/screen-2-480.webp",
+      "960": "/media/gcf/screen-2-960.webp",
+      "1440": "/media/gcf/screen-2-1440.webp"
     }
   },
-  "posters/medical-camp": {
-    "w": 800,
-    "h": 800,
-    "color": "#af5949",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/medical-camp-400.webp",
-      "800": "/media/posters/medical-camp-800.webp"
-    }
-  },
-  "posters/mens-mental-health": {
-    "w": 800,
-    "h": 800,
-    "color": "#dbdad3",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/mens-mental-health-400.webp",
-      "800": "/media/posters/mens-mental-health-800.webp"
-    }
-  },
-  "posters/mothers-day": {
-    "w": 800,
-    "h": 800,
-    "color": "#afbfc3",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/mothers-day-400.webp",
-      "800": "/media/posters/mothers-day-800.webp"
-    }
-  },
-  "posters/inreach": {
-    "w": 800,
-    "h": 800,
-    "color": "#733c37",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/inreach-400.webp",
-      "800": "/media/posters/inreach-800.webp"
-    }
-  },
-  "posters/door-of-the-sheep": {
-    "w": 800,
-    "h": 1000,
-    "color": "#4e6639",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/door-of-the-sheep-400.webp",
-      "800": "/media/posters/door-of-the-sheep-800.webp"
-    }
-  },
-  "posters/cultural-sunday": {
-    "w": 800,
-    "h": 800,
-    "color": "#d2bda8",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/cultural-sunday-400.webp",
-      "800": "/media/posters/cultural-sunday-800.webp"
-    }
-  },
-  "posters/100k": {
-    "w": 800,
-    "h": 800,
+  "posters/100k-james": {
+    "w": 720,
+    "h": 720,
     "color": "#9c3e2f",
     "alpha": false,
     "srcs": {
-      "400": "/media/posters/100k-400.webp",
-      "800": "/media/posters/100k-800.webp"
+      "360": "/media/posters/100k-james-360.webp",
+      "720": "/media/posters/100k-james-720.webp"
     }
   },
-  "posters/welcome-july": {
-    "w": 800,
-    "h": 800,
-    "color": "#f0dfd8",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/welcome-july-400.webp",
-      "800": "/media/posters/welcome-july-800.webp"
-    }
-  },
-  "posters/shirts-sale": {
-    "w": 800,
-    "h": 800,
-    "color": "#c5b6b2",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/shirts-sale-400.webp",
-      "800": "/media/posters/shirts-sale-800.webp"
-    }
-  },
-  "posters/baptism": {
-    "w": 800,
-    "h": 800,
+  "posters/baptism-classes": {
+    "w": 720,
+    "h": 720,
     "color": "#81605a",
     "alpha": false,
     "srcs": {
-      "400": "/media/posters/baptism-400.webp",
-      "800": "/media/posters/baptism-800.webp"
+      "360": "/media/posters/baptism-classes-360.webp",
+      "720": "/media/posters/baptism-classes-720.webp"
     }
   },
-  "posters/compelled": {
-    "w": 800,
-    "h": 800,
-    "color": "#c8b3a5",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/compelled-400.webp",
-      "800": "/media/posters/compelled-800.webp"
-    }
-  },
-  "posters/grand-launch": {
-    "w": 800,
-    "h": 1132,
-    "color": "#647186",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/grand-launch-400.webp",
-      "800": "/media/posters/grand-launch-800.webp"
-    }
-  },
-  "posters/mt-hebron": {
-    "w": 800,
-    "h": 1061,
-    "color": "#6c4b42",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/mt-hebron-400.webp",
-      "800": "/media/posters/mt-hebron-800.webp"
-    }
-  },
-  "posters/living-waters": {
-    "w": 800,
-    "h": 979,
-    "color": "#3c437e",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/living-waters-400.webp",
-      "800": "/media/posters/living-waters-800.webp"
-    }
-  },
-  "posters/necessary-lie": {
-    "w": 800,
-    "h": 800,
-    "color": "#d5b4ab",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/necessary-lie-400.webp",
-      "800": "/media/posters/necessary-lie-800.webp"
-    }
-  },
-  "posters/character-daniel": {
-    "w": 800,
-    "h": 1000,
-    "color": "#536c4b",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/character-daniel-400.webp",
-      "800": "/media/posters/character-daniel-800.webp"
-    }
-  },
-  "posters/customer-week": {
-    "w": 800,
-    "h": 1000,
-    "color": "#e5d1ba",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/customer-week-400.webp",
-      "800": "/media/posters/customer-week-800.webp"
-    }
-  },
-  "posters/birthday-cinta": {
-    "w": 800,
-    "h": 800,
-    "color": "#d6a07a",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/birthday-cinta-400.webp",
-      "800": "/media/posters/birthday-cinta-800.webp"
-    }
-  },
-  "posters/aecf-podcast": {
-    "w": 800,
-    "h": 450,
-    "color": "#427084",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/aecf-podcast-400.webp",
-      "800": "/media/posters/aecf-podcast-800.webp"
-    }
-  },
-  "posters/worship-experience": {
-    "w": 800,
-    "h": 1000,
-    "color": "#4b448d",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/worship-experience-400.webp",
-      "800": "/media/posters/worship-experience-800.webp"
-    }
-  },
-  "posters/gala-dinner": {
-    "w": 800,
-    "h": 1000,
-    "color": "#814331",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/gala-dinner-400.webp",
-      "800": "/media/posters/gala-dinner-800.webp"
-    }
-  },
-  "posters/welcome-sep": {
-    "w": 800,
-    "h": 800,
-    "color": "#472829",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/welcome-sep-400.webp",
-      "800": "/media/posters/welcome-sep-800.webp"
-    }
-  },
-  "posters/widow-judge": {
-    "w": 800,
-    "h": 800,
-    "color": "#572e2a",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/widow-judge-400.webp",
-      "800": "/media/posters/widow-judge-800.webp"
-    }
-  },
-  "posters/destiny": {
-    "w": 800,
-    "h": 800,
-    "color": "#4f5a3d",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/destiny-400.webp",
-      "800": "/media/posters/destiny-800.webp"
-    }
-  },
-  "posters/prioritizing": {
-    "w": 800,
-    "h": 800,
-    "color": "#b5a7a0",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/prioritizing-400.webp",
-      "800": "/media/posters/prioritizing-800.webp"
-    }
-  },
-  "posters/helpmate": {
-    "w": 800,
-    "h": 1000,
-    "color": "#a7aa8f",
-    "alpha": false,
-    "srcs": {
-      "400": "/media/posters/helpmate-400.webp",
-      "800": "/media/posters/helpmate-800.webp"
-    }
-  },
-  "posters/benefits-fear": {
-    "w": 800,
-    "h": 800,
+  "posters/benefits-of-fearing-god": {
+    "w": 720,
+    "h": 720,
     "color": "#5e3022",
     "alpha": false,
     "srcs": {
-      "400": "/media/posters/benefits-fear-400.webp",
-      "800": "/media/posters/benefits-fear-800.webp"
+      "360": "/media/posters/benefits-of-fearing-god-360.webp",
+      "720": "/media/posters/benefits-of-fearing-god-720.webp"
     }
   },
-  "posters/spark-camp": {
-    "w": 800,
-    "h": 1127,
-    "color": "#8ca072",
+  "posters/coming-to-atdf-en-03": {
+    "w": 720,
+    "h": 720,
+    "color": "#374a5b",
     "alpha": false,
     "srcs": {
-      "400": "/media/posters/spark-camp-400.webp",
-      "800": "/media/posters/spark-camp-800.webp"
+      "360": "/media/posters/coming-to-atdf-en-03-360.webp",
+      "720": "/media/posters/coming-to-atdf-en-03-720.webp"
     }
   },
-  "posters/service-hub": {
-    "w": 800,
-    "h": 1135,
-    "color": "#a0d1e5",
+  "posters/coming-to-atdf-en": {
+    "w": 720,
+    "h": 720,
+    "color": "#29465d",
     "alpha": false,
     "srcs": {
-      "400": "/media/posters/service-hub-400.webp",
-      "800": "/media/posters/service-hub-800.webp"
+      "360": "/media/posters/coming-to-atdf-en-360.webp",
+      "720": "/media/posters/coming-to-atdf-en-720.webp"
     }
   },
-  "stationery/uet-agm": {
-    "w": 1280,
-    "h": 711,
-    "color": "#eaddd3",
+  "posters/compelled-to-preach-jkuatcu": {
+    "w": 720,
+    "h": 720,
+    "color": "#c8b3a5",
     "alpha": false,
     "srcs": {
-      "640": "/media/stationery/uet-agm-640.webp",
-      "1280": "/media/stationery/uet-agm-1280.webp"
+      "360": "/media/posters/compelled-to-preach-jkuatcu-360.webp",
+      "720": "/media/posters/compelled-to-preach-jkuatcu-720.webp"
     }
   },
-  "stationery/jkusa-ec": {
-    "w": 1280,
-    "h": 711,
-    "color": "#c4c7d6",
+  "posters/cream-auditions": {
+    "w": 720,
+    "h": 720,
+    "color": "#6c3434",
     "alpha": false,
     "srcs": {
-      "640": "/media/stationery/jkusa-ec-640.webp",
-      "1280": "/media/stationery/jkusa-ec-1280.webp"
+      "360": "/media/posters/cream-auditions-360.webp",
+      "720": "/media/posters/cream-auditions-720.webp"
     }
   },
-  "stationery/email-signature": {
-    "w": 1280,
-    "h": 419,
-    "color": "#b5c7b3",
+  "posters/customer-service-week-cyrah": {
+    "w": 720,
+    "h": 720,
+    "color": "#baafa1",
     "alpha": false,
     "srcs": {
-      "640": "/media/stationery/email-signature-640.webp",
-      "1280": "/media/stationery/email-signature-1280.webp"
+      "360": "/media/posters/customer-service-week-cyrah-360.webp",
+      "720": "/media/posters/customer-service-week-cyrah-720.webp"
     }
   },
-  "stationery/zaria-banner": {
-    "w": 1280,
-    "h": 1280,
-    "color": "#c0936c",
+  "posters/elements-of-the-fear-of-god-part-1": {
+    "w": 720,
+    "h": 720,
+    "color": "#711f1b",
     "alpha": false,
     "srcs": {
-      "640": "/media/stationery/zaria-banner-640.webp",
-      "1280": "/media/stationery/zaria-banner-1280.webp"
+      "360": "/media/posters/elements-of-the-fear-of-god-part-1-360.webp",
+      "720": "/media/posters/elements-of-the-fear-of-god-part-1-720.webp"
     }
   },
-  "qless/promo": {
-    "w": 342,
-    "h": 285,
-    "color": "#1b512d",
+  "posters/elements-of-the-fear-of-god-part-2": {
+    "w": 720,
+    "h": 720,
+    "color": "#82403b",
     "alpha": false,
     "srcs": {
-      "342": "/media/qless/promo-342.webp"
-    },
-    "og": "/media/qless/promo-og.jpg"
+      "360": "/media/posters/elements-of-the-fear-of-god-part-2-360.webp",
+      "720": "/media/posters/elements-of-the-fear-of-god-part-2-720.webp"
+    }
   },
-  "qless/phone": {
-    "w": 600,
+  "posters/gcf-quote-of-the-week": {
+    "w": 720,
+    "h": 720,
+    "color": "#95635f",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/gcf-quote-of-the-week-360.webp",
+      "720": "/media/posters/gcf-quote-of-the-week-720.webp"
+    }
+  },
+  "posters/gcf-thanks-giving-service": {
+    "w": 720,
+    "h": 720,
+    "color": "#744035",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/gcf-thanks-giving-service-360.webp",
+      "720": "/media/posters/gcf-thanks-giving-service-720.webp"
+    }
+  },
+  "posters/happy-birthday-cinta": {
+    "w": 720,
+    "h": 720,
+    "color": "#d6a07a",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/happy-birthday-cinta-360.webp",
+      "720": "/media/posters/happy-birthday-cinta-720.webp"
+    }
+  },
+  "posters/head-of-digital-post-design-for-boxraft": {
+    "w": 720,
+    "h": 720,
+    "color": "#5b4c4d",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/head-of-digital-post-design-for-boxraft-360.webp",
+      "720": "/media/posters/head-of-digital-post-design-for-boxraft-720.webp"
+    }
+  },
+  "posters/necessary-lie": {
+    "w": 720,
+    "h": 720,
+    "color": "#d5b4ab",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/necessary-lie-360.webp",
+      "720": "/media/posters/necessary-lie-720.webp"
+    }
+  },
+  "posters/power-of-the-tongue-gcf": {
+    "w": 720,
+    "h": 720,
+    "color": "#802d1c",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/power-of-the-tongue-gcf-360.webp",
+      "720": "/media/posters/power-of-the-tongue-gcf-720.webp"
+    }
+  },
+  "posters/prayer-service-gcf-nov": {
+    "w": 720,
+    "h": 720,
+    "color": "#6e472e",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/prayer-service-gcf-nov-360.webp",
+      "720": "/media/posters/prayer-service-gcf-nov-720.webp"
+    }
+  },
+  "posters/prayer-and-fasting-gcf": {
+    "w": 720,
+    "h": 720,
+    "color": "#e4c7bd",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/prayer-and-fasting-gcf-360.webp",
+      "720": "/media/posters/prayer-and-fasting-gcf-720.webp"
+    }
+  },
+  "posters/prayer-service-gcf-25-july": {
+    "w": 720,
+    "h": 720,
+    "color": "#44221d",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/prayer-service-gcf-25-july-360.webp",
+      "720": "/media/posters/prayer-service-gcf-25-july-720.webp"
+    }
+  },
+  "posters/prioritizing-relationship-gcf": {
+    "w": 720,
+    "h": 720,
+    "color": "#b5a7a0",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/prioritizing-relationship-gcf-360.webp",
+      "720": "/media/posters/prioritizing-relationship-gcf-720.webp"
+    }
+  },
+  "posters/relationships-that-build-destiny-uet": {
+    "w": 720,
+    "h": 720,
+    "color": "#4f5a3d",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/relationships-that-build-destiny-uet-360.webp",
+      "720": "/media/posters/relationships-that-build-destiny-uet-720.webp"
+    }
+  },
+  "posters/seminars-on-friday-taita-taveta": {
+    "w": 720,
+    "h": 720,
+    "color": "#76453d",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/seminars-on-friday-taita-taveta-360.webp",
+      "720": "/media/posters/seminars-on-friday-taita-taveta-720.webp"
+    }
+  },
+  "posters/soroptimist-international-nairobi-central": {
+    "w": 720,
+    "h": 720,
+    "color": "#19223e",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/soroptimist-international-nairobi-central-360.webp",
+      "720": "/media/posters/soroptimist-international-nairobi-central-720.webp"
+    }
+  },
+  "posters/the-foundation-of-wisdom-gcf": {
+    "w": 720,
+    "h": 720,
+    "color": "#642f26",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/the-foundation-of-wisdom-gcf-360.webp",
+      "720": "/media/posters/the-foundation-of-wisdom-gcf-720.webp"
+    }
+  },
+  "posters/the-widow-and-the-judge-jkuatcu": {
+    "w": 720,
+    "h": 720,
+    "color": "#572e2a",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/the-widow-and-the-judge-jkuatcu-360.webp",
+      "720": "/media/posters/the-widow-and-the-judge-jkuatcu-720.webp"
+    }
+  },
+  "posters/uet-50-challenge": {
+    "w": 720,
+    "h": 720,
+    "color": "#d7cab5",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/uet-50-challenge-360.webp",
+      "720": "/media/posters/uet-50-challenge-720.webp"
+    }
+  },
+  "posters/wto-how-can-more-businesses-benefit-from-aeo": {
+    "w": 720,
+    "h": 720,
+    "color": "#38a4c8",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/wto-how-can-more-businesses-benefit-from-aeo-360.webp",
+      "720": "/media/posters/wto-how-can-more-businesses-benefit-from-aeo-720.webp"
+    }
+  },
+  "posters/wto-flyer-02": {
+    "w": 720,
+    "h": 720,
+    "color": "#30a7ce",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/wto-flyer-02-360.webp",
+      "720": "/media/posters/wto-flyer-02-720.webp"
+    }
+  },
+  "posters/welcome-to-july-2026": {
+    "w": 720,
+    "h": 720,
+    "color": "#f0dfd8",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/welcome-to-july-2026-360.webp",
+      "720": "/media/posters/welcome-to-july-2026-720.webp"
+    }
+  },
+  "posters/welcome-to-sep": {
+    "w": 720,
+    "h": 720,
+    "color": "#472829",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/welcome-to-sep-360.webp",
+      "720": "/media/posters/welcome-to-sep-720.webp"
+    }
+  },
+  "posters/atdf26-tca-part2-portrait-1080x1350": {
+    "w": 720,
     "h": 900,
-    "color": "#9f8e80",
+    "color": "#2c475a",
     "alpha": false,
     "srcs": {
-      "600": "/media/qless/phone-600.webp"
+      "360": "/media/posters/atdf26-tca-part2-portrait-1080x1350-360.webp",
+      "720": "/media/posters/atdf26-tca-part2-portrait-1080x1350-720.webp"
     }
   },
-  "qless/logo": {
-    "w": 960,
-    "h": 960,
-    "color": "#e4c4bc",
+  "posters/beyond-outward-religion-gcf": {
+    "w": 720,
+    "h": 900,
+    "color": "#704a41",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/beyond-outward-religion-gcf-360.webp",
+      "720": "/media/posters/beyond-outward-religion-gcf-720.webp"
+    }
+  },
+  "posters/character-exposition-daniel-uet": {
+    "w": 720,
+    "h": 900,
+    "color": "#536c4b",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/character-exposition-daniel-uet-360.webp",
+      "720": "/media/posters/character-exposition-daniel-uet-720.webp"
+    }
+  },
+  "posters/consecrate-yourself-gcf": {
+    "w": 720,
+    "h": 900,
+    "color": "#89483c",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/consecrate-yourself-gcf-360.webp",
+      "720": "/media/posters/consecrate-yourself-gcf-720.webp"
+    }
+  },
+  "posters/customer-service-week-shady": {
+    "w": 720,
+    "h": 900,
+    "color": "#e5d1ba",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/customer-service-week-shady-360.webp",
+      "720": "/media/posters/customer-service-week-shady-720.webp"
+    }
+  },
+  "posters/faith-that-acts-gcf": {
+    "w": 720,
+    "h": 900,
+    "color": "#634934",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/faith-that-acts-gcf-360.webp",
+      "720": "/media/posters/faith-that-acts-gcf-720.webp"
+    }
+  },
+  "posters/faith-that-endures-gcf": {
+    "w": 720,
+    "h": 900,
+    "color": "#72423b",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/faith-that-endures-gcf-360.webp",
+      "720": "/media/posters/faith-that-endures-gcf-720.webp"
+    }
+  },
+  "posters/faith-that-waits-cf": {
+    "w": 720,
+    "h": 900,
+    "color": "#e8d9cd",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/faith-that-waits-cf-360.webp",
+      "720": "/media/posters/faith-that-waits-cf-720.webp"
+    }
+  },
+  "posters/family-sunday-gcf": {
+    "w": 720,
+    "h": 900,
+    "color": "#beb3b2",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/family-sunday-gcf-360.webp",
+      "720": "/media/posters/family-sunday-gcf-720.webp"
+    }
+  },
+  "posters/forgive-understanding-forgiveness-gcf": {
+    "w": 720,
+    "h": 900,
+    "color": "#c6bab8",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/forgive-understanding-forgiveness-gcf-360.webp",
+      "720": "/media/posters/forgive-understanding-forgiveness-gcf-720.webp"
+    }
+  },
+  "posters/god-is-working-behind-the-scenes-gcf": {
+    "w": 720,
+    "h": 900,
+    "color": "#452026",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/god-is-working-behind-the-scenes-gcf-360.webp",
+      "720": "/media/posters/god-is-working-behind-the-scenes-gcf-720.webp"
+    }
+  },
+  "posters/grace-is-not-a-license-to-sin-gcf": {
+    "w": 720,
+    "h": 900,
+    "color": "#403921",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/grace-is-not-a-license-to-sin-gcf-360.webp",
+      "720": "/media/posters/grace-is-not-a-license-to-sin-gcf-720.webp"
+    }
+  },
+  "posters/grand-launch-victors-chapel": {
+    "w": 720,
+    "h": 1019,
+    "color": "#647186",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/grand-launch-victors-chapel-360.webp",
+      "720": "/media/posters/grand-launch-victors-chapel-720.webp"
+    }
+  },
+  "posters/helpmate-flier": {
+    "w": 720,
+    "h": 900,
+    "color": "#a7aa8f",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/helpmate-flier-360.webp",
+      "720": "/media/posters/helpmate-flier-720.webp"
+    }
+  },
+  "posters/i-am-the-door-of-the-sheep": {
+    "w": 720,
+    "h": 900,
+    "color": "#4e6639",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/i-am-the-door-of-the-sheep-360.webp",
+      "720": "/media/posters/i-am-the-door-of-the-sheep-720.webp"
+    }
+  },
+  "posters/interdenominational-worship-experience-cfc": {
+    "w": 720,
+    "h": 900,
+    "color": "#4b448d",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/interdenominational-worship-experience-cfc-360.webp",
+      "720": "/media/posters/interdenominational-worship-experience-cfc-720.webp"
+    }
+  },
+  "posters/knowing-god-gcf": {
+    "w": 720,
+    "h": 900,
+    "color": "#4b3620",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/knowing-god-gcf-360.webp",
+      "720": "/media/posters/knowing-god-gcf-720.webp"
+    }
+  },
+  "posters/living-waters-chapel-juja-poster": {
+    "w": 720,
+    "h": 881,
+    "color": "#3c437e",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/living-waters-chapel-juja-poster-360.webp",
+      "720": "/media/posters/living-waters-chapel-juja-poster-720.webp"
+    }
+  },
+  "posters/mt-hebron-church-poster": {
+    "w": 720,
+    "h": 954,
+    "color": "#6c4b42",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/mt-hebron-church-poster-360.webp",
+      "720": "/media/posters/mt-hebron-church-poster-720.webp"
+    }
+  },
+  "posters/offer-design": {
+    "w": 720,
+    "h": 900,
+    "color": "#e1c4b8",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/offer-design-360.webp",
+      "720": "/media/posters/offer-design-720.webp"
+    }
+  },
+  "posters/power-to-make-wealth-gcf": {
+    "w": 720,
+    "h": 900,
+    "color": "#e8cdb2",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/power-to-make-wealth-gcf-360.webp",
+      "720": "/media/posters/power-to-make-wealth-gcf-720.webp"
+    }
+  },
+  "posters/pre-valentines-gala-dinner": {
+    "w": 720,
+    "h": 900,
+    "color": "#814331",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/pre-valentines-gala-dinner-360.webp",
+      "720": "/media/posters/pre-valentines-gala-dinner-720.webp"
+    }
+  },
+  "posters/street-evangelism-uet": {
+    "w": 720,
+    "h": 900,
+    "color": "#d8bf95",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/street-evangelism-uet-360.webp",
+      "720": "/media/posters/street-evangelism-uet-720.webp"
+    }
+  },
+  "posters/tn-2026": {
+    "w": 720,
+    "h": 900,
+    "color": "#712e21",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/tn-2026-360.webp",
+      "720": "/media/posters/tn-2026-720.webp"
+    }
+  },
+  "posters/tn-2026-final-countdown": {
+    "w": 720,
+    "h": 900,
+    "color": "#602b1e",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/tn-2026-final-countdown-360.webp",
+      "720": "/media/posters/tn-2026-final-countdown-720.webp"
+    }
+  },
+  "posters/tn-2026-live": {
+    "w": 720,
+    "h": 900,
+    "color": "#6f3723",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/tn-2026-live-360.webp",
+      "720": "/media/posters/tn-2026-live-720.webp"
+    }
+  },
+  "posters/the-great-taita-taveta-mission-theme": {
+    "w": 720,
+    "h": 900,
+    "color": "#594147",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/the-great-taita-taveta-mission-theme-360.webp",
+      "720": "/media/posters/the-great-taita-taveta-mission-theme-720.webp"
+    }
+  },
+  "posters/the-great-taita-taveta-mission-countdown": {
+    "w": 720,
+    "h": 900,
+    "color": "#706f66",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/the-great-taita-taveta-mission-countdown-360.webp",
+      "720": "/media/posters/the-great-taita-taveta-mission-countdown-720.webp"
+    }
+  },
+  "posters/thank-you-great-taita-taveta": {
+    "w": 720,
+    "h": 900,
+    "color": "#616077",
     "alpha": true,
     "srcs": {
-      "480": "/media/qless/logo-480.webp",
-      "960": "/media/qless/logo-960.webp"
+      "360": "/media/posters/thank-you-great-taita-taveta-360.webp",
+      "720": "/media/posters/thank-you-great-taita-taveta-720.webp"
     }
   },
-  "qless/ui-welcome": {
+  "posters/the-grace-of-contentment-gcf": {
     "w": 720,
-    "h": 1280,
-    "color": "#e5d3cb",
-    "alpha": false,
-    "srcs": {
-      "360": "/media/qless/ui-welcome-360.webp",
-      "720": "/media/qless/ui-welcome-720.webp"
-    }
-  },
-  "qless/ui-signup": {
-    "w": 720,
-    "h": 1280,
-    "color": "#e2e2dd",
-    "alpha": false,
-    "srcs": {
-      "360": "/media/qless/ui-signup-360.webp",
-      "720": "/media/qless/ui-signup-720.webp"
-    }
-  },
-  "qless/ui-login": {
-    "w": 720,
-    "h": 1280,
-    "color": "#e7e6e2",
-    "alpha": false,
-    "srcs": {
-      "360": "/media/qless/ui-login-360.webp",
-      "720": "/media/qless/ui-login-720.webp"
-    }
-  },
-  "qless/ui-home": {
-    "w": 720,
-    "h": 1280,
-    "color": "#2e4f27",
-    "alpha": false,
-    "srcs": {
-      "360": "/media/qless/ui-home-360.webp",
-      "720": "/media/qless/ui-home-720.webp"
-    }
-  },
-  "qless/ui-home-conductor": {
-    "w": 720,
-    "h": 1280,
-    "color": "#2e4f27",
-    "alpha": false,
-    "srcs": {
-      "360": "/media/qless/ui-home-conductor-360.webp",
-      "720": "/media/qless/ui-home-conductor-720.webp"
-    }
-  },
-  "qless/ui-location": {
-    "w": 720,
-    "h": 1280,
-    "color": "#a1ad8b",
-    "alpha": false,
-    "srcs": {
-      "360": "/media/qless/ui-location-360.webp",
-      "720": "/media/qless/ui-location-720.webp"
-    }
-  },
-  "qless/ui-bus": {
-    "w": 720,
-    "h": 1280,
-    "color": "#b29b63",
-    "alpha": false,
-    "srcs": {
-      "360": "/media/qless/ui-bus-360.webp",
-      "720": "/media/qless/ui-bus-720.webp"
-    }
-  },
-  "qless/ui-pay": {
-    "w": 720,
-    "h": 1280,
-    "color": "#5a652b",
-    "alpha": false,
-    "srcs": {
-      "360": "/media/qless/ui-pay-360.webp",
-      "720": "/media/qless/ui-pay-720.webp"
-    }
-  },
-  "qless/ui-qr": {
-    "w": 720,
-    "h": 1280,
-    "color": "#607549",
-    "alpha": false,
-    "srcs": {
-      "360": "/media/qless/ui-qr-360.webp",
-      "720": "/media/qless/ui-qr-720.webp"
-    }
-  },
-  "his/desktop": {
-    "w": 1536,
-    "h": 738,
-    "color": "#f7f9fb",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/his/desktop-640.webp",
-      "1280": "/media/his/desktop-1280.webp",
-      "1536": "/media/his/desktop-1536.webp"
-    },
-    "og": "/media/his/desktop-og.jpg"
-  },
-  "portfolio/desktop": {
-    "w": 1440,
     "h": 900,
-    "color": "#483a2f",
+    "color": "#bab2b1",
     "alpha": false,
     "srcs": {
-      "640": "/media/portfolio/desktop-640.webp",
-      "1280": "/media/portfolio/desktop-1280.webp",
-      "1440": "/media/portfolio/desktop-1440.webp"
-    },
-    "og": "/media/portfolio/desktop-og.jpg"
+      "360": "/media/posters/the-grace-of-contentment-gcf-360.webp",
+      "720": "/media/posters/the-grace-of-contentment-gcf-720.webp"
+    }
   },
-  "qless/cover": {
-    "w": 1920,
-    "h": 1200,
-    "color": "#485f46",
+  "posters/the-gift-you-cannot-earn-gcf": {
+    "w": 720,
+    "h": 900,
+    "color": "#403724",
     "alpha": false,
     "srcs": {
-      "640": "/media/qless/cover-640.webp",
-      "1280": "/media/qless/cover-1280.webp",
-      "1920": "/media/qless/cover-1920.webp"
-    },
-    "og": "/media/qless/cover-og.jpg"
+      "360": "/media/posters/the-gift-you-cannot-earn-gcf-360.webp",
+      "720": "/media/posters/the-gift-you-cannot-earn-gcf-720.webp"
+    }
+  },
+  "posters/the-manifold-grace-of-god-gcf1": {
+    "w": 720,
+    "h": 900,
+    "color": "#494c33",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/the-manifold-grace-of-god-gcf1-360.webp",
+      "720": "/media/posters/the-manifold-grace-of-god-gcf1-720.webp"
+    }
+  },
+  "posters/uet-retreat-2026": {
+    "w": 720,
+    "h": 900,
+    "color": "#35592a",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/uet-retreat-2026-360.webp",
+      "720": "/media/posters/uet-retreat-2026-720.webp"
+    }
+  },
+  "posters/when-god-circumcises-the-heart-gcf": {
+    "w": 720,
+    "h": 900,
+    "color": "#ccc3c1",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/when-god-circumcises-the-heart-gcf-360.webp",
+      "720": "/media/posters/when-god-circumcises-the-heart-gcf-720.webp"
+    }
+  },
+  "posters/yelklin-solutions-poster1": {
+    "w": 720,
+    "h": 900,
+    "color": "#b9c0c6",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/yelklin-solutions-poster1-360.webp",
+      "720": "/media/posters/yelklin-solutions-poster1-720.webp"
+    }
+  },
+  "posters/save-the-date-mercy": {
+    "w": 720,
+    "h": 900,
+    "color": "#57492a",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/save-the-date-mercy-360.webp",
+      "720": "/media/posters/save-the-date-mercy-720.webp"
+    }
+  },
+  "posters/medical-camp-2": {
+    "w": 720,
+    "h": 720,
+    "color": "#af5949",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/medical-camp-2-360.webp",
+      "720": "/media/posters/medical-camp-2-720.webp"
+    }
+  },
+  "posters/tma-men-s-mental-health-2026": {
+    "w": 720,
+    "h": 720,
+    "color": "#dbdad3",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/tma-men-s-mental-health-2026-360.webp",
+      "720": "/media/posters/tma-men-s-mental-health-2026-720.webp"
+    }
+  },
+  "posters/mothers-day-tma-sq": {
+    "w": 720,
+    "h": 720,
+    "color": "#afbfc3",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/mothers-day-tma-sq-360.webp",
+      "720": "/media/posters/mothers-day-tma-sq-720.webp"
+    }
+  },
+  "posters/inreach": {
+    "w": 720,
+    "h": 720,
+    "color": "#733c37",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/inreach-360.webp",
+      "720": "/media/posters/inreach-720.webp"
+    }
+  },
+  "posters/uet-cultural-sunday2": {
+    "w": 720,
+    "h": 720,
+    "color": "#d2bda8",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/uet-cultural-sunday2-360.webp",
+      "720": "/media/posters/uet-cultural-sunday2-720.webp"
+    }
+  },
+  "posters/shirts-sale": {
+    "w": 720,
+    "h": 720,
+    "color": "#c5b6b2",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/shirts-sale-360.webp",
+      "720": "/media/posters/shirts-sale-720.webp"
+    }
+  },
+  "posters/shadesign-ad2": {
+    "w": 720,
+    "h": 900,
+    "color": "#d1b0a2",
+    "alpha": false,
+    "srcs": {
+      "360": "/media/posters/shadesign-ad2-360.webp",
+      "720": "/media/posters/shadesign-ad2-720.webp"
+    }
   },
   "amana-insights/cover": {
     "w": 1920,
     "h": 1200,
-    "color": "#9b95a8",
+    "color": "#bcaeb3",
     "alpha": false,
     "srcs": {
-      "640": "/media/amana-insights/cover-640.webp",
-      "1280": "/media/amana-insights/cover-1280.webp",
-      "1920": "/media/amana-insights/cover-1920.webp"
+      "480": "/media/amana-insights/cover-480.webp",
+      "960": "/media/amana-insights/cover-960.webp",
+      "1600": "/media/amana-insights/cover-1600.webp"
     },
     "og": "/media/amana-insights/cover-og.jpg"
-  },
-  "fairtrade-sugar/cover": {
-    "w": 1920,
-    "h": 1200,
-    "color": "#acc5ba",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/fairtrade-sugar/cover-640.webp",
-      "1280": "/media/fairtrade-sugar/cover-1280.webp",
-      "1920": "/media/fairtrade-sugar/cover-1920.webp"
-    },
-    "og": "/media/fairtrade-sugar/cover-og.jpg"
   },
   "logofolio/cover": {
     "w": 1920,
     "h": 1200,
-    "color": "#e4d3cf",
+    "color": "#e1d7d1",
     "alpha": false,
     "srcs": {
-      "640": "/media/logofolio/cover-640.webp",
-      "1280": "/media/logofolio/cover-1280.webp",
-      "1920": "/media/logofolio/cover-1920.webp"
+      "480": "/media/logofolio/cover-480.webp",
+      "960": "/media/logofolio/cover-960.webp",
+      "1600": "/media/logofolio/cover-1600.webp"
     },
     "og": "/media/logofolio/cover-og.jpg"
-  },
-  "posters/cover": {
-    "w": 1920,
-    "h": 1200,
-    "color": "#776867",
-    "alpha": false,
-    "srcs": {
-      "640": "/media/posters/cover-640.webp",
-      "1280": "/media/posters/cover-1280.webp",
-      "1920": "/media/posters/cover-1920.webp"
-    },
-    "og": "/media/posters/cover-og.jpg"
   },
   "optimum-prime/cover": {
     "w": 1920,
@@ -2043,9 +1784,9 @@ export const media = {
     "color": "#424e74",
     "alpha": false,
     "srcs": {
-      "640": "/media/optimum-prime/cover-640.webp",
-      "1280": "/media/optimum-prime/cover-1280.webp",
-      "1920": "/media/optimum-prime/cover-1920.webp"
+      "480": "/media/optimum-prime/cover-480.webp",
+      "960": "/media/optimum-prime/cover-960.webp",
+      "1600": "/media/optimum-prime/cover-1600.webp"
     },
     "og": "/media/optimum-prime/cover-og.jpg"
   },
@@ -2055,9 +1796,9 @@ export const media = {
     "color": "#4d281f",
     "alpha": false,
     "srcs": {
-      "640": "/media/gcf/cover-640.webp",
-      "1280": "/media/gcf/cover-1280.webp",
-      "1920": "/media/gcf/cover-1920.webp"
+      "480": "/media/gcf/cover-480.webp",
+      "960": "/media/gcf/cover-960.webp",
+      "1600": "/media/gcf/cover-1600.webp"
     },
     "og": "/media/gcf/cover-og.jpg"
   }

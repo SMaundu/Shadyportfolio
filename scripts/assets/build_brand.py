@@ -21,9 +21,10 @@ CV_DESIGN = Path(os.environ.get("CV_DESIGN", "E:/React/Shadrack-Maundu-Graphics-
 CV_DEV = Path(
     os.environ.get("CV_DEV", "C:/Users/user/OneDrive/Documents/PERSONAL/Shadrack-Maundu-Software-Developer-CV.pdf")
 )
-FONTS = REPO / "node_modules"
+MONT_DIR = Path(os.environ.get("MONT_DIR", "D:/GRAPHICS/Fonts/mont-font-family/Mont Font Family"))
+MONT_HEAVY = MONT_DIR / "Fontfabric - Mont Heavy DEMO.otf"
+MONT_LIGHT = MONT_DIR / "Fontfabric - Mont ExtraLight DEMO.otf"
 
-RED = (238, 37, 36)  # Shadesigns mark
 GOLD = (247, 163, 6)
 BURGUNDY = (106, 20, 20)
 INK = (13, 6, 6)
@@ -56,21 +57,7 @@ def svg_mark() -> str:
     paths = "".join(
         f'<path d="M{" L".join(f"{x} {y}" for x, y in poly)}Z"/>' for poly in S_MARK
     )
-    return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 -20 748 786" fill="#EE2524">{paths}</svg>\n'
-
-
-def recolour_logo(src: Path, dst_light: Path, dst_dark: Path, width: int = 1400) -> None:
-    im = Image.open(src).convert("RGBA")
-    im = im.resize((width, round(im.height * width / im.width)), Image.Resampling.LANCZOS)
-    im.save(dst_light, "WEBP", quality=90, method=6)
-    # Dark-background version: brown wordmark -> warm white, red stays (as on the brand sheet).
-    px = im.load()
-    for y in range(im.height):
-        for x in range(im.width):
-            r, g, b, a = px[x, y]
-            if a and r < 140 and g < 90:  # brown family (#542404)
-                px[x, y] = (*CREAM, a)
-    im.save(dst_dark, "WEBP", quality=90, method=6)
+    return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 -20 748 786" fill="#F7A306">{paths}</svg>\n'
 
 
 def font(path: Path, size: int) -> ImageFont.FreeTypeFont:
@@ -93,17 +80,17 @@ def og_image(dst: Path) -> None:
     for y in range(0, H, 60):
         d.line([(0, y), (W, y)], fill=(28, 16, 16), width=1)
 
-    anton = FONTS / "@fontsource/anton/files/anton-latin-400-normal.woff"
-    mark = draw_mark(96, RED, pad=0.0)
+    mark = draw_mark(96, GOLD, pad=0.0)
     im.paste(mark, (72, 52), mark)
-    d.text((188, 66), "SHADESIGNS", font=font(anton, 34), fill=CREAM)
-    d.text((188, 106), "DESIGNS THAT CONVERT", font=font(anton, 22), fill=(190, 170, 160))
+    d.text((188, 66), "Shadesigns", font=font(MONT_HEAVY, 36), fill=CREAM)
+    d.text((188, 112), "Designs That Convert", font=font(MONT_LIGHT, 24), fill=(215, 200, 190))
 
-    big = font(anton, 132)
-    d.text((68, 300), "SHADRACK", font=big, fill=CREAM, anchor="ls")
-    d.text((68, 450), "MAUNDU", font=big, fill=GOLD, anchor="ls")
-    d.rectangle((72, 520, 132, 524), fill=GOLD)
-    d.text((150, 534), "CREATIVE DESIGNER  |  SOFTWARE DEVELOPER", font=font(anton, 30), fill=CREAM, anchor="ls")
+    d.text((68, 282), "Hey, I'm a", font=font(MONT_LIGHT, 44), fill=CREAM, anchor="ls")
+    big = font(MONT_HEAVY, 104)
+    d.text((64, 392), "CREATIVE", font=big, fill=CREAM, anchor="ls")
+    d.text((64, 498), "DESIGNER", font=big, fill=GOLD, anchor="ls")
+    d.rectangle((72, 540, 132, 544), fill=GOLD)
+    d.text((150, 552), "Shadrack Maundu  ·  Designer & Software Developer", font=font(MONT_LIGHT, 26), fill=CREAM, anchor="ls")
     im.save(dst, "JPEG", quality=88, optimize=True, progressive=True)
 
 
@@ -114,17 +101,12 @@ def main() -> None:
 
     (PUBLIC / "favicon.svg").write_text(svg_mark(), encoding="utf-8")
     (PUBLIC / "brand" / "s-mark.svg").write_text(svg_mark(), encoding="utf-8")
-    ico = draw_mark(64, RED, pad=0.06)
+    ico = draw_mark(64, GOLD, BURGUNDY, pad=0.14)
     ico.save(PUBLIC / "favicon.ico", sizes=[(16, 16), (32, 32), (48, 48), (64, 64)])
-    draw_mark(180, CREAM, BURGUNDY, pad=0.2).convert("RGB").save(PUBLIC / "apple-touch-icon.png")
-    draw_mark(192, CREAM, BURGUNDY, pad=0.22).save(PUBLIC / "icon-192.png")
-    draw_mark(512, CREAM, BURGUNDY, pad=0.22).save(PUBLIC / "icon-512.png")
+    draw_mark(180, GOLD, BURGUNDY, pad=0.2).convert("RGB").save(PUBLIC / "apple-touch-icon.png")
+    draw_mark(192, GOLD, BURGUNDY, pad=0.22).save(PUBLIC / "icon-192.png")
+    draw_mark(512, GOLD, BURGUNDY, pad=0.22).save(PUBLIC / "icon-512.png")
 
-    recolour_logo(
-        LOGOS / "Horizontal Logo.png",
-        PUBLIC / "brand" / "shadesigns-horizontal.webp",
-        PUBLIC / "brand" / "shadesigns-horizontal-dark.webp",
-    )
     og_image(PUBLIC / "og-image.jpg")
 
     shutil.copyfile(CV_DESIGN, PUBLIC / "cv" / "Shadrack-Maundu-Graphic-Design-CV.pdf")

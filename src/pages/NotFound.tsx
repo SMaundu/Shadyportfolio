@@ -10,7 +10,7 @@ export default function NotFound() {
       <Seo title="Page not found" description="This page doesn't exist." noindex />
       <SMark aria-hidden className="absolute -z-10 h-[70vmin] w-[70vmin] text-foreground/[0.04]" />
       <div>
-        <p className="font-display text-[clamp(7rem,30vw,16rem)] leading-none text-highlight">404</p>
+        <p className="font-display text-[clamp(6rem,24vw,13rem)] font-extrabold leading-none text-highlight">404</p>
         <h1 className="mt-2 text-3xl font-bold">This page doesn't exist</h1>
         <p className="mx-auto mt-3 max-w-md text-muted-foreground">
           The link may be broken or the page may have moved. Here are some places to go instead.

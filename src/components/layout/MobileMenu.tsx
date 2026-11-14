@@ -38,7 +38,7 @@ export function MobileMenu({ active }: { active?: string }) {
       <Dialog.Trigger asChild>
         <button
           type="button"
-          className="grid h-10 w-10 place-items-center rounded-full border border-border/70 lg:hidden"
+          className="grid h-10 w-10 place-items-center rounded-full border border-border/70 xl:hidden"
           aria-label="Open menu"
         >
           <Menu className="h-5 w-5" />
@@ -101,7 +101,7 @@ export function MobileMenu({ active }: { active?: string }) {
                           }}
                           aria-current={active === link.id ? "location" : undefined}
                           className={cn(
-                            "flex items-baseline gap-4 py-1 font-display text-[clamp(2.75rem,13vw,4.5rem)] uppercase leading-none transition-colors",
+                            "flex items-baseline gap-4 py-1.5 font-display text-[clamp(2rem,9vw,3.5rem)] font-extrabold uppercase leading-none tracking-tight transition-colors",
                             active === link.id ? "text-primary" : "text-foreground hover:text-primary",
                           )}
                         >

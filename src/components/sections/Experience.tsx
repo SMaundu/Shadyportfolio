@@ -1,9 +1,8 @@
 import { motion, useScroll, useSpring } from "framer-motion";
 import { Download, GraduationCap } from "lucide-react";
 import { useRef } from "react";
-import { Marquee } from "@/components/motion/Marquee";
 import { Reveal } from "@/components/motion/Reveal";
-import { education, roles, skillGroups, tools } from "@/content/experience";
+import { education, roles, skillGroups } from "@/content/experience";
 import { profile } from "@/content/site";
 import { cn } from "@/lib/utils";
 
@@ -128,19 +127,6 @@ export function Experience() {
         </div>
       </div>
 
-      <div className="mt-20">
-        <p className="container text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">Tools I use</p>
-        <Marquee className="mt-6" duration={35} label="Tools">
-          {tools.map((t) => (
-            <span key={t.name} className="mx-3 inline-flex items-center gap-3 rounded-full border border-border bg-background px-5 py-3">
-              <span className="grid h-8 w-8 place-items-center rounded-lg bg-secondary text-[11px] font-black text-secondary-foreground">
-                {t.short}
-              </span>
-              <span className="whitespace-nowrap font-semibold">{t.name}</span>
-            </span>
-          ))}
-        </Marquee>
-      </div>
     </section>
   );
 }

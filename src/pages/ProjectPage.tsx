@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowLeft, ArrowRight, ArrowUpRight, CalendarClock, ExternalLink, Info } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, CalendarClock, Info } from "lucide-react";
 import { lazy, Suspense, useMemo, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Media } from "@/components/media/Media";
@@ -16,77 +16,105 @@ import NotFound from "./NotFound";
 
 const PosterLightbox = lazy(() => import("@/components/work/PosterLightbox"));
 
-const SPAN: Record<NonNullable<GalleryItem["span"]>, string> = {
-  full: "md:col-span-6",
-  half: "md:col-span-3",
-  third: "md:col-span-2",
-};
-
 /** Which service to pre-select when someone enquires from a case study. */
 const SERVICE_FOR: Record<string, string> = {
   brand: "brand-identity",
   graphic: "marketing-materials",
   corporate: "corporate-profiles",
   marketing: "social-media-graphics",
-  software: "website-development",
-  uiux: "ui-ux-design",
+};
+
+type Group = "logos" | "landscape" | "square" | "portrait";
+
+/** Each group is its own row(s) with one consistent frame, so shapes never mix. */
+const GROUP_STYLE: Record<Group, { grid: string; aspect: string; sizes: string }> = {
+  logos: { grid: "sm:grid-cols-2 lg:grid-cols-3", aspect: "4 / 3", sizes: "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" },
+  landscape: { grid: "md:grid-cols-2", aspect: "16 / 10", sizes: "(min-width: 768px) 50vw, 100vw" },
+  square: { grid: "grid-cols-2 lg:grid-cols-3", aspect: "1 / 1", sizes: "(min-width: 1024px) 33vw, 50vw" },
+  portrait: { grid: "grid-cols-2 lg:grid-cols-4", aspect: "4 / 5", sizes: "(min-width: 1024px) 25vw, 50vw" },
+};
+
+const groupOf = (g: GalleryItem): Group => {
+  if (g.fit === "contain") return "logos";
+  const a = getMedia(g.id)!;
+  const r = a.w / a.h;
+  if (r > 1.07) return "landscape";
+  return r >= 0.93 ? "square" : "portrait";
 };
 
 function Gallery({ project }: { project: Project }) {
   const [open, setOpen] = useState<number | null>(null);
-  const items = project.gallery.filter((g) => getMedia(g.id));
+  const groups = useMemo(() => {
+    const out = new Map<Group, GalleryItem[]>();
+    for (const g of project.gallery) {
+      if (!getMedia(g.id)) continue;
+      const k = groupOf(g);
+      out.set(k, [...(out.get(k) ?? []), g]);
+    }
+    return [...out.entries()];
+  }, [project]);
+  const ordered = useMemo(() => groups.flatMap(([, items]) => items), [groups]);
   const slides = useMemo(
     () =>
-      items.map((g) => {
+      ordered.map((g) => {
         const a = getMedia(g.id)!;
+        const entries = Object.entries(a.srcs).sort((x, y) => Number(x[0]) - Number(y[0]));
         return {
-          src: Object.values(a.srcs).at(-1)!,
+          src: entries.at(-1)![1],
           width: a.w,
           height: a.h,
           alt: g.caption ?? project.title,
-          srcSet: Object.entries(a.srcs).map(([w, src]) => ({ src, width: Number(w), height: Math.round((a.h * Number(w)) / a.w) })),
+          srcSet: entries.map(([w, src]) => ({ src, width: Number(w), height: Math.round((a.h * Number(w)) / a.w) })),
         };
       }),
-    [items, project.title],
+    [ordered, project.title],
   );
-  if (!items.length) return null;
+  if (!ordered.length) return null;
 
   return (
     <>
-      <ul className="grid gap-4 md:grid-cols-6 md:gap-6">
-        {items.map((g, i) => {
-          const a = getMedia(g.id)!;
-          const contain = g.fit === "contain";
+      <div className="space-y-6 md:space-y-8">
+        {groups.map(([group, items]) => {
+          const style = GROUP_STYLE[group];
           return (
-            <li key={g.id} className={cn("col-span-1", SPAN[g.span ?? "half"])}>
-              <figure>
-                <button
-                  type="button"
-                  onClick={() => setOpen(i)}
-                  className="group block w-full overflow-hidden rounded-2xl border border-border text-left"
-                  aria-label={`View ${g.caption ?? `image ${i + 1}`} full size`}
-                >
-                  <ImageReveal delay={(i % 3) * 0.06}>
-                    <div
-                      className={cn(contain && "grid place-items-center p-[5%]")}
-                      style={{ backgroundColor: g.bg ?? (contain ? "#f5f2ee" : a.color), aspectRatio: contain ? "4 / 3" : `${a.w} / ${a.h}` }}
-                    >
-                      <Media
-                        id={g.id}
-                        alt={g.caption ?? `${project.title}, image ${i + 1}`}
-                        fit={contain ? "contain" : "cover"}
-                        sizes={g.span === "full" ? "(min-width: 1024px) 1280px, 100vw" : g.span === "third" ? "(min-width: 768px) 33vw, 100vw" : "(min-width: 768px) 50vw, 100vw"}
-                        className="transition-transform duration-700 ease-out-expo group-hover:scale-[1.03]"
-                      />
-                    </div>
-                  </ImageReveal>
-                </button>
-                {g.caption && <figcaption className="mt-3 text-sm text-muted-foreground">{g.caption}</figcaption>}
-              </figure>
-            </li>
+            <ul key={group} className={cn("grid gap-4 md:gap-6", style.grid)}>
+              {items.map((g, j) => {
+                const i = ordered.indexOf(g);
+                const a = getMedia(g.id)!;
+                const contain = g.fit === "contain";
+                return (
+                  <li key={g.id}>
+                    <figure>
+                      <button
+                        type="button"
+                        onClick={() => setOpen(i)}
+                        className="group block w-full overflow-hidden rounded-2xl border border-border text-left"
+                        aria-label={`View ${g.caption ?? `image ${i + 1}`} full size`}
+                      >
+                        <ImageReveal delay={(j % 3) * 0.06}>
+                          <div
+                            className={cn(contain && "grid place-items-center p-[6%]")}
+                            style={{ backgroundColor: g.bg ?? (contain ? "#f5f2ee" : a.color), aspectRatio: style.aspect }}
+                          >
+                            <Media
+                              id={g.id}
+                              alt={g.caption ?? `${project.title}, image ${i + 1}`}
+                              fit={contain ? "contain" : "cover"}
+                              sizes={style.sizes}
+                              className="transition-[transform,opacity] duration-700 ease-out-expo group-hover:scale-[1.03]"
+                            />
+                          </div>
+                        </ImageReveal>
+                      </button>
+                      {g.caption && <figcaption className="mt-3 text-sm text-muted-foreground">{g.caption}</figcaption>}
+                    </figure>
+                  </li>
+                );
+              })}
+            </ul>
           );
         })}
-      </ul>
+      </div>
       {open !== null && (
         <Suspense fallback={null}>
           <PosterLightbox open index={open} onClose={() => setOpen(null)} slides={slides} />
@@ -140,7 +168,7 @@ export default function ProjectPage() {
         >
           {project.categories.map(categoryLabel).join(" · ")}
         </motion.p>
-        <h1 className="mt-4 overflow-hidden font-display text-[clamp(3.25rem,10vw,9rem)] uppercase leading-[0.88]">
+        <h1 className="mt-4 overflow-hidden font-display text-[clamp(2.5rem,7vw,6rem)] font-extrabold uppercase leading-[0.95] tracking-tight">
           <motion.span
             className="block"
             initial={{ y: "100%" }}
@@ -213,22 +241,6 @@ export default function ProjectPage() {
               <p className="mt-3 text-muted-foreground md:text-lg">{s.body}</p>
             </Reveal>
           ))}
-          {project.links && (
-            <Reveal className="mt-10 flex flex-wrap gap-3">
-              {project.links.map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-bold transition-colors hover:border-primary hover:text-primary"
-                >
-                  {l.label} <ExternalLink className="h-4 w-4" />
-                  <span className="sr-only">(opens in a new tab)</span>
-                </a>
-              ))}
-            </Reveal>
-          )}
         </div>
 
         <Reveal delay={0.1} className="space-y-8 lg:sticky lg:top-28 lg:self-start">
@@ -267,7 +279,7 @@ export default function ProjectPage() {
       <section className="container mt-24 md:mt-32">
         <Reveal className="relative overflow-hidden rounded-[2rem] bg-secondary p-8 text-secondary-foreground md:p-14">
           <div aria-hidden className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-gold/30 blur-3xl" />
-          <h2 className="relative font-display text-4xl uppercase leading-none md:text-6xl">Have a similar project?</h2>
+          <h2 className="relative font-display text-3xl font-extrabold uppercase leading-none md:text-5xl">Have a similar project?</h2>
           <p className="relative mt-4 max-w-xl text-secondary-foreground/80">
             Tell me what you need and I'll come back to you with ideas and next steps.
           </p>
@@ -293,7 +305,7 @@ export default function ProjectPage() {
         <Link to={`/work/${next.slug}`} className="group block border-t border-border pt-10">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">Next project</p>
           <div className="mt-4 flex items-center justify-between gap-6">
-            <p className="font-display text-[clamp(2.5rem,8vw,7rem)] uppercase leading-none transition-colors group-hover:text-highlight">
+            <p className="font-display text-[clamp(2rem,6vw,4.75rem)] font-extrabold uppercase leading-none tracking-tight transition-colors group-hover:text-highlight">
               {next.title}
             </p>
             <span className="grid h-16 w-16 shrink-0 place-items-center rounded-full border border-border transition-all duration-500 group-hover:rotate-45 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground md:h-24 md:w-24">

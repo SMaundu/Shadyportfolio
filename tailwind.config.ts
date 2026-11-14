@@ -9,7 +9,7 @@ export default {
     container: {
       center: true,
       padding: { DEFAULT: "1.25rem", md: "2rem" },
-      screens: { "2xl": "1360px" },
+      screens: { "2xl": "1360px", "3xl": "1680px" },
     },
     extend: {
       colors: {
@@ -65,9 +65,10 @@ export default {
         lightgray: "#ded9d9",
       },
       fontFamily: {
-        sans: ['"Manrope Variable"', "Manrope", "system-ui", "sans-serif"],
-        heading: ['"Manrope Variable"', "Manrope", "system-ui", "sans-serif"],
-        display: ["Anton", "Impact", '"Arial Narrow"', "sans-serif"],
+        // Body copy: Montserrat (free, variable). Headings & display: Mont (Fontfabric free weights).
+        sans: ['"Montserrat Variable"', "Montserrat", "system-ui", "sans-serif"],
+        heading: ["Mont", '"Montserrat Variable"', "system-ui", "sans-serif"],
+        display: ["Mont", '"Montserrat Variable"', "system-ui", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

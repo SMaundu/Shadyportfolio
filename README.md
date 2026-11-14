@@ -3,16 +3,17 @@
 Personal portfolio of **Shadrack Maundu, Creative Designer | Software Developer**.
 Live: https://smaunduportfolio.netlify.app
 
-- Animated hero, filterable work showcase with 21 case studies, a 3D poster wall, services, about, experience and contact.
+- Animated hero, tools ticker, about, experience, a 3D poster wall (square and portrait rows), six selected case studies, services and contact.
 - A real backend: enquiries are validated, spam-checked, rate-limited, stored in **Supabase** and emailed with **Resend** through **Netlify Functions**.
 - Real consultation booking with **Cal.com**; a signed webhook stores every booking in Supabase.
-- Dark-first gold and burgundy design, light theme, reduced-motion support, SEO and social previews for every page.
+- Dark-first gold and burgundy design in Mont + Montserrat, light theme, reduced-motion support, responsive from 320 px to 2560 px, SEO and social previews for every page.
 
 ## Stack
 
 | Layer | Tools |
 | --- | --- |
 | Front end | React 18, TypeScript, Vite 5, Tailwind CSS 3, shadcn/ui (Radix), Framer Motion |
+| Type | Mont (Fontfabric free weights, headings) + Montserrat (body) |
 | Forms | react-hook-form + zod (one schema shared by browser and server) |
 | Backend | Netlify Functions (`netlify/functions`), Supabase (Postgres), Resend, Cal.com |
 | Tooling | ESLint, Vitest, Python asset pipeline (Pillow + PyMuPDF) |
@@ -42,7 +43,7 @@ src/
                   media.generated.ts (written by the asset pipeline - don't edit)
   components/
     layout/       Header, mobile menu, footer, logo, page transitions
-    sections/     Hero, Work, PosterWall, Services, About, Experience, Contact
+    sections/     Hero, ToolsStrip, About, Experience, PosterWall, Work, Services, Contact
     work/         Project cards and covers, 3D poster ring, lightbox
     contact/      Enquiry form
     motion/       Reveal, image reveal, rotating words, marquee
@@ -75,7 +76,9 @@ Originals stay outside the repository (`D:\GRAPHICS`, `E:\React\site-originals`,
 2. Run `npm run assets:media` (needs `pip install pillow pymupdf`).
 3. Reference the id (`"my-project/cover"`) in `projects.ts`. TypeScript will flag typos.
 
-**Hero cut-out:** save a background-free portrait as `E:\React\Logos\hero-cutout.png` and run `npm run assets:media`. The hero switches automatically from the framed photo to the cut-out over the name.
+**Poster wall:** add file names to `POSTER_FILES` (from `D:\GRAPHICS\Fliers`) or `DRIVE_POSTERS` (files saved in `E:\React\drive-posters`) in `build_assets.py`, then run `npm run assets:media`. Square and portrait posters are sorted into their own rows automatically.
+
+**Fonts:** Mont comes from Fontfabric's free release (ExtraLight and Heavy only). Those "DEMO" files draw a "DEMO" badge for a few characters (`/ | # % ~ ^ _ < >`) and through some OpenType features, so `src/index.css` limits Mont with `unicode-range` (those characters fall back to Montserrat) and switches the features off. If you buy the full Mont family, replace the files in `src/assets/fonts/` and remove those workarounds.
 
 ## Deployment
 

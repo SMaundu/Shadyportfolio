@@ -26,7 +26,7 @@ export const services: Service[] = [
     title: "Logo Design",
     summary: "A distinctive mark with the variations you need for print, screens, signage and social profiles.",
     includes: ["Concept exploration", "Primary & secondary logos", "Colour and mono versions", "Export package (PNG, SVG, PDF)"],
-    proof: ["selected-logos", "queensway-insurance"],
+    proof: ["selected-logos", "au-theme-2027"],
   },
   {
     slug: "corporate-profiles",
@@ -34,7 +34,7 @@ export const services: Service[] = [
     title: "Corporate Profiles",
     summary: "Company profiles, brochures and reports that present your organisation clearly and professionally.",
     includes: ["Content structure", "Layout & typesetting", "Infographics & tables", "Print-ready and digital PDF"],
-    proof: ["amana-insights", "fairtrade-sugar-brochure"],
+    proof: ["amana-insights"],
   },
   {
     slug: "marketing-materials",
@@ -42,7 +42,7 @@ export const services: Service[] = [
     title: "Marketing Materials",
     summary: "Posters, fliers, billboards, banners and signage designed to be noticed and understood quickly.",
     includes: ["Posters & fliers", "Billboards & roll-up banners", "Signage & lightboxes", "Event materials & merchandise"],
-    proof: ["skypeak-golden-hill", "kellian-autogarage"],
+    proof: ["grace-community-fellowship", "faithful-two"],
   },
   {
     slug: "social-media-graphics",
@@ -50,7 +50,7 @@ export const services: Service[] = [
     title: "Social Media Graphics",
     summary: "Consistent campaign graphics and content plans for Facebook, Instagram, LinkedIn, X and YouTube.",
     includes: ["Campaign key visuals", "Weekly post series", "Content calendars", "Covers, thumbnails & stories"],
-    proof: ["optimum-prime-social", "talents-night-2026"],
+    proof: ["optimum-prime-social", "grace-community-fellowship"],
   },
   {
     slug: "presentation-design",
@@ -66,7 +66,6 @@ export const services: Service[] = [
     title: "Frontend Development",
     summary: "Fast, accessible, responsive interfaces in React and TypeScript, built from your designs or mine.",
     includes: ["React & TypeScript", "Responsive layouts", "Animations", "API integration"],
-    proof: ["portfolio-website", "kemyc-web-platform"],
   },
   {
     slug: "website-development",
@@ -74,7 +73,6 @@ export const services: Service[] = [
     title: "Website Development",
     summary: "Business websites and landing pages that look like your brand and are easy for visitors to act on.",
     includes: ["Design & build", "Contact forms & booking", "SEO basics", "Hosting & deployment"],
-    proof: ["portfolio-website", "health-information-system"],
   },
   {
     slug: "mobile-app-development",
@@ -82,7 +80,6 @@ export const services: Service[] = [
     title: "Mobile App Development",
     summary: "Android and cross-platform apps with Flutter or Java, including payments and maps.",
     includes: ["Flutter & Android (Java)", "Firebase & MySQL", "M-Pesa Daraja integration", "Google Maps"],
-    proof: ["qless-commute"],
   },
   {
     slug: "ui-ux-design",
@@ -90,7 +87,6 @@ export const services: Service[] = [
     title: "UI/UX Design",
     summary: "User flows and interface designs for web and mobile, ready to build.",
     includes: ["User flows", "Wireframes", "High-fidelity UI in Figma", "Design hand-off"],
-    proof: ["qless-commute"],
   },
   {
     slug: "digital-product-development",
@@ -98,7 +94,6 @@ export const services: Service[] = [
     title: "Digital Product Development",
     summary: "From idea to working product: brand, interface and code, handled by one person who speaks both design and development.",
     includes: ["Product scoping", "Brand + UI", "MVP development", "Launch support"],
-    proof: ["qless-commute", "portfolio-website"],
   },
 ];
 

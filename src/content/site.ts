@@ -44,33 +44,13 @@ export const profile = {
   ],
 } as const;
 
-/** Facts for the scrolling strip under the hero. CV-verified only. */
-export const facts = [
-  "4+ years in graphic design",
-  "BSc Information Technology, JKUAT",
-  "Second Class Honours, Upper Division",
-  "Brand identity & visual systems",
-  "React · Flutter · Java · Python",
-  "Adobe CC · Affinity · Figma",
-  "Social media management",
-  "Based in Kenya",
-] as const;
-
-/** Organisations from the CVs' professional experience. */
-export const organisations = [
-  "Boxraft Ltd",
-  "Gallexia Kenya",
-  "Optimum Prime Solutions",
-  "Kenya Malaria Youth Corps",
-  "Action Africa Institute",
-] as const;
-
 export const navLinks = [
   { label: "Home", id: "home" },
-  { label: "Work", id: "work" },
-  { label: "Services", id: "services" },
   { label: "About", id: "about" },
   { label: "Experience", id: "experience" },
+  { label: "Designs", id: "designs" },
+  { label: "Work", id: "work" },
+  { label: "Services", id: "services" },
   { label: "Contact", id: "contact" },
 ] as const;
 

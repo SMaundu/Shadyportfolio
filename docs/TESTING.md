@@ -1,5 +1,18 @@
 # Testing results
 
+## Design update (14 Nov 2026, second round)
+
+| Check | Result |
+| --- | --- |
+| Type-check, lint (0 warnings), backend tests 23 / 23, production build | Pass |
+| Responsive sweep: 5 pages x 10 widths (320, 360, 390, 414, 768, 1024, 1280, 1440, 1920, 2560 px), no horizontal scroll or clipped text | **50 / 50 pass** |
+| Browser interaction tests (filters, service links, form errors/success, mobile menu, routing, 404, themes, reduced motion, links, CVs) | **29 / 29 pass** |
+| Poster wall images loaded after scrolling to the section | 48 / 48 |
+| Mont "DEMO" glyphs: every Mont text node has the DEMO-producing features off; DEMO-only characters fall back to Montserrat | Pass |
+| Image payload | 174 images, 13.4 MB total (was 23 MB) |
+
+The first-round results below still apply to the backend and booking flow.
+
 Run on 14 Nov 2026 against the `revamp` branch (local dev server + production build).
 
 ## Automated checks

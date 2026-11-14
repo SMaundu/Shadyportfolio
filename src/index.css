@@ -3,6 +3,30 @@
 @tailwind utilities;
 
 /*
+ * Mont by Fontfabric - the free weights (ExtraLight 200, Heavy 800), used under
+ * the Fontfabric Free Font EULA, which permits @font-face web embedding.
+ * The free "DEMO" files draw a "DEMO" badge for some characters (e.g. / | # % ~),
+ * so unicode-range limits Mont to its real glyphs; anything else falls back to
+ * Montserrat automatically.
+ */
+@font-face {
+  font-family: "Mont";
+  src: url("./assets/fonts/mont-extralight.woff2") format("woff2");
+  font-weight: 100 399;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0020-0022, U+0024, U+0026-002E, U+0030-003B, U+003D, U+003F-005B, U+005D, U+0060-007B, U+007D, U+00A0, U+00A2-00A3, U+00A5, U+00A7-00A9, U+00AB, U+00AE-00AF, U+00B4, U+00B6-00B8, U+00BB, U+00C0-00C5, U+00C7-00DD, U+00E0-00EF, U+00F1-00FD, U+00FF-010E, U+0110, U+0112-0131, U+0133-0136, U+0139-0148, U+014A-0152, U+0154-0162, U+0164, U+0166, U+0168-017E, U+01FD-01FF, U+0218-021A, U+02C6-02C7, U+02D8-02DD, U+0300-0304, U+0306-0308, U+030A-030C, U+0312, U+0326-0328, U+0335, U+0337, U+0384-0385, U+0401-040B, U+040E-044F, U+0451-045F, U+0490-0491, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+20AC, U+20BD, U+2116-2117, U+2122, U+2212;
+}
+@font-face {
+  font-family: "Mont";
+  src: url("./assets/fonts/mont-heavy.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0020-0022, U+0024, U+0026-002E, U+0030-003D, U+003F-005D, U+0060-007B, U+007D, U+00A0, U+00A2-00A3, U+00A5, U+00A7-00A9, U+00AB, U+00AE-00AF, U+00B4, U+00B6-00B8, U+00BB, U+00C0-00C5, U+00C7-00DD, U+00E0-00E5, U+00E7-00EF, U+00F1-00FD, U+00FF-010E, U+0110, U+0112-0131, U+0134-0136, U+0138-0148, U+014A-0151, U+0153-0162, U+0164, U+0166, U+0168-017E, U+01FE-01FF, U+0218-021A, U+02C6-02C7, U+02D8-02DD, U+0300-0304, U+0306-0308, U+030A-030C, U+0312, U+0326-0328, U+0335, U+0337, U+0384-0385, U+0401-040B, U+040E-044F, U+0451-045F, U+0490-0491, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+20AC, U+20BD, U+2116-2117, U+2122, U+2193, U+2196, U+2198-2199, U+2212, U+2264;
+}
+
+/*
  * Brand palette (preserved from the original site):
  *   gold     #F7A306  -> hsl(39 95% 50%)
  *   burgundy #6A1414  -> hsl(0 68% 25%)
@@ -104,7 +128,6 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-feature-settings: "ss01" 1, "cv11" 1;
     text-rendering: optimizeLegibility;
   }
 
@@ -114,7 +137,32 @@
   h4,
   h5,
   h6 {
-    @apply font-heading font-bold tracking-tight;
+    @apply font-heading font-extrabold tracking-tight;
+  }
+
+  /*
+   * Mont DEMO swaps some letters for a "DEMO" badge through OpenType features
+   * (contextual alternates, ordinals, case...). Switch those features off
+   * everywhere Mont is used; plain glyphs are unaffected.
+   */
+  .font-display,
+  .font-heading,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-synthesis: none;
+    font-variant-ligatures: no-contextual;
+    font-feature-settings:
+      "calt" 0,
+      "ordn" 0,
+      "case" 0,
+      "salt" 0,
+      "aalt" 0,
+      "ss01" 0,
+      "ss02" 0;
   }
 
   section[id] {
@@ -145,12 +193,17 @@
   }
 
   .section-heading {
-    @apply font-display uppercase leading-[0.9] tracking-normal text-[clamp(2.75rem,7vw,6rem)];
+    @apply font-display font-extrabold uppercase leading-[0.95] tracking-tight text-[clamp(2.25rem,5.4vw,4.75rem)];
   }
 
   .text-outline {
     color: transparent;
     -webkit-text-stroke: 1.5px hsl(var(--highlight) / 0.85);
+  }
+
+  /* Mont ExtraLight accent, e.g. "Hey, I'm a" */
+  .text-light-accent {
+    @apply font-display font-extralight normal-case tracking-normal;
   }
 
   .glass {

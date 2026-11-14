@@ -41,11 +41,11 @@ export function Header() {
         )}
       >
         <div className="container flex h-[72px] items-center justify-between gap-4">
-          <Link to="/" className="group rounded-xl" aria-label="Shadrack Maundu, home">
+          <Link to="/" className="group rounded-xl" aria-label="Shadesigns, home">
             <Logo />
           </Link>
 
-          <nav aria-label="Primary" className="hidden lg:block">
+          <nav aria-label="Primary" className="hidden xl:block">
             <ul className="flex items-center gap-1 rounded-full border border-border/70 bg-background/50 p-1.5 backdrop-blur-md">
               {navLinks.map((link) => {
                 const isActive = onHome && active === link.id;
@@ -55,7 +55,7 @@ export function Header() {
                       to={link.id}
                       aria-current={isActive ? "location" : undefined}
                       className={cn(
-                        "relative block rounded-full px-4 py-2 text-sm font-semibold transition-colors",
+                        "relative block rounded-full px-3.5 py-2 text-sm font-semibold transition-colors",
                         isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground",
                       )}
                     >

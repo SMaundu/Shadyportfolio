@@ -7,40 +7,28 @@ interface ImageRevealProps {
   children: ReactNode;
   className?: string;
   delay?: number;
-  /** Direction the mask opens towards. */
-  from?: "bottom" | "left" | "top";
 }
 
-const hiddenClip = {
-  bottom: "inset(100% 0% 0% 0%)",
-  top: "inset(0% 0% 100% 0%)",
-  left: "inset(0% 100% 0% 0%)",
-};
-
 /**
- * Wipes an image in with a clip-path mask while the image settles from a slight zoom.
- * Used for project covers and case-study media.
+ * Reveals media with a curtain that slides off it. The image itself is never
+ * masked or hidden (no clip-path / opacity on its ancestors), so the browser's
+ * native lazy loading starts as early as possible and images don't stall.
  */
-export function ImageReveal({ children, className, delay = 0, from = "bottom" }: ImageRevealProps) {
+export function ImageReveal({ children, className, delay = 0 }: ImageRevealProps) {
   const reduce = useReducedMotion();
-  if (reduce) return <div className={cn("overflow-hidden", className)}>{children}</div>;
   return (
-    <motion.div
-      className={cn("overflow-hidden", className)}
-      initial={{ clipPath: hiddenClip[from] }}
-      whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 1.1, delay, ease: EASE_OUT }}
-    >
-      <motion.div
-        className="h-full w-full"
-        initial={{ scale: 1.18 }}
-        whileInView={{ scale: 1 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 1.5, delay, ease: EASE_OUT }}
-      >
-        {children}
-      </motion.div>
-    </motion.div>
+    <div className={cn("relative overflow-hidden", className)}>
+      {children}
+      {!reduce && (
+        <motion.div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 z-[1] origin-top bg-secondary"
+          initial={{ scaleY: 1 }}
+          whileInView={{ scaleY: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 1, delay, ease: EASE_OUT }}
+        />
+      )}
+    </div>
   );
 }

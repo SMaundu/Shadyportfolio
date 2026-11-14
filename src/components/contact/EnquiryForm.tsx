@@ -30,6 +30,7 @@ function Field({
   error,
   optional,
   hint,
+  aside,
   children,
   className,
 }: {
@@ -38,18 +39,21 @@ function Field({
   error?: string;
   optional?: boolean;
   hint?: string;
+  /** Extra control shown on the right of the label row (e.g. a currency switch). */
+  aside?: ReactNode;
   children: ReactNode;
   className?: string;
 }) {
   return (
     <div className={className}>
-      <label htmlFor={id} className="mb-2 flex items-baseline justify-between text-sm font-semibold">
-        <span>
+      <div className="mb-2 flex min-h-[1.5rem] items-center justify-between gap-3">
+        <label htmlFor={id} className="text-sm font-semibold">
           {label}
           {!optional && <span className="text-highlight" aria-hidden> *</span>}
-        </span>
+        </label>
         {optional && <span className="text-xs font-normal text-muted-foreground">Optional</span>}
-      </label>
+        {aside}
+      </div>
       {children}
       {hint && !error && (
         <p id={`${id}-hint`} className="mt-1.5 text-xs text-muted-foreground">
@@ -270,14 +274,17 @@ export function EnquiryForm() {
           </select>
         </Field>
 
-        <Field id={fid("budget")} label="Budget" error={errors.budget?.message}>
-          <div className="flex gap-2">
-            <div role="radiogroup" aria-label="Currency" className="flex shrink-0 rounded-xl border border-input p-1">
+        <Field
+          id={fid("budget")}
+          label="Budget"
+          error={errors.budget?.message}
+          aside={
+            <div role="radiogroup" aria-label="Budget currency" className="flex shrink-0 rounded-lg border border-input p-0.5">
               {CURRENCIES.map((c) => (
                 <label
                   key={c}
                   className={cn(
-                    "cursor-pointer rounded-lg px-3 py-2 text-xs font-bold transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring",
+                    "cursor-pointer rounded-md px-2.5 py-0.5 text-[11px] font-bold transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring",
                     currency === c ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground",
                   )}
                 >
@@ -286,17 +293,18 @@ export function EnquiryForm() {
                 </label>
               ))}
             </div>
-            <select id={fid("budget")} className="field min-w-0 appearance-none" {...aria("budget")} {...register("budget")}>
-              <option value="" disabled>
-                Choose a range
+          }
+        >
+          <select id={fid("budget")} className="field appearance-none" {...aria("budget")} {...register("budget")}>
+            <option value="" disabled>
+              Choose a range
+            </option>
+            {BUDGETS[currency as keyof typeof BUDGETS].map((b) => (
+              <option key={b.value} value={b.value}>
+                {b.label}
               </option>
-              {BUDGETS[currency as keyof typeof BUDGETS].map((b) => (
-                <option key={b.value} value={b.value}>
-                  {b.label}
-                </option>
-              ))}
-            </select>
-          </div>
+            ))}
+          </select>
         </Field>
         <Field id={fid("timeline")} label="Timeline" error={errors.timeline?.message}>
           <select id={fid("timeline")} className="field appearance-none" {...aria("timeline")} {...register("timeline")}>

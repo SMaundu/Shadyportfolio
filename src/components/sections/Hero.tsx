@@ -8,30 +8,28 @@ import {
   useTransform,
   type MotionValue,
 } from "framer-motion";
-import { ArrowDownRight, ArrowRight, MapPin } from "lucide-react";
-import { useRef, type PointerEvent } from "react";
-import { Media } from "@/components/media/Media";
-import { getMedia } from "@/lib/media";
+import { ArrowDownRight, ArrowRight } from "lucide-react";
+import { useRef, type PointerEvent, type ReactNode } from "react";
 import { SMark } from "@/components/layout/Logo";
 import { SectionLink } from "@/components/layout/SectionLink";
 import { RotatingWords } from "@/components/motion/RotatingWords";
-import { EASE_OUT } from "@/lib/motion";
-import type { MediaId } from "@/content/media.generated";
 import { profile } from "@/content/site";
+import { EASE_OUT } from "@/lib/motion";
 
-const letters = (word: string) => word.split("");
+const DISCIPLINES = ["Brand Identity Design", "Graphic & Social Media Design", "Web & App Development", "UI/UX Design"];
+const SECOND_LINE = ["Software Developer", "Brand Designer", "Frontend Developer", "UI/UX Designer"] as const;
 
-function NameLine({ word, delay, className }: { word: string; delay: number; className?: string }) {
+function RiseWord({ word, delay, className }: { word: string; delay: number; className?: string }) {
   return (
-    <span className={`block overflow-hidden ${className ?? ""}`} aria-hidden>
+    <span className={`block overflow-hidden pb-[0.06em] ${className ?? ""}`} aria-hidden>
       <span className="inline-flex">
-        {letters(word).map((ch, i) => (
+        {word.split("").map((ch, i) => (
           <motion.span
             key={i}
             className="inline-block"
-            initial={{ y: "105%" }}
+            initial={{ y: "110%" }}
             animate={{ y: "0%" }}
-            transition={{ duration: 1.1, delay: delay + i * 0.045, ease: EASE_OUT }}
+            transition={{ duration: 1.1, delay: delay + i * 0.04, ease: EASE_OUT }}
           >
             {ch}
           </motion.span>
@@ -41,7 +39,7 @@ function NameLine({ word, delay, className }: { word: string; delay: number; cla
   );
 }
 
-function Floating({
+function Parallax({
   x,
   y,
   depth,
@@ -52,7 +50,7 @@ function Floating({
   y: MotionValue<number>;
   depth: number;
   className?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   const tx = useTransform(x, (v) => v * depth);
   const ty = useTransform(y, (v) => v * depth);
@@ -63,19 +61,24 @@ function Floating({
   );
 }
 
+/**
+ * Hero: big role headline over a warm glow with a giant Shadesigns mark that
+ * follows the cursor, a supporting statement on the right and the four core
+ * disciplines along the bottom.
+ */
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
-  const cutout = getMedia("site/portrait-cutout");
 
-  // Pointer-reactive background (normalised -0.5..0.5) and spotlight position (px).
+  // Pointer-reactive background (normalised -0.5..0.5) and spotlight position (%).
   const px = useMotionValue(0);
   const py = useMotionValue(0);
   const sx = useSpring(px, { stiffness: 60, damping: 20 });
   const sy = useSpring(py, { stiffness: 60, damping: 20 });
-  const lightX = useMotionValue(70);
-  const lightY = useMotionValue(30);
-  const spotlight = useMotionTemplate`radial-gradient(600px circle at ${lightX}% ${lightY}%, rgba(247,163,6,0.14), transparent 60%)`;
+  const lightX = useMotionValue(68);
+  const lightY = useMotionValue(42);
+  const spotlight = useMotionTemplate`radial-gradient(560px circle at ${lightX}% ${lightY}%, rgba(247,163,6,0.16), transparent 62%)`;
+  const markRotate = useTransform(sx, (v) => v * 10);
 
   const onPointerMove = (e: PointerEvent<HTMLElement>) => {
     if (reduce || e.pointerType !== "mouse" || !ref.current) return;
@@ -88,11 +91,9 @@ export function Hero() {
     lightY.set(ny * 100);
   };
 
-  // Gentle parallax as the hero scrolls away.
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const nameY = useTransform(scrollYProgress, [0, 1], ["0%", reduce ? "0%" : "18%"]);
-  const portraitY = useTransform(scrollYProgress, [0, 1], ["0%", reduce ? "0%" : "-10%"]);
-  const fade = useTransform(scrollYProgress, [0, 0.8], [1, reduce ? 1 : 0.2]);
+  const headY = useTransform(scrollYProgress, [0, 1], ["0%", reduce ? "0%" : "22%"]);
+  const fade = useTransform(scrollYProgress, [0, 0.8], [1, reduce ? 1 : 0.15]);
 
   return (
     <section
@@ -102,153 +103,129 @@ export function Hero() {
       aria-labelledby="hero-title"
       className="grain relative isolate flex min-h-[100svh] flex-col overflow-hidden pt-[72px]"
     >
-      {/* Background layers */}
+      {/* Background: warm glow, grid, cursor spotlight */}
       <div aria-hidden className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
-        <div className="absolute -right-40 -top-40 h-[42rem] w-[42rem] rounded-full bg-burgundy/50 blur-[140px] dark:bg-burgundy/60" />
-        <div className="absolute -bottom-48 left-[-10%] h-[34rem] w-[34rem] rounded-full bg-gold/20 blur-[140px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(90%_70%_at_75%_45%,hsl(var(--secondary)/0.85),transparent_70%)] dark:bg-[radial-gradient(90%_70%_at_75%_45%,hsl(var(--secondary)),transparent_72%)]" />
+        <div className="absolute right-[6%] top-[22%] h-[30rem] w-[30rem] rounded-full bg-gold/35 blur-[140px] dark:bg-gold/30" />
+        <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_center,black_25%,transparent_75%)]" />
         <motion.div className="absolute inset-0" style={{ background: spotlight }} />
       </div>
-      <Floating x={sx} y={sy} depth={-40} className="right-[2%] top-[13%] hidden lg:block">
-        <SMark className="h-24 w-24 animate-spin-slow text-transparent [stroke:hsl(var(--primary)/0.4)] [stroke-width:10]" />
-      </Floating>
-      <Floating x={sx} y={sy} depth={60} className="right-[30%] top-[15%] hidden md:block">
-        <div className="h-20 w-20 rounded-full border border-primary/30" />
-      </Floating>
-      <Floating x={sx} y={sy} depth={25} className="left-[47%] top-[13%] hidden lg:block">
-        <div className="h-3 w-3 rotate-45 bg-primary/70" />
-      </Floating>
 
-      <div className="container relative flex flex-1 flex-col justify-center py-8 md:py-10">
+      {/* Giant mark in place of a portrait: follows the cursor */}
+      <Parallax x={sx} y={sy} depth={-50} className="right-[-8%] top-[10%] hidden h-[74%] md:block lg:right-[max(2%,calc((100vw-1680px)/2))]">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: EASE_OUT }}
-          className="flex flex-wrap items-center gap-3"
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.6, delay: 0.3, ease: EASE_OUT }}
+          style={{ rotate: markRotate }}
+          className="h-full"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-background/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/80 backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            {profile.headline}
-          </span>
-          <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
-            <MapPin className="h-3.5 w-3.5" /> Based in {profile.location}
-          </span>
+          <SMark className="h-full w-auto text-[hsl(var(--background))] opacity-80 drop-shadow-[0_40px_80px_rgba(0,0,0,0.55)] dark:opacity-90" />
         </motion.div>
+      </Parallax>
+      <Parallax x={sx} y={sy} depth={-90} className="right-[max(12%,calc((100vw-1680px)/2+10%))] top-[14%] hidden lg:block">
+        <SMark className="h-24 w-24 animate-spin-slow text-transparent [stroke:hsl(var(--primary)/0.6)] [stroke-width:10]" />
+      </Parallax>
+      <Parallax x={sx} y={sy} depth={70} className="bottom-[32%] left-[47%] hidden md:block">
+        <div className="h-16 w-16 rounded-full border border-primary/40" />
+      </Parallax>
+      <Parallax x={sx} y={sy} depth={30} className="left-[40%] top-[16%] hidden lg:block">
+        <div className="h-3 w-3 rotate-45 bg-primary/80" />
+      </Parallax>
 
-        <div className="relative mt-6">
-          <motion.h1
-            id="hero-title"
-            style={{ y: nameY, opacity: fade }}
-            className="relative z-0 font-display text-[clamp(4.25rem,14.2vw,13.25rem)] uppercase leading-[0.84] tracking-[-0.01em]"
-          >
-            <span className="sr-only">
-              {profile.name}, {profile.headline}
-            </span>
-            <NameLine word="Shadrack" delay={0.2} />
-            <NameLine word="Maundu" delay={0.45} className="text-outline md:pl-[8vw]" />
-          </motion.h1>
-
-          {/* Portrait: background-free cut-out over the name when available, otherwise a framed photo. */}
-          {cutout ? (
-            <motion.div
-              style={{ y: portraitY }}
-              initial={{ opacity: 0, y: 60 }}
+      <div className="container relative flex flex-1 flex-col justify-center py-10">
+        <div className="grid items-end gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.8fr)]">
+          <motion.div style={{ y: headY, opacity: fade }}>
+            <motion.p
+              initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.4, delay: 0.6, ease: EASE_OUT }}
-              className="pointer-events-none absolute bottom-[-12%] right-[4%] z-10 hidden w-[min(34vw,520px)] md:block"
+              transition={{ duration: 0.8, delay: 0.1, ease: EASE_OUT }}
+              className="text-light-accent text-[clamp(1.5rem,3vw,2.5rem)] text-foreground/90"
             >
-              <Media id={"site/portrait-cutout" as MediaId} alt="Portrait of Shadrack Maundu" intrinsic priority sizes="34vw" />
-            </motion.div>
-          ) : (
-            <div className="absolute right-0 top-1/2 z-10 hidden w-[clamp(220px,22vw,330px)] -translate-y-1/2 md:block">
-              <motion.figure
-                style={{ y: portraitY }}
-                initial={{ opacity: 0, scale: 0.92, rotate: 6 }}
-                animate={{ opacity: 1, scale: 1, rotate: 3 }}
-                transition={{ duration: 1.4, delay: 0.55, ease: EASE_OUT }}
-                className="relative"
+              Hey, I'm a
+            </motion.p>
+            <h1
+              id="hero-title"
+              className="mt-2 font-display font-extrabold uppercase leading-[0.92] tracking-[-0.02em] text-[clamp(3.25rem,10vw,9.5rem)]"
+            >
+              <span className="sr-only">{profile.headline}</span>
+              <RiseWord word="Creative" delay={0.2} />
+              <RiseWord word="Designer" delay={0.45} className="text-highlight" />
+            </h1>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.95, ease: EASE_OUT }}
+              className="mt-5 flex flex-wrap items-baseline gap-x-3 font-display text-[clamp(1.25rem,2.6vw,2.25rem)] font-extrabold uppercase"
+            >
+              <span className="text-light-accent">&amp;</span>
+              <RotatingWords words={SECOND_LINE} startDelay={1200} />
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.8, ease: EASE_OUT }}
+            className="relative z-10 max-w-[31rem] lg:justify-self-end lg:pb-4"
+          >
+            <p className="font-display text-2xl font-extrabold leading-tight md:text-3xl">{profile.tagline}</p>
+            <p className="mt-4 text-[15px] leading-relaxed text-foreground/80 md:text-base">
+              Brand identities, campaigns and corporate design, plus the websites and apps that bring them to life.
+            </p>
+            <div className="mt-7 flex flex-col flex-wrap gap-3 sm:flex-row">
+              <SectionLink
+                to="work"
+                className="group inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-full bg-primary px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-[0_18px_40px_-14px_rgba(247,163,6,0.7)] transition-transform hover:-translate-y-0.5"
               >
-                <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-card p-2 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.8)]">
-                  <div className="aspect-[4/5] overflow-hidden rounded-[1.6rem]">
-                    <Media
-                      id="site/portrait"
-                      alt="Portrait of Shadrack Maundu"
-                      priority
-                      sizes="330px"
-                      className="object-[50%_18%]"
-                    />
-                  </div>
-                </div>
-                <figcaption className="absolute -bottom-5 -left-6 rounded-2xl bg-primary px-4 py-2 text-xs font-bold uppercase tracking-widest text-primary-foreground shadow-lg">
-                  Design × Code
-                </figcaption>
-              </motion.figure>
+                View My Work
+                <ArrowDownRight className="h-4 w-4 transition-transform duration-300 group-hover:rotate-[-45deg]" />
+              </SectionLink>
+              <SectionLink
+                to="contact"
+                className="group inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-full border border-foreground/30 bg-background/30 px-6 py-3.5 text-sm font-bold uppercase tracking-wider backdrop-blur transition-colors hover:border-primary hover:text-primary"
+              >
+                Let's Work Together
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </SectionLink>
             </div>
-          )}
-        </div>
-
-        <div className="relative z-20 mt-10 grid gap-8 md:mt-12 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:items-end">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.9, ease: EASE_OUT }}
-            className="max-w-xl"
-          >
-            <p className="text-lg font-semibold md:text-2xl">
-              I'm a{" "}
-              <RotatingWords words={profile.roles} className="text-highlight" />
-            </p>
-            <p className="mt-3 font-display text-2xl uppercase leading-tight text-foreground/90 md:text-3xl">
-              {profile.tagline}
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-[17px]">{profile.intro}</p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 1.05, ease: EASE_OUT }}
-            className="flex flex-col gap-3 sm:flex-row md:justify-end"
-          >
-            <SectionLink
-              to="work"
-              className="group inline-flex items-center justify-center gap-3 rounded-full bg-primary px-7 py-4 text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-[0_18px_40px_-14px_rgba(247,163,6,0.7)] transition-transform hover:-translate-y-0.5"
-            >
-              View My Work
-              <ArrowDownRight className="h-4 w-4 transition-transform duration-300 group-hover:rotate-[-45deg]" />
-            </SectionLink>
-            <SectionLink
-              to="contact"
-              className="group inline-flex items-center justify-center gap-3 rounded-full border border-foreground/25 px-7 py-4 text-sm font-bold uppercase tracking-wider transition-colors hover:border-primary hover:text-primary"
-            >
-              Let's Work Together
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </SectionLink>
           </motion.div>
         </div>
 
-        {/* Framed portrait on small screens */}
-        {!cutout && (
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.1, ease: EASE_OUT }}
-            className="mt-10 overflow-hidden rounded-[1.75rem] border border-white/10 md:hidden"
-          >
-            <div className="aspect-[4/3]">
-              <Media id="site/portrait" alt="Portrait of Shadrack Maundu" sizes="100vw" className="object-[50%_20%]" />
-            </div>
-          </motion.div>
-        )}
+        {/* Disciplines */}
+        <motion.ol
+          initial="hidden"
+          animate="show"
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08, delayChildren: 1.1 } } }}
+          className="relative z-10 mt-14 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-foreground/15 pt-6 md:mt-20 md:grid-cols-4"
+        >
+          {DISCIPLINES.map((d, i) => (
+            <motion.li
+              key={d}
+              variants={{
+                hidden: { opacity: 0, y: 14 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE_OUT } },
+              }}
+            >
+              <SectionLink
+                to="services"
+                className="group flex items-baseline gap-3 text-sm font-semibold text-foreground/85 hover:text-foreground"
+              >
+                <span className="font-display text-xs font-extrabold text-highlight">0{i + 1}</span>
+                <span className="link-underline">{d}</span>
+              </SectionLink>
+            </motion.li>
+          ))}
+        </motion.ol>
       </div>
 
       {/* Scroll indicator */}
       <SectionLink
-        to="work"
-        aria-label="Scroll to selected work"
-        className="group absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.35em] text-muted-foreground md:flex"
+        to="about"
+        aria-label="Scroll to About"
+        className="absolute bottom-6 right-6 hidden flex-col items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.35em] text-muted-foreground md:flex"
       >
-        Scroll
+        <span className="[writing-mode:vertical-rl]">Scroll</span>
         <span className="relative h-12 w-px overflow-hidden bg-foreground/15">
           <span className="absolute inset-x-0 top-0 h-1/2 animate-scroll-cue bg-primary" />
         </span>

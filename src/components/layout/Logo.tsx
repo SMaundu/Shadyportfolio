@@ -17,45 +17,31 @@ export function SMark({ className, title }: { className?: string; title?: string
   );
 }
 
-/** Nav lock-up: Shadesigns mark + personal name. */
-export function Logo({ className, compact }: { className?: string; compact?: boolean }) {
+/** Header lock-up: gold Shadesigns mark + wordmark. */
+export function Logo({ className }: { className?: string }) {
   return (
     <span className={cn("inline-flex items-center gap-3", className)}>
-      <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#ee2524]/10 ring-1 ring-[#ee2524]/30 transition-transform duration-500 group-hover:rotate-[-8deg]">
-        <SMark className="h-6 w-6 text-[#ee2524]" />
+      <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 ring-1 ring-primary/35 transition-transform duration-500 group-hover:rotate-[-8deg]">
+        <SMark className="h-6 w-6 text-primary" />
       </span>
-      {!compact && (
-        <span className="flex flex-col leading-none">
-          <span className="font-display text-xl uppercase tracking-wide">Shadrack Maundu</span>
-          <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
-            Shadesigns
-          </span>
-        </span>
-      )}
+      <span className="font-display text-[1.35rem] font-extrabold leading-none tracking-tight">
+        Shade<span className="text-highlight">signs</span>
+      </span>
     </span>
   );
 }
 
-/** Full Shadesigns horizontal logo; switches to the white version on dark backgrounds. */
+/** Full lock-up with tagline (footer, about). */
 export function ShadesignsLogo({ className }: { className?: string }) {
   return (
-    <span className={cn("inline-block", className)}>
-      <img
-        src="/brand/shadesigns-horizontal.webp"
-        alt="Shadesigns, Designs That Convert"
-        width={1400}
-        height={406}
-        loading="lazy"
-        className="h-auto w-full dark:hidden"
-      />
-      <img
-        src="/brand/shadesigns-horizontal-dark.webp"
-        alt="Shadesigns, Designs That Convert"
-        width={1400}
-        height={406}
-        loading="lazy"
-        className="hidden h-auto w-full dark:block"
-      />
+    <span className={cn("inline-flex items-center gap-3", className)} role="img" aria-label="Shadesigns, Designs That Convert">
+      <SMark className="h-12 w-12 text-primary" />
+      <span className="flex flex-col leading-none" aria-hidden>
+        <span className="font-display text-2xl font-extrabold tracking-tight">
+          Shade<span className="text-highlight">signs</span>
+        </span>
+        <span className="mt-1 font-display text-sm font-extralight tracking-wide text-foreground/80">Designs That Convert</span>
+      </span>
     </span>
   );
 }

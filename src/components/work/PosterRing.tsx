@@ -1,19 +1,9 @@
-import {
-  animate,
-  motion,
-  useAnimationFrame,
-  useInView,
-  useMotionValue,
-  useReducedMotion,
-  useTransform,
-} from "framer-motion";
-import { ChevronLeft, ChevronRight, Expand } from "lucide-react";
-import { lazy, Suspense, useEffect, useRef, useState, type PointerEvent } from "react";
+import { animate, motion, useAnimationFrame, useInView, useMotionValue, useReducedMotion, useTransform } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useRef, useState, type PointerEvent } from "react";
 import { Media } from "@/components/media/Media";
-import { getMedia } from "@/lib/media";
 import type { MediaId } from "@/content/media.generated";
-
-const PosterLightbox = lazy(() => import("./PosterLightbox"));
+import { getMedia } from "@/lib/media";
 
 export interface Poster {
   id: MediaId;
@@ -22,45 +12,60 @@ export interface Poster {
 
 interface PosterRingProps {
   posters: Poster[];
+  /** Card shape: every poster in a ring shares the same frame. */
+  shape: "square" | "portrait";
+  /** Spin direction for auto-rotation. */
+  direction?: 1 | -1;
+  label: string;
+  onOpen: (poster: Poster) => void;
 }
 
-function useCardWidth() {
-  const [w, setW] = useState(220);
+const RATIO = { square: 1, portrait: 4 / 3 } as const;
+
+const widthFor = (shape: "square" | "portrait", wide: boolean) =>
+  wide ? (shape === "square" ? 230 : 220) : shape === "square" ? 140 : 135;
+
+function useCardWidth(shape: "square" | "portrait") {
+  // Read the breakpoint synchronously so the stage height never jumps after mount.
+  const [w, setW] = useState(() =>
+    widthFor(shape, typeof window !== "undefined" && window.matchMedia("(min-width: 768px)").matches),
+  );
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 768px)");
-    const set = () => setW(mq.matches ? 250 : 160);
+    const set = () => setW(widthFor(shape, mq.matches));
     set();
     mq.addEventListener("change", set);
     return () => mq.removeEventListener("change", set);
-  }, []);
+  }, [shape]);
   return w;
 }
 
 /**
- * A curved, rotating 3D wall of posters (the viewer stands inside the ring, so
- * the wall bends towards the edges). Drag or use the arrows to spin it; click a
- * poster to open it full size. Auto-rotation stops for reduced-motion users,
- * on hover, while dragging and when the ring is off-screen.
+ * A curved, rotating 3D row of posters (the viewer stands inside the ring, so
+ * the wall bends towards the edges). Drag or use the arrows to spin; click a
+ * poster to view it full size. Auto-rotation stops for reduced motion, on
+ * hover, while dragging and when off-screen.
  */
-export function PosterRing({ posters }: PosterRingProps) {
+export function PosterRing({ posters, shape, direction = -1, label, onOpen }: PosterRingProps) {
   const reduce = useReducedMotion();
   const stageRef = useRef<HTMLDivElement>(null);
-  const inView = useInView(stageRef, { margin: "200px" });
-  const cardW = useCardWidth();
-  const cardH = Math.round(cardW * 1.25);
+  const inView = useInView(stageRef, { margin: "100px" });
+  // Start loading images well before the ring scrolls into view.
+  const near = useInView(stageRef, { margin: "1200px", once: true });
+  const cardW = useCardWidth(shape);
+  const cardH = Math.round(cardW * RATIO[shape]);
   const n = posters.length;
   const step = 360 / n;
-  const radius = Math.round(cardW / 2 / Math.tan(Math.PI / n) + 14);
+  const radius = Math.round(cardW / 2 / Math.tan(Math.PI / n) + 12);
 
   const rotation = useMotionValue(0);
   const ringTransform = useTransform(rotation, (r) => `translateZ(${radius * 0.5}px) rotateY(${r}deg)`);
   const [paused, setPaused] = useState(false);
-  const [open, setOpen] = useState<number | null>(null);
   const drag = useRef({ active: false, startX: 0, startRot: 0, moved: 0, lastX: 0, lastT: 0, v: 0 });
 
   useAnimationFrame((_, delta) => {
-    if (reduce || paused || !inView || drag.current.active || open !== null) return;
-    rotation.set(rotation.get() - delta * 0.006);
+    if (reduce || paused || !inView || drag.current.active) return;
+    rotation.set(rotation.get() + direction * delta * 0.005);
   });
 
   const snapTo = (target: number) => animate(rotation, target, { type: "spring", stiffness: 90, damping: 20 });
@@ -80,30 +85,21 @@ export function PosterRing({ posters }: PosterRingProps) {
     d.v = (e.clientX - d.lastX) / Math.max(1, now - d.lastT);
     d.lastX = e.clientX;
     d.lastT = now;
-    rotation.set(d.startRot + dx * 0.18);
+    rotation.set(d.startRot + dx * 0.16);
   };
   const onPointerUp = () => {
     const d = drag.current;
     if (!d.active) return;
     d.active = false;
-    if (d.moved > 4) {
-      // Fling with inertia, then settle on the nearest poster.
-      const projected = rotation.get() + d.v * 180;
-      snapTo(Math.round(projected / step) * step);
-    }
-  };
-
-  const openAt = (i: number) => {
-    if (drag.current.moved > 6) return; // it was a drag, not a click
-    setOpen(i);
+    if (d.moved > 4) snapTo(Math.round((rotation.get() + d.v * 160) / step) * step);
   };
 
   return (
-    <div>
+    <div className="relative">
       <div
         ref={stageRef}
-        className="relative mx-auto h-[360px] w-full touch-pan-y select-none overflow-hidden md:h-[480px]"
-        style={{ perspective: `${radius * 2}px`, perspectiveOrigin: "50% 50%" }}
+        className="relative mx-auto w-full touch-pan-y select-none overflow-hidden"
+        style={{ height: Math.round(cardH * 1.3) + 16, perspective: `${radius * 2}px` }}
         onPointerEnter={(e) => e.pointerType === "mouse" && setPaused(true)}
         onPointerLeave={() => {
           setPaused(false);
@@ -115,8 +111,8 @@ export function PosterRing({ posters }: PosterRingProps) {
         onPointerCancel={onPointerUp}
         aria-hidden
       >
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-[12%] bg-gradient-to-r from-background to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-[12%] bg-gradient-to-l from-background to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-[10%] bg-gradient-to-r from-background to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-[10%] bg-gradient-to-l from-background to-transparent" />
         <motion.div
           className="preserve-3d absolute left-1/2 top-1/2 cursor-grab active:cursor-grabbing"
           style={{ width: cardW, height: cardH, marginLeft: -cardW / 2, marginTop: -cardH / 2, transform: ringTransform }}
@@ -126,66 +122,37 @@ export function PosterRing({ posters }: PosterRingProps) {
               key={p.id}
               type="button"
               tabIndex={-1}
-              onClick={() => openAt(i)}
-              className="backface-hidden absolute inset-0 overflow-hidden rounded-2xl border border-white/10 bg-card shadow-[0_30px_60px_-25px_rgba(0,0,0,0.9)] transition-[filter] duration-300 hover:brightness-110"
-              style={{ transform: `rotateY(${i * step}deg) translateZ(${-radius}px)` }}
+              onClick={() => drag.current.moved <= 6 && onOpen(p)}
+              className="backface-hidden absolute inset-0 overflow-hidden rounded-2xl border border-white/10 shadow-[0_30px_60px_-25px_rgba(0,0,0,0.9)] transition-[filter] duration-300 hover:brightness-110"
+              style={{ transform: `rotateY(${i * step}deg) translateZ(${-radius}px)`, backgroundColor: getMedia(p.id)?.color }}
             >
-              <Media id={p.id} alt="" sizes={`${cardW}px`} />
+              {near && <Media id={p.id} alt="" sizes={`${cardW * 2}px`} eager />}
             </button>
           ))}
         </motion.div>
       </div>
 
-      <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <div className="mt-2 flex items-center justify-center gap-3">
         <button
           type="button"
           onClick={() => nudge(1)}
-          className="grid h-12 w-12 place-items-center rounded-full border border-border transition-colors hover:border-primary hover:text-primary"
-          aria-label="Rotate posters left"
+          className="grid h-10 w-10 place-items-center rounded-full border border-border transition-colors hover:border-primary hover:text-primary"
+          aria-label={`${label}: rotate left`}
         >
-          <ChevronLeft className="h-5 w-5" />
+          <ChevronLeft className="h-4 w-4" />
         </button>
-        <button
-          type="button"
-          onClick={() => setOpen(0)}
-          className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold transition-colors hover:border-primary hover:text-primary"
-        >
-          <Expand className="h-4 w-4" /> Open poster gallery ({n})
-        </button>
+        <span className="min-w-28 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+          {label} · {n}
+        </span>
         <button
           type="button"
           onClick={() => nudge(-1)}
-          className="grid h-12 w-12 place-items-center rounded-full border border-border transition-colors hover:border-primary hover:text-primary"
-          aria-label="Rotate posters right"
+          className="grid h-10 w-10 place-items-center rounded-full border border-border transition-colors hover:border-primary hover:text-primary"
+          aria-label={`${label}: rotate right`}
         >
-          <ChevronRight className="h-5 w-5" />
+          <ChevronRight className="h-4 w-4" />
         </button>
       </div>
-      <p className="mt-3 text-center text-xs text-muted-foreground">Drag to spin · click a poster to view it full size</p>
-
-      {open !== null && (
-        <Suspense fallback={null}>
-          <PosterLightbox
-            open
-            index={open}
-            onClose={() => setOpen(null)}
-            slides={posters
-              .map((p) => ({ p, a: getMedia(p.id) }))
-              .filter((x) => x.a)
-              .map(({ p, a }) => ({
-                src: Object.values(a!.srcs).at(-1)!,
-                width: a!.w,
-                height: a!.h,
-                alt: p.title,
-                srcSet: Object.entries(a!.srcs).map(([w, src]) => ({
-                  src,
-                  width: Number(w),
-                  height: Math.round((a!.h * Number(w)) / a!.w),
-                })),
-              }))}
-          />
-        </Suspense>
-      )}
     </div>
   );
 }

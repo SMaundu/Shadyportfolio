@@ -81,11 +81,11 @@ export function Services() {
                     <h3>
                       <Accordion.Trigger className="flex w-full items-center gap-5 py-6 text-left md:py-7">
                         <span className="w-8 shrink-0 font-mono text-xs text-muted-foreground">0{i + 1}</span>
-                        <span className="flex-1 font-display text-3xl uppercase leading-none tracking-wide transition-colors group-hover/item:text-highlight group-data-[state=open]/item:text-highlight md:text-[2.6rem]">
+                        <span className="flex-1 font-display text-xl font-extrabold uppercase leading-tight tracking-tight transition-colors group-hover/item:text-highlight group-data-[state=open]/item:text-highlight md:text-3xl">
                           {s.title}
                         </span>
-                        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-border transition-all duration-500 group-data-[state=open]/item:rotate-45 group-data-[state=open]/item:border-primary group-data-[state=open]/item:bg-primary group-data-[state=open]/item:text-primary-foreground">
-                          <Plus className="h-4 w-4" />
+                        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-border transition-colors duration-500 group-data-[state=open]/item:border-primary group-data-[state=open]/item:bg-primary group-data-[state=open]/item:text-primary-foreground">
+                          <Plus className="h-4 w-4 transition-transform duration-500 group-data-[state=open]/item:rotate-45" />
                         </span>
                       </Accordion.Trigger>
                     </h3>
