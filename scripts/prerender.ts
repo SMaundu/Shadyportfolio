@@ -35,10 +35,15 @@ function render(route: string, title: string, description: string, image?: strin
     .replace(/<meta property="og:image:width"[^>]*>\s*<meta property="og:image:height"[^>]*>/, "");
 }
 
+/**
+ * Written as `work/slug.html`, not `work/slug/index.html`: Netlify serves
+ * `/work/slug` straight from the .html file, whereas a folder index makes it
+ * 301-redirect to `/work/slug/`, which no longer matches the canonical URL.
+ */
 function write(route: string, html: string) {
-  const dir = path.join(DIST, route);
-  fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, "index.html"), html);
+  const file = path.join(DIST, `${route}.html`);
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, html);
 }
 
 /** Prefer the JPEG social image (widest platform support), else the largest WebP. */
